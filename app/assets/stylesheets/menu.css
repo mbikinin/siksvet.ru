@@ -1,0 +1,91 @@
+/*		SUBMENU		*/
+div.subMenu {
+	position:absolute;
+	width:100%;
+	z-index:999;
+	display:none;
+	top:107px;
+	left:0;
+	background:#d4d4d4 url('../images/submenuFBG.png') bottom repeat-x;
+}
+div.subMenu ul.warp {
+	width:996px;
+	margin:0 auto;
+	overflow:hidden;
+	margin-bottom:-5px;
+}
+div.subMenu footer {
+	width:996px;
+	margin:0 auto 14px;
+}
+div.subMenu footer a {
+	color:#000 !important;
+	text-align:left !important;
+	font-size:12px !important;
+	text-decoration:underline !important;
+	background:none !important;
+	margin-bottom: -13px !important;
+}
+div.subMenu footer a:hover {
+	text-decoration:none !important;
+}
+div.subMenu footer img {
+	margin:0 4px -5px 0;
+}
+div.subMenu ul.warp li {
+	width:166px;
+	float:left;
+}
+#about {
+	background:#d4d4d4 url('../images/submenuFBG.png') 0 109% repeat-x;
+	padding-bottom:35px;
+}
+#about ul.warp {
+	width:1000px;
+	margin-bottom:-28px;
+}
+
+div.subMenu ul.warp li {
+	padding-top:10px;
+	min-height:310px;
+}
+#about ul.warp li {
+	width:200px;
+	min-height:350px;
+}
+#about ul.warp li li {
+	min-height:33px;
+}
+div.subMenu ul.warp li li {
+	padding-top:0;
+	min-height:33px;
+}
+div.subMenu ul.warp li li img {
+	margin-left: 13px;
+    margin-top: 10px;
+}
+div.subMenu ul.warp li a {
+	display:block;
+	text-align:left;
+	font-size:12px;
+	text-decoration:underline;
+	color:#1c58ba;
+	padding:6px 14px;
+}
+div.subMenu ul.warp li li a {
+	text-decoration:none;
+	color:#000;
+	font-size:11px;
+}
+div.subMenu ul.warp li:hover {
+	background:#fff;
+}
+div.subMenu ul.warp li a:hover {
+	background:none;
+	text-decoration:none;
+	color:#9b1c1e;
+}
+div.subMenu ul.warp li li a:hover {
+	background:#1b4f91;
+	color:#fff;
+}

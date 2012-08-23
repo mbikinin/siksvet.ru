@@ -1,0 +1,354 @@
+body {
+	background:#fff;
+	position:relative;
+	overflow-x:hidden;
+	width:100%;
+}
+.warp {
+	width:100%;
+}
+.main {
+	width:1000px;
+	margin:0 auto;
+}
+
+header.main {
+	height:64px;
+	background:url('../images/headerBg.png') no-repeat;
+}
+header.main div.logo {
+	float:left;
+	margin: 7px 0 0 24px;
+}
+header.main div.contacts {
+	float:right;
+	width:555px;
+	margin-top:10px;
+}
+header.main div.contacts div {
+	float:left;
+	width:185px;
+}
+header.main div.contacts div img {
+	margin-bottom:-11px;
+}
+header.main div.contacts div.phone p,header.main div.contacts div.phone span {
+	font-size:16px;
+}
+header.main div.contacts div.phone {
+	margin-right:12px;
+	float:right;
+}
+header.main div.contacts div.skype {
+	width:167px;
+}
+header.main div.contacts div.phone p {
+	float:right;
+	border-bottom:1px dotted;
+	margin:6px 20px 0 0;
+}
+header.main div.contacts div.phone span.gray {
+	color:#898989;
+}
+
+header.main div.contacts div.phone img {
+	margin-bottom:-8px;
+}
+nav.warp {
+	background: url('../images/navBg.png') repeat-x;
+	height:43px;
+	overflow:hidden;
+}
+nav.warp div.main div {
+	float:left;
+}
+
+nav.warp div.main div a {
+	display:block;
+	color: #fff;
+	text-decoration:none;
+    font-size: 14px;
+    padding: 14px 41px 13px;
+	text-align:center;
+}
+nav.warp div.main div a:hover {
+	background:url('../images/navBgH.png') repeat-x;
+}
+nav.warp div.main div a.active {
+	color:#000;
+	border-radius:10px 10px 0 0;
+	padding:11px 24px 25px;
+	margin:7px 16px 0 18px;
+	background:#e9e9e9;
+}
+
+/*		ПЛЮШКИ		*/
+section.warp {
+	background:#000 url('../images/twoBgM.jpg');
+	height:394px;
+	width:1920px;
+	position:absolute;
+	left:50%;
+	margin-top:8px;
+	box-shadow:0 -3px 5px #999;
+	margin-left:-960px;
+	position:relative;
+}
+
+section.warp div.center {
+	margin:0 auto;
+	width:500px;
+	text-align:center;
+	padding-top:20px;
+}
+section.warp div.center img {
+	margin-bottom:45px;
+}
+
+
+ul.extraSlider {
+	position:absolute;
+	width:1022px;
+	height:444px;
+}
+ul.extraSlider li {
+	position:absolute;
+	width:280px;
+
+}
+ul.extraSlider li.left span {
+	display:block;
+	float:left;
+	width:200px;
+	text-align:right;
+	margin-top:30px;
+	color:#00aeef;
+	text-decoration:underline;
+}
+ul.extraSlider li.left img {
+	display:block;
+	float:right;
+}
+ul.extraSlider li.right span {
+	display:block;
+	float:right;
+	text-align:left;
+	width:200px;
+	margin-top:30px;
+	color:#00aeef;
+	text-decoration:underline;
+}
+ul.extraSlider li.right img {
+	display:block;
+	float:left;
+}
+ul.extraSlider li.li1 {
+	top:69px;
+	left:66px;
+}
+ul.extraSlider li.li1 span {
+	margin-top:10px;
+}
+ul.extraSlider li.li2 span {
+	width:182px;
+	margin:20px 0 0 30px;
+}
+ul.extraSlider li.li2 {
+	top:150px;
+	left:-10px
+}
+ul.extraSlider li.li3 span {
+	width:170px;
+	margin-left:17px;
+}
+ul.extraSlider li.li3 {
+	top:248px;
+	left:60px;
+}
+ul.extraSlider li.li4 {
+	top:54px;
+	right:78px;
+}
+ul.extraSlider li.li4 span {
+	margin-top:25px;
+}
+ul.extraSlider li.li5 span {
+	margin-top:13px;
+	width:190px;
+}
+ul.extraSlider li.li5 {
+	top:158px;
+	right:24px
+}
+ul.extraSlider li.li6 {
+	top:258px;
+	right:80px;
+}
+ul.extraSlider li.li6 span {
+	margin-top:17px
+}
+ul.extraSlider li a:hover span,ul.extraSlider li a.active span {
+	color:#fff;
+	text-decoration:none;
+}
+.extraSlider {
+	z-index:990;
+}
+.starPic {
+	position: absolute;
+	z-index:50 !important;
+	display:none;
+}
+div.header {
+	background:url('../images/headBg.png') repeat-x;
+	width:1000px;
+	height:89px;
+	margin:-90px auto 0;
+}
+div.header h1 {
+	text-transform:none;
+	font-size:25px;
+	padding-top:15px;
+	width:1000px;
+	text-align:center;
+	color:#252525;
+}
+/*		CONTENT		*/
+section.main {
+	margin-top:90px;
+	overflow:hidden;
+}
+section.main div.left {
+	width:491px;
+	float:left;
+}
+section.main div.right {
+	float:right;
+	width:491px;
+}
+section.main div.element header {
+	font-size:18px;
+	color: #1c58ba;
+}
+section.main div.element {
+	margin-bottom:40px;
+}
+section.main div.element header a {
+	text-decoration:none;
+	color:#1c58ba;
+	font-size:18px;
+	border-bottom:1px dashed #1c58ba;
+}
+section.main div.element header a:hover {
+	border:none;
+	color:#111;
+}
+div.elementClose div.elements {
+	display:none;
+}
+
+section.main header {
+	margin-bottom:14px;
+}
+section.main div.element div.text {
+	width:440px;
+}
+section.main div.element div.text p {
+	margin-bottom:18px;
+}
+section.main div.element div.text p.modules,section.main div.element div.screenshots {
+	color:#898989;
+	margin-bottom:3px;
+}
+section.main div.element div.text p.modules a {
+	color: #197b30;
+}
+section.main div.element div.screenshots img {
+	box-shadow: 0 0 11px #999999;
+    margin: 15px 0 0 10px;
+}
+/*		FOOTER		*/
+footer.main div.urls, footer.main div.logo {
+	float:left;
+}
+footer.main div.right a {
+	color:#898989;
+}
+footer.main div.right a.skype {
+	color:#1c58ba;
+	text-decoration:none;
+}
+
+footer.main div.right {
+	float:right;
+	width:160px;
+	color:#898989;
+	text-align:right;
+}
+footer.main div.urls a {
+	margin:0 50px 0 0;
+	color:#898989;
+}
+footer.main div.urls p {
+	margin-bottom:-6px;
+}
+footer.main div.urls {
+	width:480px;
+	margin-left:50px;
+}
+
+footer.main {
+	overflow:hidden;
+	margin:5px auto 50px;
+	padding-top:35px;
+	background:url('../images/footerBg.png') top repeat-x;
+}
+
+/*		CONTENT SLIDER		*/
+div.contentSlider {
+	position:relative;
+	overflow:hidden;
+	width:470px;
+	height:200px;
+}
+div.contentSlider div.slide {
+	position:absolute;
+}
+
+div.contentSlider div.slide {
+	position:absolute;
+	left:95px;
+	margin-top:55px;
+	width:177px;
+	height:105px;
+	overflow:hidden;
+	box-shadow:0 0 10px #d0d0d0;
+}
+div.contentSlider div.right img,div.contentSlider div.left img {
+	width:177px;
+	height:105px;
+}
+div.contentSlider div.right {
+	left:260px;
+	opacity:0.4;
+}
+div.contentSlider div.left  {
+	left:10px;
+	opacity:0.4;
+}
+div.contentSlider div.right,div.contentSlider div.left {
+	cursor:pointer;
+	z-index:150;
+	opacity:0.4;
+	display:block;
+	box-shadow:0 0 10px #d0d0d0;
+}
+div.contentSlider div.viewed {
+	width:279px;
+	left:85px;
+	height:166px;
+	margin-top:20px;
+	z-index:200;
+}
+
+
