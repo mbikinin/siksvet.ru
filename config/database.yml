@@ -14,7 +14,7 @@ development:
   reconnect: false
   database: infinityt_development
   pool: 5
-  username: root
+  username: apps_user
   password:
   socket: /var/run/mysqld/mysqld.sock
 
@@ -27,7 +27,7 @@ test:
   reconnect: false
   database: infinityt_test
   pool: 5
-  username: root
+  username: apps_user
   password:
   socket: /var/run/mysqld/mysqld.sock
 
@@ -37,6 +37,6 @@ production:
   reconnect: false
   database: infinityt_production
   pool: 5
-  username: root
+  username: apps_user
   password:
   socket: /var/run/mysqld/mysqld.sock
