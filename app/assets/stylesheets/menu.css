@@ -6,7 +6,7 @@ div.subMenu {
 	display:none;
 	top:107px;
 	left:0;
-	background:#d4d4d4 url('../images/submenuFBG.png') bottom repeat-x;
+	background:#d4d4d4 url('submenuFBG.png') bottom repeat-x;
 }
 div.subMenu ul.warp {
 	width:996px;
@@ -37,7 +37,7 @@ div.subMenu ul.warp li {
 	float:left;
 }
 #about {
-	background:#d4d4d4 url('../images/submenuFBG.png') 0 109% repeat-x;
+	background:#d4d4d4 url('submenuFBG.png') 0 109% repeat-x;
 	padding-bottom:35px;
 }
 #about ul.warp {

@@ -22,7 +22,7 @@ body {
 
 header.main {
 	height:64px;
-	background:url('../images/headerBg.png') no-repeat;
+	background:url('headerBg.png') no-repeat;
 }
 header.main div.logo {
 	float:left;
@@ -63,7 +63,7 @@ header.main div.contacts div.phone img {
 	margin-bottom:-8px;
 }
 nav.warp {
-	background: url('../images/navBg.png') repeat-x;
+	background: url('navBg.png') repeat-x;
 	height:43px;
 	overflow:hidden;
 }
@@ -79,7 +79,7 @@ nav.warp div.main div a {
 	text-align:center;
 }
 nav.warp div.main div a:hover {
-	background:url('../images/navBgH.png') repeat-x;
+	background:url('navBgH.png') repeat-x;
 }
 nav.warp div.main div a.active {
 	color:#000;
@@ -91,7 +91,7 @@ nav.warp div.main div a.active {
 
 /*		ПЛЮШКИ		*/
 section.warp {
-	background:#000 url('../images/twoBgF.jpg');
+	background:#000 url('twoBgF.jpg');
 	height:444px;
 	width:1920px;
 	position:absolute;
@@ -193,7 +193,7 @@ ul.extraSlider li a:hover span,ul.extraSlider li a.active span {
 }
 
 div.header {
-	background:url('../images/headBg.png') repeat-x;
+	background:url('headBg.png') repeat-x;
 	width:1000px;
 	height:89px;
 	margin:-50px auto 0;
@@ -236,7 +236,7 @@ div.elementClose div.element {
 	display:none;
 }
 section.main div.elementOpen {
-	background:url('../images/openBBG.png') bottom repeat-x;
+	background:url('openBBG.png') bottom repeat-x;
     margin-bottom: -20px;
     padding-bottom: 15px;
 }
@@ -247,7 +247,7 @@ section.main div.elementOpen div.element {
 	display:block;
 }
 section.main div.elementOpen header.top {
-	background:url('../images/openHBG.png') bottom repeat-x;
+	background:url('openHBG.png') bottom repeat-x;
 	min-height:40px;
 	position:relative;
 	padding-bottom:5px;
@@ -256,7 +256,7 @@ section.main div.elementOpen header.top {
 }
 section.main div.elementOpen header.top a:after {
 	display:block;
-	background:url('../images/openH.png') right center no-repeat;
+	background:url('openH.png') right center no-repeat;
 	width:13px;
 	height:8px;
 	position:absolute;
@@ -313,7 +313,7 @@ footer.main {
 	overflow:hidden;
 	margin:5px auto 50px;
 	padding-top:35px;
-	background:url('../images/footerBg.png') top repeat-x;
+	background:url('footerBg.png') top repeat-x;
 }
 
 /*		CONTENT SLIDER		*/
@@ -362,5 +362,3 @@ div.contentSlider div.viewed {
 	margin-top:20px;
 	z-index:200;
 }
-
-

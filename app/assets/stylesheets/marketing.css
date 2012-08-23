@@ -14,7 +14,7 @@ body {
 
 header.main {
 	height:64px;
-	background:url('../images/headerBg.png') no-repeat;
+	background:url('headerBg.png') no-repeat;
 }
 header.main div.logo {
 	float:left;
@@ -55,7 +55,7 @@ header.main div.contacts div.phone img {
 	margin-bottom:-8px;
 }
 nav.warp {
-	background: url('../images/navBg.png') repeat-x;
+	background: url('navBg.png') repeat-x;
 	height:43px;
 	overflow:hidden;
 }
@@ -72,7 +72,7 @@ nav.warp div.main div a {
 	text-align:center;
 }
 nav.warp div.main div a:hover {
-	background:url('../images/navBgH.png') repeat-x;
+	background:url('navBgH.png') repeat-x;
 }
 nav.warp div.main div a.active {
 	color:#000;
@@ -84,7 +84,7 @@ nav.warp div.main div a.active {
 
 /*		ПЛЮШКИ		*/
 section.warp {
-	background:#000 url('../images/twoBgM.jpg');
+	background:#000 url('twoBgM.jpg');
 	height:394px;
 	width:1920px;
 	position:absolute;
@@ -200,7 +200,7 @@ ul.extraSlider li a:hover span,ul.extraSlider li a.active span {
 	display:none;
 }
 div.header {
-	background:url('../images/headBg.png') repeat-x;
+	background:url('headBg.png') repeat-x;
 	width:1000px;
 	height:89px;
 	margin:-90px auto 0;
@@ -301,7 +301,7 @@ footer.main {
 	overflow:hidden;
 	margin:5px auto 50px;
 	padding-top:35px;
-	background:url('../images/footerBg.png') top repeat-x;
+	background:url('footerBg.png') top repeat-x;
 }
 
 /*		CONTENT SLIDER		*/
@@ -350,5 +350,3 @@ div.contentSlider div.viewed {
 	margin-top:20px;
 	z-index:200;
 }
-
-

@@ -14,7 +14,7 @@ body {
 
 header.main {
 	height:64px;
-	background:url('../images/headerBg.png') no-repeat;
+	background:url('headerBg.png') no-repeat;
 }
 header.main div.logo {
 	float:left;
@@ -55,7 +55,7 @@ header.main div.contacts div.phone img {
 	margin-bottom:-8px;
 }
 nav.warp {
-	background: url('../images/navBg.png') repeat-x;
+	background: url('navBg.png') repeat-x;
 	height:43px;
 	overflow:hidden;
 }
@@ -71,7 +71,7 @@ nav.warp div.main div a {
 	text-align:center;
 }
 nav.warp div.main div a:hover {
-	background:url('../images/navBgH.png') repeat-x;
+	background:url('navBgH.png') repeat-x;
 }
 nav.warp div.main div a.active {
 	color:#000;
@@ -206,7 +206,7 @@ section.warp .text {
 }
 section.warp .bottom a {
 	color:#fff;
-	background:url('../images/blueArrow.png') no-repeat;
+	background:url('blueArrow.png') no-repeat;
     display: block;
     font-size: 14px;
     height: 25px;
@@ -216,14 +216,14 @@ section.warp .bottom a {
     width: 149px;
 }
 section.warp .bottom a:hover {
-	background:url('../images/redArrow.png') no-repeat;
+	background:url('redArrow.png') no-repeat;
 }
 
 section.main {
 	margin-top:445px;
 }
 div.navPred {
-	background:url('../images/navPredBg.png') repeat-x;
+	background:url('navPredBg.png') repeat-x;
 	height:114px;
 	border-radius:2px;
 	overflow:hidden;
@@ -288,7 +288,7 @@ div.navPred div a p {
 }
 #modal a {
 	color:#fff;
-	background:url('../images/blueArrow.png') no-repeat;
+	background:url('blueArrow.png') no-repeat;
     display: block;
     font-size: 14px;
     height: 25px;
@@ -298,7 +298,7 @@ div.navPred div a p {
     width: 149px;
 }
 #modal a:hover {
-	background:url('../images/redArrow.png') no-repeat;
+	background:url('redArrow.png') no-repeat;
 }
 aside {
 	width:280px;
@@ -322,7 +322,7 @@ div.news,div.ensign,div.winStory {
 	border:1px solid #d3d3d3;
 	border-radius:2px;
 	margin-bottom:31px;
-	background:url('../images/blockBg.png') top repeat-x;
+	background:url('blockBg.png') top repeat-x;
 }
 div.ensign img {
 	width: 180px;
@@ -349,7 +349,7 @@ div.news header,div.winStory header {
 }
 div.newsElement {
 	border-top:2px solid #d3d3d3;
-	background:url('../images/newsElementBg.png') top repeat-x;
+	background:url('newsElementBg.png') top repeat-x;
 	padding:14px 0;
 	overflow:hidden;
 }
@@ -486,7 +486,7 @@ div.winStory footer {
 #navWinLeft {
 	width:13px;
 	height:23px;
-	background:url('../images/navWinLeft.png');
+	background:url('navWinLeft.png');
 	position:absolute;
 	right: 40px;
     top: 23px;
@@ -495,17 +495,17 @@ div.winStory footer {
 #navWinRight {
 	width:13px;
 	height:23px;
-	background:url('../images/navWinRight.png');
+	background:url('navWinRight.png');
 	position:absolute;
 	right: 20px;
 	cursor:pointer;
     top: 23px;
 }
 #navWinRight:hover {
-	background:url('../images/navWinRightHover.png');
+	background:url('navWinRightHover.png');
 }
 #navWinLeft:hover {
-	background:url('../images/navWinLeftHover.png');
+	background:url('navWinLeftHover.png');
 }
 /*		SLIDER BOTTOM		*/
 section.main div.bottom {
@@ -545,7 +545,7 @@ div.bottom .clients li {
 	top:0;
 	z-index:999;
 	left:0;
-	background:url('../images/clientsNavLeft.png');
+	background:url('clientsNavLeft.png');
 }
 #navClRight {
 	width:101px;
@@ -555,11 +555,11 @@ div.bottom .clients li {
 	top:0;
 	z-index:999;
 	right:0;
-	background:url('../images/clientsNavRight.png');
+	background:url('clientsNavRight.png');
 }
 div.bottom .clients {
 	border:1px solid #cdcdcf;
-	background:url('../images/clientsBg.png');
+	background:url('clientsBg.png');
 	height:160px;
 	padding-top:60px;
 	width:1000px!important;
@@ -571,10 +571,10 @@ div.bottom .clients ul {
 
 }
 #navClRight:hover {
-	background:url('../images/clientsNavRightHover.png');
+	background:url('clientsNavRightHover.png');
 }
 #navClLeft:hover {
-	background:url('../images/clientsNavLeftHover.png');
+	background:url('clientsNavLeftHover.png');
 }
 
 /*		FOOTER		*/
@@ -620,7 +620,7 @@ div.subMenu {
 	display:none;
 	top:107px;
 	left:0;
-	background:#d4d4d4 url('../images/twosubmenuFBG.png') bottom repeat-x;
+	background:#d4d4d4 url('twosubmenuFBG.png') bottom repeat-x;
 }
 div.subMenu ul.warp {
 	width:996px;
@@ -651,7 +651,7 @@ div.subMenu ul.warp li {
 	float:left;
 }
 #about {
-	background:#d4d4d4 url('../images/twosubmenuFBG.png') 0 109% repeat-x;
+	background:#d4d4d4 url('twosubmenuFBG.png') 0 109% repeat-x;
 	padding-bottom:35px;
 }
 #about ul.warp {

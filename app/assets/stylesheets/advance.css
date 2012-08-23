@@ -14,7 +14,7 @@ body {
 
 header.main {
 	height:64px;
-	background:url('../images/headerBg.png') no-repeat;
+	background:url('headerBg.png') no-repeat;
 }
 header.main div.logo {
 	float:left;
@@ -55,7 +55,7 @@ header.main div.contacts div.phone img {
 	margin-bottom:-8px;
 }
 nav.warp {
-	background: url('../images/navBg.png') repeat-x;
+	background: url('navBg.png') repeat-x;
 	height:43px;
 	overflow:hidden;
 }
@@ -71,7 +71,7 @@ nav.warp div.main div a {
 	text-align:center;
 }
 nav.warp div.main div a:hover {
-	background:url('../images/navBgH.png') repeat-x;
+	background:url('navBgH.png') repeat-x;
 }
 nav.warp div.main div a.active {
 	color:#000;
@@ -82,7 +82,7 @@ nav.warp div.main div a.active {
 }
 nav.twosubmenu {
 	height:41px;
-	background:url('../images/submenuBg.png') repeat-x;
+	background:url('submenuBg.png') repeat-x;
 	margin-top:2px;
 	position:absolute;
 	z-index:101;
@@ -93,14 +93,14 @@ nav.twosubmenu div.main div a {
 	color:#1c58ba;
 }
 nav.twosubmenu div.main div a:hover {
-	background:url('../images/submenuBgH.png') repeat-x;
+	background:url('submenuBgH.png') repeat-x;
 	border:1px solid #c1c1c1;
 	margin:-2px -1px 0;
 	color:#555;
 	padding-top:14px;
 }
 nav.twosubmenu div.main div a.active {
-	background:url('../images/submenuBgA.png') repeat-x;
+	background:url('submenuBgA.png') repeat-x;
 	border:1px solid #7b7b7c;
 	box-shadow:inset 0 0 3px #7b7b7c;
 	margin:-2px -1px 0;
@@ -110,7 +110,7 @@ nav.twosubmenu div.main div a.active {
 }
 /*		WARP		*/
 section.warp {
-	background:#000 url('../images/twoBg.jpg');
+	background:#000 url('twoBg.jpg');
 	height:419px;
 	width:1920px;
 	position:absolute;
@@ -138,7 +138,7 @@ section.warp p {
 	width:440px;
 }
 div.secondMain {
-	background:#000 url('../images/twoBgMin.jpg');
+	background:#000 url('twoBgMin.jpg');
 	height:22px;
 	width:1920px;
 	position:absolute;
@@ -149,7 +149,7 @@ div.secondMain {
 }
 section.warp .bottom a {
 	color:#fff;
-	background:url('../images/blueArrow.png') no-repeat;
+	background:url('blueArrow.png') no-repeat;
     display: block;
     font-size: 14px;
     height: 25px;
@@ -159,7 +159,7 @@ section.warp .bottom a {
     width: 149px;
 }
 section.warp .bottom a:hover {
-	background:url('../images/redArrow.png') no-repeat;
+	background:url('redArrow.png') no-repeat;
 }
 /*		CONTENT		*/
 section.main {
@@ -313,7 +313,7 @@ div.storyListing .story,div.newsListing .news {
 	width:299px;
 	border:1px solid #d3d3d3;
 	border-radius:2px;
-	background:url('../images/storyBg.png') top repeat-x;
+	background:url('storyBg.png') top repeat-x;
 	float:left;
 	padding-top:44px;
 	margin-bottom:43px;
@@ -394,7 +394,7 @@ div.newsView {
 div.newsView header {
 	width:1000px;
 	margin:0 -25px;
-	background:url('../images/newsHeader.png') bottom repeat-x;
+	background:url('newsHeader.png') bottom repeat-x;
 }
 div.newsView header div.date b {
 	display:block;
@@ -452,7 +452,7 @@ footer.main {
 	overflow:hidden;
 	margin:5px auto 50px;
 	padding-top:35px;
-	background:url('../images/footerBg.png') top repeat-x;
+	background:url('footerBg.png') top repeat-x;
 }
 
 div.partnerListing {
@@ -461,7 +461,7 @@ div.partnerListing {
 }
 div.partnerListing .element {
 	width:492px;
-	background:url('../images/partnerBg.png') top repeat-x;
+	background:url('partnerBg.png') top repeat-x;
 	border:1px solid #d3d3d3;
 	border-radius:2px;
 	min-height:222px;
@@ -517,7 +517,7 @@ body {
 
 header.main {
 	height:64px;
-	background:url('../images/headerBg.png') no-repeat;
+	background:url('headerBg.png') no-repeat;
 }
 header.main div.logo {
 	float:left;
@@ -558,7 +558,7 @@ header.main div.contacts div.phone img {
 	margin-bottom:-8px;
 }
 nav.warp {
-	background: url('../images/navBg.png') repeat-x;
+	background: url('navBg.png') repeat-x;
 	height:43px;
 	overflow:hidden;
 }
@@ -574,7 +574,7 @@ nav.warp div.main div a {
 	text-align:center;
 }
 nav.warp div.main div a:hover {
-	background:url('../images/navBgH.png') repeat-x;
+	background:url('navBgH.png') repeat-x;
 }
 nav.warp div.main div a.active {
 	color:#000;
@@ -586,7 +586,7 @@ nav.warp div.main div a.active {
 
 /*		ПЛЮШКИ		*/
 section.warp {
-	background:#000 url('../images/equipBg.jpg');
+	background:#000 url('equipBg.jpg');
 	height:444px;
 	width:1920px;
 	position:absolute;
@@ -701,7 +701,7 @@ ul.extraSlider li a:hover span,ul.extraSlider li a.active span {
 	text-decoration:none;
 }
 div.header {
-	background:url('../images/headBg.png') repeat-x;
+	background:url('headBg.png') repeat-x;
 	width:1000px;
 	height:89px;
 	margin:-50px auto 0;
@@ -768,7 +768,7 @@ h2 {
 div.open {
 	margin-top:-27px;
 	padding-top:67px;
-	background:url('../images/newsHeader.png') top repeat-x;
+	background:url('newsHeader.png') top repeat-x;
 }
 div.open div.desc a:after {
 	background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAICAYAAAAiJnXPAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RkVBN0IyN0JFQTk1MTFFMTgxOThCNzY3RjY2NDEyQjciIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RkVBN0IyN0NFQTk1MTFFMTgxOThCNzY3RjY2NDEyQjciPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpGRUE3QjI3OUVBOTUxMUUxODE5OEI3NjdGNjY0MTJCNyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpGRUE3QjI3QUVBOTUxMUUxODE5OEI3NjdGNjY0MTJCNyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PuS1uHoAAACySURBVHjadNA9CsJAEIbhGHMBQYS0aVKkCrmAjUfIHaz8wYMIgmVaCxF7KzvvYBdbGzshEKPvyFeswQw8xezMxy7by/Pco0YY4Op1V4wH7r6aHc5IOwKp5rYXW6jCDSEOyFqBTOeh9ioLlZhigwhHJ5ipjzS3vbKfJIkNG5wwxARjPLFWYIs5XrYcOM94Y6HBDIXO7YaV5t/yW++vsXQChfraXQr+/FSjGy/Yq/+pjwADALoGJtDAo0JcAAAAAElFTkSuQmCC);
@@ -821,7 +821,7 @@ footer.main {
 	overflow:hidden;
 	margin:5px auto 50px;
 	padding-top:35px;
-	background:url('../images/footerBg.png') top repeat-x;
+	background:url('footerBg.png') top repeat-x;
 }
 
 /*		CONTENT SLIDER		*/
@@ -896,7 +896,7 @@ body {
 
 header.main {
 	height:64px;
-	background:url('../images/headerBg.png') no-repeat;
+	background:url('headerBg.png') no-repeat;
 }
 header.main div.logo {
 	float:left;
@@ -937,7 +937,7 @@ header.main div.contacts div.phone img {
 	margin-bottom:-8px;
 }
 nav.warp {
-	background: url('../images/navBg.png') repeat-x;
+	background: url('navBg.png') repeat-x;
 	height:43px;
 	overflow:hidden;
 }
@@ -953,7 +953,7 @@ nav.warp div.main div a {
 	text-align:center;
 }
 nav.warp div.main div a:hover {
-	background:url('../images/navBgH.png') repeat-x;
+	background:url('navBgH.png') repeat-x;
 }
 nav.warp div.main div a.active {
 	color:#000;
@@ -965,7 +965,7 @@ nav.warp div.main div a.active {
 
 /*		ПЛЮШКИ		*/
 section.warp {
-	background:#000 url('../images/twoBgF.jpg');
+	background:#000 url('twoBgF.jpg');
 	height:444px;
 	width:1920px;
 	position:absolute;
@@ -1067,7 +1067,7 @@ ul.extraSlider li a:hover span,ul.extraSlider li a.active span {
 }
 
 div.header {
-	background:url('../images/headBg.png') repeat-x;
+	background:url('headBg.png') repeat-x;
 	width:1000px;
 	height:89px;
 	margin:-50px auto 0;
@@ -1110,7 +1110,7 @@ div.elementClose div.element {
 	display:none;
 }
 section.main div.elementOpen {
-	background:url('../images/openBBG.png') bottom repeat-x;
+	background:url('openBBG.png') bottom repeat-x;
     margin-bottom: -20px;
     padding-bottom: 15px;
 }
@@ -1121,7 +1121,7 @@ section.main div.elementOpen div.element {
 	display:block;
 }
 section.main div.elementOpen header.top {
-	background:url('../images/openHBG.png') bottom repeat-x;
+	background:url('openHBG.png') bottom repeat-x;
 	min-height:40px;
 	position:relative;
 	padding-bottom:5px;
@@ -1130,7 +1130,7 @@ section.main div.elementOpen header.top {
 }
 section.main div.elementOpen header.top a:after {
 	display:block;
-	background:url('../images/openH.png') right center no-repeat;
+	background:url('openH.png') right center no-repeat;
 	width:13px;
 	height:8px;
 	position:absolute;
@@ -1187,7 +1187,7 @@ footer.main {
 	overflow:hidden;
 	margin:5px auto 50px;
 	padding-top:35px;
-	background:url('../images/footerBg.png') top repeat-x;
+	background:url('footerBg.png') top repeat-x;
 }
 
 /*		CONTENT SLIDER		*/
@@ -1254,7 +1254,7 @@ body {
 
 header.main {
 	height:64px;
-	background:url('../images/headerBg.png') no-repeat;
+	background:url('headerBg.png') no-repeat;
 }
 header.main div.logo {
 	float:left;
@@ -1295,7 +1295,7 @@ header.main div.contacts div.phone img {
 	margin-bottom:-8px;
 }
 nav.warp {
-	background: url('../images/navBg.png') repeat-x;
+	background: url('navBg.png') repeat-x;
 	height:43px;
 	overflow:hidden;
 }
@@ -1312,7 +1312,7 @@ nav.warp div.main div a {
 	text-align:center;
 }
 nav.warp div.main div a:hover {
-	background:url('../images/navBgH.png') repeat-x;
+	background:url('navBgH.png') repeat-x;
 }
 nav.warp div.main div a.active {
 	color:#000;
@@ -1324,7 +1324,7 @@ nav.warp div.main div a.active {
 
 /*		ПЛЮШКИ		*/
 section.warp {
-	background:#000 url('../images/twoBgM.jpg');
+	background:#000 url('twoBgM.jpg');
 	height:394px;
 	width:1920px;
 	position:absolute;
@@ -1440,7 +1440,7 @@ ul.extraSlider li a:hover span,ul.extraSlider li a.active span {
 	display:none;
 }
 div.header {
-	background:url('../images/headBg.png') repeat-x;
+	background:url('headBg.png') repeat-x;
 	width:1000px;
 	height:89px;
 	margin:-90px auto 0;
@@ -1541,7 +1541,7 @@ footer.main {
 	overflow:hidden;
 	margin:5px auto 50px;
 	padding-top:35px;
-	background:url('../images/footerBg.png') top repeat-x;
+	background:url('footerBg.png') top repeat-x;
 }
 
 /*		CONTENT SLIDER		*/
@@ -1600,7 +1600,7 @@ div.subMenu {
 	display:none;
 	top:107px;
 	left:0;
-	background:#d4d4d4 url('../images/submenuFBG.png') bottom repeat-x;
+	background:#d4d4d4 url('submenuFBG.png') bottom repeat-x;
 }
 div.subMenu ul.warp {
 	width:996px;
@@ -1631,7 +1631,7 @@ div.subMenu ul.warp li {
 	float:left;
 }
 #about {
-	background:#d4d4d4 url('../images/submenuFBG.png') 0 109% repeat-x;
+	background:#d4d4d4 url('submenuFBG.png') 0 109% repeat-x;
 	padding-bottom:35px;
 }
 #about ul.warp {
@@ -1691,8 +1691,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -1705,7 +1705,7 @@ time, mark, audio, video {
 	color:#111;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -1778,7 +1778,7 @@ s {
 
 header.main {
 	height:64px;
-	background:url('../images/headerBg.png') no-repeat;
+	background:url('headerBg.png') no-repeat;
 }
 header.main div.logo {
 	float:left;
@@ -1819,7 +1819,7 @@ header.main div.contacts div.phone img {
 	margin-bottom:-8px;
 }
 nav.warp {
-	background: url('../images/navBg.png') repeat-x;
+	background: url('navBg.png') repeat-x;
 	height:43px;
 	overflow:hidden;
 }
@@ -1835,7 +1835,7 @@ nav.warp div.main div a {
 	text-align:center;
 }
 nav.warp div.main div a:hover {
-	background:url('../images/navBgH.png') repeat-x;
+	background:url('navBgH.png') repeat-x;
 }
 nav.warp div.main div a.active {
 	color:#000;
@@ -1970,7 +1970,7 @@ section.warp .text {
 }
 section.warp .bottom a {
 	color:#fff;
-	background:url('../images/blueArrow.png') no-repeat;
+	background:url('blueArrow.png') no-repeat;
     display: block;
     font-size: 14px;
     height: 25px;
@@ -1980,14 +1980,14 @@ section.warp .bottom a {
     width: 149px;
 }
 section.warp .bottom a:hover {
-	background:url('../images/redArrow.png') no-repeat;
+	background:url('redArrow.png') no-repeat;
 }
 
 section.main {
 	margin-top:445px;
 }
 div.navPred {
-	background:url('../images/navPredBg.png') repeat-x;
+	background:url('navPredBg.png') repeat-x;
 	height:114px;
 	border-radius:2px;
 	overflow:hidden;
@@ -2052,7 +2052,7 @@ div.navPred div a p {
 }
 #modal a {
 	color:#fff;
-	background:url('../images/blueArrow.png') no-repeat;
+	background:url('blueArrow.png') no-repeat;
     display: block;
     font-size: 14px;
     height: 25px;
@@ -2062,7 +2062,7 @@ div.navPred div a p {
     width: 149px;
 }
 #modal a:hover {
-	background:url('../images/redArrow.png') no-repeat;
+	background:url('redArrow.png') no-repeat;
 }
 aside {
 	width:280px;
@@ -2086,7 +2086,7 @@ div.news,div.ensign,div.winStory {
 	border:1px solid #d3d3d3;
 	border-radius:2px;
 	margin-bottom:31px;
-	background:url('../images/blockBg.png') top repeat-x;
+	background:url('blockBg.png') top repeat-x;
 }
 div.ensign img {
 	width: 180px;
@@ -2113,7 +2113,7 @@ div.news header,div.winStory header {
 }
 div.newsElement {
 	border-top:2px solid #d3d3d3;
-	background:url('../images/newsElementBg.png') top repeat-x;
+	background:url('newsElementBg.png') top repeat-x;
 	padding:14px 0;
 	overflow:hidden;
 }
@@ -2250,7 +2250,7 @@ div.winStory footer {
 #navWinLeft {
 	width:13px;
 	height:23px;
-	background:url('../images/navWinLeft.png');
+	background:url('navWinLeft.png');
 	position:absolute;
 	right: 40px;
     top: 23px;
@@ -2259,17 +2259,17 @@ div.winStory footer {
 #navWinRight {
 	width:13px;
 	height:23px;
-	background:url('../images/navWinRight.png');
+	background:url('navWinRight.png');
 	position:absolute;
 	right: 20px;
 	cursor:pointer;
     top: 23px;
 }
 #navWinRight:hover {
-	background:url('../images/navWinRightHover.png');
+	background:url('navWinRightHover.png');
 }
 #navWinLeft:hover {
-	background:url('../images/navWinLeftHover.png');
+	background:url('navWinLeftHover.png');
 }
 /*		SLIDER BOTTOM		*/
 section.main div.bottom {
@@ -2309,7 +2309,7 @@ div.bottom .clients li {
 	top:0;
 	z-index:999;
 	left:0;
-	background:url('../images/clientsNavLeft.png');
+	background:url('clientsNavLeft.png');
 }
 #navClRight {
 	width:101px;
@@ -2319,11 +2319,11 @@ div.bottom .clients li {
 	top:0;
 	z-index:999;
 	right:0;
-	background:url('../images/clientsNavRight.png');
+	background:url('clientsNavRight.png');
 }
 div.bottom .clients {
 	border:1px solid #cdcdcf;
-	background:url('../images/clientsBg.png');
+	background:url('clientsBg.png');
 	height:160px;
 	padding-top:60px;
 	width:1000px!important;
@@ -2335,10 +2335,10 @@ div.bottom .clients ul {
 
 }
 #navClRight:hover {
-	background:url('../images/clientsNavRightHover.png');
+	background:url('clientsNavRightHover.png');
 }
 #navClLeft:hover {
-	background:url('../images/clientsNavLeftHover.png');
+	background:url('clientsNavLeftHover.png');
 }
 
 /*		FOOTER		*/
@@ -2384,7 +2384,7 @@ div.subMenu {
 	display:none;
 	top:107px;
 	left:0;
-	background:#d4d4d4 url('../images/twosubmenuFBG.png') bottom repeat-x;
+	background:#d4d4d4 url('twosubmenuFBG.png') bottom repeat-x;
 }
 div.subMenu ul.warp {
 	width:996px;
@@ -2415,7 +2415,7 @@ div.subMenu ul.warp li {
 	float:left;
 }
 #about {
-	background:#d4d4d4 url('../images/twosubmenuFBG.png') 0 109% repeat-x;
+	background:#d4d4d4 url('twosubmenuFBG.png') 0 109% repeat-x;
 	padding-bottom:35px;
 }
 #about ul.warp {
@@ -2501,7 +2501,7 @@ ul.discList {
 
 header.main {
 	height:64px;
-	background:url('../images/headerBg.png') no-repeat;
+	background:url('headerBg.png') no-repeat;
 }
 header.main div.logo {
 	float:left;
@@ -2542,7 +2542,7 @@ header.main div.contacts div.phone img {
 	margin-bottom:-8px;
 }
 nav.warp {
-	background: url('../images/navBg.png') repeat-x;
+	background: url('navBg.png') repeat-x;
 	height:43px;
 	overflow:hidden;
 }
@@ -2558,7 +2558,7 @@ nav.warp div.main div a {
 	text-align:center;
 }
 nav.warp div.main div a:hover {
-	background:url('../images/navBgH.png') repeat-x;
+	background:url('navBgH.png') repeat-x;
 }
 nav.warp div.main div a.active {
 	color:#000;
@@ -2570,7 +2570,7 @@ nav.warp div.main div a.active {
 
 nav.twosubmenu {
 	height:41px;
-	background:url('../images/submenuBg.png') repeat-x;
+	background:url('submenuBg.png') repeat-x;
 	margin-top:2px;
 	position:absolute;
 	z-index:101;
@@ -2581,14 +2581,14 @@ nav.twosubmenu div.main div a {
 	color:#1c58ba;
 }
 nav.twosubmenu div.main div a:hover {
-	background:url('../images/submenuBgH.png') repeat-x;
+	background:url('submenuBgH.png') repeat-x;
 	border:1px solid #c1c1c1;
 	margin:-2px -1px 0;
 	color:#555;
 	padding-top:14px;
 }
 nav.twosubmenu div.main div a.active {
-	background:url('../images/submenuBgA.png') repeat-x;
+	background:url('submenuBgA.png') repeat-x;
 	border:1px solid #7b7b7c;
 	box-shadow:inset 0 0 3px #7b7b7c;
 	margin:-2px -1px 0;
@@ -2598,7 +2598,7 @@ nav.twosubmenu div.main div a.active {
 }
 /*		ПЛЮШКИ		*/
 section.warp {
-	background:#000 url('../images/twoBgV.jpg');
+	background:#000 url('twoBgV.jpg');
 	height:619px;
 	width:1920px;
 	position:absolute;
@@ -2744,7 +2744,7 @@ footer.main {
 	overflow:hidden;
 	margin:5px auto 50px;
 	padding-top:35px;
-	background:url('../images/footerBg.png') top repeat-x;
+	background:url('footerBg.png') top repeat-x;
 }
 
 /*		CONTENT SLIDER		*/
@@ -2864,7 +2864,7 @@ body {
 
 header.main {
 	height:64px;
-	background:url('../images/headerBg.png') no-repeat;
+	background:url('headerBg.png') no-repeat;
 }
 header.main div.logo {
 	float:left;
@@ -2905,7 +2905,7 @@ header.main div.contacts div.phone img {
 	margin-bottom:-8px;
 }
 nav.warp {
-	background: url('../images/navBg.png') repeat-x;
+	background: url('navBg.png') repeat-x;
 	height:43px;
 	overflow:hidden;
 }
@@ -2921,7 +2921,7 @@ nav.warp div.main div a {
 	text-align:center;
 }
 nav.warp div.main div a:hover {
-	background:url('../images/navBgH.png') repeat-x;
+	background:url('navBgH.png') repeat-x;
 }
 nav.warp div.main div a.active {
 	color:#000;
@@ -2933,7 +2933,7 @@ nav.warp div.main div a.active {
 
 /*		ПЛЮШКИ		*/
 section.warp {
-	background:#000 url('../images/equipBg.jpg');
+	background:#000 url('equipBg.jpg');
 	height:444px;
 	width:1920px;
 	position:absolute;
@@ -3048,7 +3048,7 @@ ul.extraSlider li a:hover span,ul.extraSlider li a.active span {
 	text-decoration:none;
 }
 div.header {
-	background:url('../images/headBg.png') repeat-x;
+	background:url('headBg.png') repeat-x;
 	width:1000px;
 	height:89px;
 	margin:-50px auto 0;
@@ -3115,7 +3115,7 @@ h2 {
 div.open {
 	margin-top:-27px;
 	padding-top:67px;
-	background:url('../images/newsHeader.png') top repeat-x;
+	background:url('newsHeader.png') top repeat-x;
 }
 div.open div.desc a:after {
 	background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAICAYAAAAiJnXPAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RkVBN0IyN0JFQTk1MTFFMTgxOThCNzY3RjY2NDEyQjciIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RkVBN0IyN0NFQTk1MTFFMTgxOThCNzY3RjY2NDEyQjciPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpGRUE3QjI3OUVBOTUxMUUxODE5OEI3NjdGNjY0MTJCNyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpGRUE3QjI3QUVBOTUxMUUxODE5OEI3NjdGNjY0MTJCNyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PuS1uHoAAACySURBVHjadNA9CsJAEIbhGHMBQYS0aVKkCrmAjUfIHaz8wYMIgmVaCxF7KzvvYBdbGzshEKPvyFeswQw8xezMxy7by/Pco0YY4Op1V4wH7r6aHc5IOwKp5rYXW6jCDSEOyFqBTOeh9ioLlZhigwhHJ5ipjzS3vbKfJIkNG5wwxARjPLFWYIs5XrYcOM94Y6HBDIXO7YaV5t/yW++vsXQChfraXQr+/FSjGy/Yq/+pjwADALoGJtDAo0JcAAAAAElFTkSuQmCC);
@@ -3168,7 +3168,7 @@ footer.main {
 	overflow:hidden;
 	margin:5px auto 50px;
 	padding-top:35px;
-	background:url('../images/footerBg.png') top repeat-x;
+	background:url('footerBg.png') top repeat-x;
 }
 
 /*		CONTENT SLIDER		*/
@@ -3243,7 +3243,7 @@ body {
 
 header.main {
 	height:64px;
-	background:url('../images/headerBg.png') no-repeat;
+	background:url('headerBg.png') no-repeat;
 }
 header.main div.logo {
 	float:left;
@@ -3284,7 +3284,7 @@ header.main div.contacts div.phone img {
 	margin-bottom:-8px;
 }
 nav.warp {
-	background: url('../images/navBg.png') repeat-x;
+	background: url('navBg.png') repeat-x;
 	height:43px;
 	overflow:hidden;
 }
@@ -3300,7 +3300,7 @@ nav.warp div.main div a {
 	text-align:center;
 }
 nav.warp div.main div a:hover {
-	background:url('../images/navBgH.png') repeat-x;
+	background:url('navBgH.png') repeat-x;
 }
 nav.warp div.main div a.active {
 	color:#000;
@@ -3312,7 +3312,7 @@ nav.warp div.main div a.active {
 
 /*		ПЛЮШКИ		*/
 section.warp {
-	background:#000 url('../images/twoBgF.jpg');
+	background:#000 url('twoBgF.jpg');
 	height:444px;
 	width:1920px;
 	position:absolute;
@@ -3414,7 +3414,7 @@ ul.extraSlider li a:hover span,ul.extraSlider li a.active span {
 }
 
 div.header {
-	background:url('../images/headBg.png') repeat-x;
+	background:url('headBg.png') repeat-x;
 	width:1000px;
 	height:89px;
 	margin:-50px auto 0;
@@ -3457,7 +3457,7 @@ div.elementClose div.element {
 	display:none;
 }
 section.main div.elementOpen {
-	background:url('../images/openBBG.png') bottom repeat-x;
+	background:url('openBBG.png') bottom repeat-x;
     margin-bottom: -20px;
     padding-bottom: 15px;
 }
@@ -3468,7 +3468,7 @@ section.main div.elementOpen div.element {
 	display:block;
 }
 section.main div.elementOpen header.top {
-	background:url('../images/openHBG.png') bottom repeat-x;
+	background:url('openHBG.png') bottom repeat-x;
 	min-height:40px;
 	position:relative;
 	padding-bottom:5px;
@@ -3477,7 +3477,7 @@ section.main div.elementOpen header.top {
 }
 section.main div.elementOpen header.top a:after {
 	display:block;
-	background:url('../images/openH.png') right center no-repeat;
+	background:url('openH.png') right center no-repeat;
 	width:13px;
 	height:8px;
 	position:absolute;
@@ -3534,7 +3534,7 @@ footer.main {
 	overflow:hidden;
 	margin:5px auto 50px;
 	padding-top:35px;
-	background:url('../images/footerBg.png') top repeat-x;
+	background:url('footerBg.png') top repeat-x;
 }
 
 /*		CONTENT SLIDER		*/
@@ -3601,7 +3601,7 @@ body {
 
 header.main {
 	height:64px;
-	background:url('../images/headerBg.png') no-repeat;
+	background:url('headerBg.png') no-repeat;
 }
 header.main div.logo {
 	float:left;
@@ -3642,7 +3642,7 @@ header.main div.contacts div.phone img {
 	margin-bottom:-8px;
 }
 nav.warp {
-	background: url('../images/navBg.png') repeat-x;
+	background: url('navBg.png') repeat-x;
 	height:43px;
 	overflow:hidden;
 }
@@ -3659,7 +3659,7 @@ nav.warp div.main div a {
 	text-align:center;
 }
 nav.warp div.main div a:hover {
-	background:url('../images/navBgH.png') repeat-x;
+	background:url('navBgH.png') repeat-x;
 }
 nav.warp div.main div a.active {
 	color:#000;
@@ -3671,7 +3671,7 @@ nav.warp div.main div a.active {
 
 /*		ПЛЮШКИ		*/
 section.warp {
-	background:#000 url('../images/twoBgM.jpg');
+	background:#000 url('twoBgM.jpg');
 	height:394px;
 	width:1920px;
 	position:absolute;
@@ -3787,7 +3787,7 @@ ul.extraSlider li a:hover span,ul.extraSlider li a.active span {
 	display:none;
 }
 div.header {
-	background:url('../images/headBg.png') repeat-x;
+	background:url('headBg.png') repeat-x;
 	width:1000px;
 	height:89px;
 	margin:-90px auto 0;
@@ -3888,7 +3888,7 @@ footer.main {
 	overflow:hidden;
 	margin:5px auto 50px;
 	padding-top:35px;
-	background:url('../images/footerBg.png') top repeat-x;
+	background:url('footerBg.png') top repeat-x;
 }
 
 /*		CONTENT SLIDER		*/
@@ -3947,7 +3947,7 @@ div.subMenu {
 	display:none;
 	top:107px;
 	left:0;
-	background:#d4d4d4 url('../images/submenuFBG.png') bottom repeat-x;
+	background:#d4d4d4 url('submenuFBG.png') bottom repeat-x;
 }
 div.subMenu ul.warp {
 	width:996px;
@@ -3978,7 +3978,7 @@ div.subMenu ul.warp li {
 	float:left;
 }
 #about {
-	background:#d4d4d4 url('../images/submenuFBG.png') 0 109% repeat-x;
+	background:#d4d4d4 url('submenuFBG.png') 0 109% repeat-x;
 	padding-bottom:35px;
 }
 #about ul.warp {
@@ -4038,8 +4038,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -4052,7 +4052,7 @@ time, mark, audio, video {
 	color:#111;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -4125,7 +4125,7 @@ s {
 
 header.main {
 	height:64px;
-	background:url('../images/headerBg.png') no-repeat;
+	background:url('headerBg.png') no-repeat;
 }
 header.main div.logo {
 	float:left;
@@ -4166,7 +4166,7 @@ header.main div.contacts div.phone img {
 	margin-bottom:-8px;
 }
 nav.warp {
-	background: url('../images/navBg.png') repeat-x;
+	background: url('navBg.png') repeat-x;
 	height:43px;
 	overflow:hidden;
 }
@@ -4182,7 +4182,7 @@ nav.warp div.main div a {
 	text-align:center;
 }
 nav.warp div.main div a:hover {
-	background:url('../images/navBgH.png') repeat-x;
+	background:url('navBgH.png') repeat-x;
 }
 nav.warp div.main div a.active {
 	color:#000;
@@ -4317,7 +4317,7 @@ section.warp .text {
 }
 section.warp .bottom a {
 	color:#fff;
-	background:url('../images/blueArrow.png') no-repeat;
+	background:url('blueArrow.png') no-repeat;
     display: block;
     font-size: 14px;
     height: 25px;
@@ -4327,14 +4327,14 @@ section.warp .bottom a {
     width: 149px;
 }
 section.warp .bottom a:hover {
-	background:url('../images/redArrow.png') no-repeat;
+	background:url('redArrow.png') no-repeat;
 }
 
 section.main {
 	margin-top:445px;
 }
 div.navPred {
-	background:url('../images/navPredBg.png') repeat-x;
+	background:url('navPredBg.png') repeat-x;
 	height:114px;
 	border-radius:2px;
 	overflow:hidden;
@@ -4399,7 +4399,7 @@ div.navPred div a p {
 }
 #modal a {
 	color:#fff;
-	background:url('../images/blueArrow.png') no-repeat;
+	background:url('blueArrow.png') no-repeat;
     display: block;
     font-size: 14px;
     height: 25px;
@@ -4409,7 +4409,7 @@ div.navPred div a p {
     width: 149px;
 }
 #modal a:hover {
-	background:url('../images/redArrow.png') no-repeat;
+	background:url('redArrow.png') no-repeat;
 }
 aside {
 	width:280px;
@@ -4433,7 +4433,7 @@ div.news,div.ensign,div.winStory {
 	border:1px solid #d3d3d3;
 	border-radius:2px;
 	margin-bottom:31px;
-	background:url('../images/blockBg.png') top repeat-x;
+	background:url('blockBg.png') top repeat-x;
 }
 div.ensign img {
 	width: 180px;
@@ -4460,7 +4460,7 @@ div.news header,div.winStory header {
 }
 div.newsElement {
 	border-top:2px solid #d3d3d3;
-	background:url('../images/newsElementBg.png') top repeat-x;
+	background:url('newsElementBg.png') top repeat-x;
 	padding:14px 0;
 	overflow:hidden;
 }
@@ -4597,7 +4597,7 @@ div.winStory footer {
 #navWinLeft {
 	width:13px;
 	height:23px;
-	background:url('../images/navWinLeft.png');
+	background:url('navWinLeft.png');
 	position:absolute;
 	right: 40px;
     top: 23px;
@@ -4606,17 +4606,17 @@ div.winStory footer {
 #navWinRight {
 	width:13px;
 	height:23px;
-	background:url('../images/navWinRight.png');
+	background:url('navWinRight.png');
 	position:absolute;
 	right: 20px;
 	cursor:pointer;
     top: 23px;
 }
 #navWinRight:hover {
-	background:url('../images/navWinRightHover.png');
+	background:url('navWinRightHover.png');
 }
 #navWinLeft:hover {
-	background:url('../images/navWinLeftHover.png');
+	background:url('navWinLeftHover.png');
 }
 /*		SLIDER BOTTOM		*/
 section.main div.bottom {
@@ -4656,7 +4656,7 @@ div.bottom .clients li {
 	top:0;
 	z-index:999;
 	left:0;
-	background:url('../images/clientsNavLeft.png');
+	background:url('clientsNavLeft.png');
 }
 #navClRight {
 	width:101px;
@@ -4666,11 +4666,11 @@ div.bottom .clients li {
 	top:0;
 	z-index:999;
 	right:0;
-	background:url('../images/clientsNavRight.png');
+	background:url('clientsNavRight.png');
 }
 div.bottom .clients {
 	border:1px solid #cdcdcf;
-	background:url('../images/clientsBg.png');
+	background:url('clientsBg.png');
 	height:160px;
 	padding-top:60px;
 	width:1000px!important;
@@ -4682,10 +4682,10 @@ div.bottom .clients ul {
 
 }
 #navClRight:hover {
-	background:url('../images/clientsNavRightHover.png');
+	background:url('clientsNavRightHover.png');
 }
 #navClLeft:hover {
-	background:url('../images/clientsNavLeftHover.png');
+	background:url('clientsNavLeftHover.png');
 }
 
 /*		FOOTER		*/
@@ -4731,7 +4731,7 @@ div.subMenu {
 	display:none;
 	top:107px;
 	left:0;
-	background:#d4d4d4 url('../images/twosubmenuFBG.png') bottom repeat-x;
+	background:#d4d4d4 url('twosubmenuFBG.png') bottom repeat-x;
 }
 div.subMenu ul.warp {
 	width:996px;
@@ -4762,7 +4762,7 @@ div.subMenu ul.warp li {
 	float:left;
 }
 #about {
-	background:#d4d4d4 url('../images/twosubmenuFBG.png') 0 109% repeat-x;
+	background:#d4d4d4 url('twosubmenuFBG.png') 0 109% repeat-x;
 	padding-bottom:35px;
 }
 #about ul.warp {
@@ -4848,7 +4848,7 @@ ul.discList {
 
 header.main {
 	height:64px;
-	background:url('../images/headerBg.png') no-repeat;
+	background:url('headerBg.png') no-repeat;
 }
 header.main div.logo {
 	float:left;
@@ -4889,7 +4889,7 @@ header.main div.contacts div.phone img {
 	margin-bottom:-8px;
 }
 nav.warp {
-	background: url('../images/navBg.png') repeat-x;
+	background: url('navBg.png') repeat-x;
 	height:43px;
 	overflow:hidden;
 }
@@ -4905,7 +4905,7 @@ nav.warp div.main div a {
 	text-align:center;
 }
 nav.warp div.main div a:hover {
-	background:url('../images/navBgH.png') repeat-x;
+	background:url('navBgH.png') repeat-x;
 }
 nav.warp div.main div a.active {
 	color:#000;
@@ -4917,7 +4917,7 @@ nav.warp div.main div a.active {
 
 nav.twosubmenu {
 	height:41px;
-	background:url('../images/submenuBg.png') repeat-x;
+	background:url('submenuBg.png') repeat-x;
 	margin-top:2px;
 	position:absolute;
 	z-index:101;
@@ -4928,14 +4928,14 @@ nav.twosubmenu div.main div a {
 	color:#1c58ba;
 }
 nav.twosubmenu div.main div a:hover {
-	background:url('../images/submenuBgH.png') repeat-x;
+	background:url('submenuBgH.png') repeat-x;
 	border:1px solid #c1c1c1;
 	margin:-2px -1px 0;
 	color:#555;
 	padding-top:14px;
 }
 nav.twosubmenu div.main div a.active {
-	background:url('../images/submenuBgA.png') repeat-x;
+	background:url('submenuBgA.png') repeat-x;
 	border:1px solid #7b7b7c;
 	box-shadow:inset 0 0 3px #7b7b7c;
 	margin:-2px -1px 0;
@@ -4945,7 +4945,7 @@ nav.twosubmenu div.main div a.active {
 }
 /*		ПЛЮШКИ		*/
 section.warp {
-	background:#000 url('../images/twoBgV.jpg');
+	background:#000 url('twoBgV.jpg');
 	height:619px;
 	width:1920px;
 	position:absolute;
@@ -5091,7 +5091,7 @@ footer.main {
 	overflow:hidden;
 	margin:5px auto 50px;
 	padding-top:35px;
-	background:url('../images/footerBg.png') top repeat-x;
+	background:url('footerBg.png') top repeat-x;
 }
 
 /*		CONTENT SLIDER		*/
@@ -5173,4 +5173,3 @@ div.videoSlider div.viewed footer span.length {
 	font-size:12px;
 	color:#959595;
 }
-

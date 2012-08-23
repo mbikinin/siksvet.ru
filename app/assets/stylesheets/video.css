@@ -14,7 +14,7 @@ body {
 
 header.main {
 	height:64px;
-	background:url('../images/headerBg.png') no-repeat;
+	background:url('headerBg.png') no-repeat;
 }
 header.main div.logo {
 	float:left;
@@ -55,7 +55,7 @@ header.main div.contacts div.phone img {
 	margin-bottom:-8px;
 }
 nav.warp {
-	background: url('../images/navBg.png') repeat-x;
+	background: url('navBg.png') repeat-x;
 	height:43px;
 	overflow:hidden;
 }
@@ -71,7 +71,7 @@ nav.warp div.main div a {
 	text-align:center;
 }
 nav.warp div.main div a:hover {
-	background:url('../images/navBgH.png') repeat-x;
+	background:url('navBgH.png') repeat-x;
 }
 nav.warp div.main div a.active {
 	color:#000;
@@ -83,7 +83,7 @@ nav.warp div.main div a.active {
 
 nav.twosubmenu {
 	height:41px;
-	background:url('../images/submenuBg.png') repeat-x;
+	background:url('submenuBg.png') repeat-x;
 	margin-top:2px;
 	position:absolute;
 	z-index:101;
@@ -94,14 +94,14 @@ nav.twosubmenu div.main div a {
 	color:#1c58ba;
 }
 nav.twosubmenu div.main div a:hover {
-	background:url('../images/submenuBgH.png') repeat-x;
+	background:url('submenuBgH.png') repeat-x;
 	border:1px solid #c1c1c1;
 	margin:-2px -1px 0;
 	color:#555;
 	padding-top:14px;
 }
 nav.twosubmenu div.main div a.active {
-	background:url('../images/submenuBgA.png') repeat-x;
+	background:url('submenuBgA.png') repeat-x;
 	border:1px solid #7b7b7c;
 	box-shadow:inset 0 0 3px #7b7b7c;
 	margin:-2px -1px 0;
@@ -111,7 +111,7 @@ nav.twosubmenu div.main div a.active {
 }
 /*		ПЛЮШКИ		*/
 section.warp {
-	background:#000 url('../images/twoBgV.jpg');
+	background:#000 url('twoBgV.jpg');
 	height:619px;
 	width:1920px;
 	position:absolute;
@@ -257,7 +257,7 @@ footer.main {
 	overflow:hidden;
 	margin:5px auto 50px;
 	padding-top:35px;
-	background:url('../images/footerBg.png') top repeat-x;
+	background:url('footerBg.png') top repeat-x;
 }
 
 /*		CONTENT SLIDER		*/
@@ -339,4 +339,3 @@ div.videoSlider div.viewed footer span.length {
 	font-size:12px;
 	color:#959595;
 }
-
