@@ -7,7 +7,7 @@
   <%= javascript_include_tag "http://html5shiv.googlecode.com/svn/trunk/html5.js" %>
 <![endif]-->
   <%= stylesheet_link_tag    :reset,:style,:menu, :media => "all" %>
-  <%= javascript_include_tag :application.:menu,:carousel,:easing,:mousewheel,:slides %>
+  <%= javascript_include_tag :application,:menu,:carousel,:easing,:mousewheel,:slides %>
   <%= csrf_meta_tags %>
 <script>
 function testinput(re, str){
@@ -322,67 +322,25 @@ $(document).ready(function() {
 	</nav>
 	<section class="warp" id="slides">
 		<div class="slides_container">
-		<div class="main slide slide_0">
-			<div class="text">
-				<p>В программу встроен Call-центр Infinity, занимающий лидирующие позиции на рынке России среди отечественных разработчиков.</p>
- 					<p>Один сервер, одна операционная система, один разработчик - минимальные затраты на внедрение и сопровождение.</p>
-			</div>
-			<div class="bottom">
-				<a href="">
-					Узнать больше
-				</a>
-			</div>
-			<div class="bg"><img src="/assets/twoBg1.jpg" alt=" " /></div>
-		</div>
-		<div class="main slide slide_1">
-			<div class="text">
-				<p>Заказ такси без звонка в диспетчерскую. История поездок, бонусы и скидки, информация о тарифах, список «любимых» адресов для быстрого заказа и многое другое в клиентском приложении.</p>
-			</div>
-			<div class="bottom">
-				<a href="">
-					Узнать больше
-				</a>
-			</div>
-			<div class="bg"><img src="/assets/twoBg2.jpg" alt=" " /></div>
-		</div>
-		<div class="main slide slide_2">
-			<div class="bottom">
-				<a href="">
-					Узнать больше
-				</a>
-			</div>
-			<div class="bg"><img src="/assets/twoBg3.jpg" alt=" " /></div>
-		</div>
-		<div class="main slide slide_3">
-			<div class="text">
-				<p>Повышайте эффективность и доходность бизнеса<br /> с комплексным решением для таксопарков </p>
-			</div>
-			<div class="bottom">
-				<a href="">
-					Узнать больше
-				</a>
-			</div>
-			<div class="bg"><img src="/assets/twoBg4.jpg" alt=" " /></div>
-		</div>
-		<div class="main slide slide_4">
-			<div class="text">
-				<p>Настройка Infinity Taxi осуществляется простыми визуальными сценариями. Достаточно несколько кликов, чтобы внести изменения в алгоритм работы системы. </p>
-				<p>Infinity Taxi признается наиболее удобной программой для автоматизации такси на рынке России</p>
-			</div>
-			<div class="bottom">
-				<a href="">
-					Узнать больше
-				</a>
-			</div>
-			<div class="bg"><img src="/assets/twoBg5.jpg" alt=" " /></div>
-		</div>
+		<% i=0; @slides.each do |s| i+=1 %>
+		  <div class="main slide slide_<%= i %>">
+			  <div class="text">
+			    <%= raw s.text%>
+			  </div>
+			  <div class="bottom">
+				  <a href="">
+					  Узнать больше
+				  </a>
+			  </div>
+			  <div class="bg"><%= image_tag(s.img)%></div>
+		  </div>
+		<% end %>
 		</div>
 		<div class="navigator">
-			<a id="0" class="navActive" href="#"><img src="/assets/mini1.jpg" /></a>
-			<a id="2" class="left1" href="#"><img src="/assets/mini2.jpg" /></a>
-			<a id="3" class="left2" href="#"><img src="/assets/mini3.jpg" /></a>
-			<a id="4" class="right1" href="#"><img src="/assets/mini4.jpg" /></a>
-			<a id="1" class="right2" href="#"><img src="/assets/mini5.jpg" /></a>
+		<% classes = ['navActive','left1','left2','right1','right2']%>
+		<% i=0; @slides.each do |s| i+=1 %>
+      <%= link_to image_tag(s.icon),"#", :id=>i, :class=>classes[i]%>
+		<% end %>
 		</div>
 	</section>
 	<section class="main">
