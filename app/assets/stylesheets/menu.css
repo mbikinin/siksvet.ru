@@ -1,3 +1,93 @@
+/*		MAIN MENU		*/
+nav.firstmenu {
+	background: url('navBg.png') repeat-x;
+	height:43px;
+	overflow:hidden;
+}
+nav div.main div {
+	float:left;
+}
+nav div.main div a {
+	display:block;
+	color: #fff;
+	text-decoration:none;
+    font-size: 14px;
+    padding: 14px 22px 13px;
+	text-align:center;
+}
+nav.firstmenu > div.main > div > a {
+	margin: 0 19px;
+}
+/*nav.firstmenu div.main div a:hover {
+	background:url('navBgH.png') repeat-x;
+}*/
+nav.firstmenu div.main div a.active {
+	color:#000;
+	border-radius:10px 10px 0 0;
+	padding:11px 24px 25px;
+	margin:7px 16px 0 18px;
+	background:#e9e9e9;
+}
+nav.firstmenu div.main:hover div a.active {
+	color:#fff;
+	border-radius:none;
+	padding:14px 22px 13px;
+	margin: 0 19px;
+	background:none;
+}
+
+nav.twosubmenu {
+	height:41px;
+	background:url('submenuBg.png') repeat-x;
+	left: 0;
+	display:none;
+    position: absolute;
+    top: 107px;
+	z-index:991;
+}
+nav.twosubactive {
+	display:block;
+}
+nav.twosubmenu div.main div a {
+	font-size:12px;
+	padding:13px 15px 12px;
+	margin-top:2px;
+	color:#1c58ba;
+}
+
+nav.twosubmenu div.main div a.active {
+	background:url('submenuBgA.png') repeat-x;
+	border:1px solid #7b7b7c;
+	box-shadow:inset 0 0 3px #7b7b7c;
+	margin:-2px -1px 0;
+	border-radius:0;
+	color:#000;
+	padding:14px 15px 13px;
+}
+nav.twosubmenu div.main:hover div a.active {
+	background:none;
+	border:none;
+	margin:0;
+	box-shadow:none;
+	color:#1c58ba;
+	padding:14px 15px 15px;
+}
+nav.twosubmenu div.main div a:hover {
+	background:url('submenuBgA.png') repeat-x !important;
+	border:1px solid #7b7b7c !important;
+	box-shadow:inset 0 0 3px #7b7b7c !important;
+	margin:-2px -1px 0!important;
+	border-radius:0!important;
+	color:#000!important;
+	padding:14px 15px 13px!important;
+}
+nav.firstmenu div.main:hover div > a.active:hover,nav.firstmenu div.main div > a:hover,a.ractive {
+	color:#000 !important;
+	border-radius:10px 10px 0 0 !important;
+	padding:11px 24px 25px !important;
+	margin:7px 16px 0 18px !important;
+	background:#e9e9e9 !important;
+}
 /*		SUBMENU		*/
 div.subMenu {
 	position:absolute;
@@ -6,13 +96,12 @@ div.subMenu {
 	display:none;
 	top:107px;
 	left:0;
-	background:#d4d4d4 url('submenuFBG.png') bottom repeat-x;
+	background:#E9E9E9 url('submenuFBG.png') bottom repeat-x;
 }
 div.subMenu ul.warp {
 	width:996px;
-	margin:0 auto;
+	margin:0 auto -8px;
 	overflow:hidden;
-	margin-bottom:-5px;
 }
 div.subMenu footer {
 	width:996px;
@@ -37,21 +126,20 @@ div.subMenu ul.warp li {
 	float:left;
 }
 #about {
-	background:#d4d4d4 url('submenuFBG.png') 0 109% repeat-x;
+	background:#e9e9e9 url('submenuFBG.png') bottom repeat-x;
 	padding-bottom:35px;
 }
 #about ul.warp {
 	width:1000px;
-	margin-bottom:-28px;
+	margin-bottom:0;
 }
 
 div.subMenu ul.warp li {
 	padding-top:10px;
-	min-height:310px;
+	min-height:326px;
 }
 #about ul.warp li {
 	width:200px;
-	min-height:350px;
 }
 #about ul.warp li li {
 	min-height:33px;
@@ -77,15 +165,35 @@ div.subMenu ul.warp li li a {
 	color:#000;
 	font-size:11px;
 }
+div.subMenu ul.warp li li a img {
+	display:block;
+}
 div.subMenu ul.warp li:hover {
 	background:#fff;
 }
 div.subMenu ul.warp li a:hover {
-	background:none;
+	background-color: #a2a2a4;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#a2a2a4), to(#929292));
+	background-image: -webkit-linear-gradient(top, #a2a2a4,#e3e5e9,#929292);
+	background-image:    -moz-linear-gradient(top, #a2a2a4,#e3e5e9,#929292);
+	background-image:      -o-linear-gradient(top, #a2a2a4,#e3e5e9,#929292);
+	background-image:         linear-gradient(to bottom, #a2a2a4,#e3e5e9,#929292);
+	border:1px solid #848484;
+	margin:-1px;
+	color:#000;
 	text-decoration:none;
-	color:#9b1c1e;
+}
+#about footer {
+	display:none;
 }
 div.subMenu ul.warp li li a:hover {
-	background:#1b4f91;
-	color:#fff;
+	background-color: #a2a2a4;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#a2a2a4), to(#929292));
+	background-image: -webkit-linear-gradient(top, #a2a2a4,#e3e5e9,#929292);
+	background-image:    -moz-linear-gradient(top, #a2a2a4,#e3e5e9,#929292);
+	background-image:      -o-linear-gradient(top, #a2a2a4,#e3e5e9,#929292);
+	background-image:         linear-gradient(to bottom, #a2a2a4,#e3e5e9,#929292);
+	border:1px solid #848484;
+	margin:-1px;
+	color:#000;
 }

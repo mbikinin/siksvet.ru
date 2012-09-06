@@ -5,6 +5,7 @@ class CreateSlides < ActiveRecord::Migration
       t.string :icon
       t.text :text
       t.string :img
+      t.string :href
 
       t.timestamps
     end

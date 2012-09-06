@@ -7,7 +7,7 @@
   <%= javascript_include_tag "http://html5shiv.googlecode.com/svn/trunk/html5.js" %>
 <![endif]-->
   <%= stylesheet_link_tag    :reset,:style,:menu, :media => "all" %>
-  <%= javascript_include_tag :application,:menu,:carousel,:easing,:mousewheel,:slides %>
+  <%= javascript_include_tag :application,:menu,:carousel,:jMyCarousel,:easing,:mousewheel,:slides %>
   <%= csrf_meta_tags %>
 <script>
 function testinput(re, str){
@@ -16,18 +16,17 @@ function testinput(re, str){
    else
 	  return false
 }
-$(document).ready(function() {
-    $(".clients").jCarouselLite({
-        btnNext: "#navClRight",
-        btnPrev: "#navClLeft",
-		mouseWheel: true,
-		visible: 5.5
-    });
-});
+		$(function() {
+		    $(".clients").jMyCarousel({
+				btnNext: "#navClRight",
+				btnPrev: "#navClLeft",
+		        visible: '100%',
+				speed: 200
+		    });
+		});
 $(document).ready(function () {
 	$('#slides').slides({
 		preload: true,
-		preloadImage: 'img/loading.gif',
 		play: 5000,
 		pause: 2500,
 		hoverPause: true,
@@ -51,43 +50,19 @@ $(document).ready(function () {
 		if ($(':animated').length == 0) {
 			var nap = $(this).attr('id');
 			if (nap == 'navWinRight') {
-				var id = Number($('.winStory .right').attr('id').replace('slide_',''));
-				/*$('#image_view').attr('src',$('.winStory .right img').attr('src'));
-				$('#image_view').attr('src',$(elem).attr('src')).css({display:'block'});
-				var imageWidth  = $('#image_view').width();
-				var imageHeight = $('#image_view').height();
-				$('#image_view').removeAttr('src').css({display:'none'});*/
-				var maxSlide = $('.winStory .preview').length;
-				if (maxSlide == id) { var next = 0; }
-				else { next = id + 1; }
-				if (id == 1) { var prev = maxSlide;}
-				else if (id == 0) { var prev = maxSlide - 1;}
-				else { var prev = id - 2; }
-				if (id == 0) { var zoom = maxSlide; }
-				else {var zoom = id - 1;}
-				$('#slide_'+zoom+' .image').css({zIndex:200});
-				$('#slide_'+id+' .image').css({zIndex:150});
-				$('#slide_'+zoom+' .text').hide();
-				$('#slide_'+next+' .image').css({opacity:0,zIndex:100});
-				$('#slide_'+id+' .image').animate({width:167,height:147,marginTop:0,opacity:1,left:35},300);
-				$('#slide_'+id+' .image img').animate({width:167,height:147},300);
-					$('#slide_'+prev+' .image').css({zIndex:100}).animate({left:36,opacity:0},300);
-					$('#slide_'+zoom+' .image img').animate({width:150,height:132},300);
-					$('#slide_'+zoom+' .image').animate({width:150,height:132,marginTop:6,opacity:0.3,left:-140},300, function() {
-						$('#slide_'+prev).removeClass('left');
-						$('#slide_'+id).removeClass('preview right');
-						$('#slide_'+zoom).addClass('preview left');
-						$('#slide_'+zoom).removeClass('viewed');
-						$('#slide_'+id).addClass('viewed');
-						$('#slide_'+next+' .image').animate({left:224,marginTop:6,opacity:0.3});
-						$('#slide_'+next).addClass('right');
-						$('#slide_'+id+' .text').show();
-					});
+				miniSlideLeft();
 			}
 			if (nap == 'navWinLeft') {
+				miniSlideRight();
+			}
+		}
+	});
+});
+function miniSlideLeft() {
+				clearInterval(timerminislides);
 				var id = Number($('.winStory .left').attr('id').replace('slide_',''));
 				var maxSlide = $('.winStory .preview').length;
-
+				
 				if (id == maxSlide) { var zoom = 0; }
 				else { var zoom = id + 1; }
 				if (id == maxSlide - 1) { var next = 0;}
@@ -113,13 +88,45 @@ $(document).ready(function () {
 						$('#slide_'+prev).addClass('left');
 						$('#slide_'+id+' .text').show();
 					});
-			}
-		}
-	});
-});
-
+	timerminislides = setInterval(function() {
+		miniSlideRight();
+	}, 8000);
+}
+function miniSlideRight() {
+				clearInterval(timerminislides);
+				var id = Number($('.winStory .right').attr('id').replace('slide_',''));
+				var maxSlide = $('.winStory .preview').length;
+				if (maxSlide == id) { var next = 0; }
+				else { next = id + 1; }
+				if (id == 1) { var prev = maxSlide;}
+				else if (id == 0) { var prev = maxSlide - 1;}
+				else { var prev = id - 2; }
+				if (id == 0) { var zoom = maxSlide; }
+				else {var zoom = id - 1;}
+				$('#slide_'+zoom+' .image').css({zIndex:200});
+				$('#slide_'+id+' .image').css({zIndex:150});
+				$('#slide_'+zoom+' .text').hide();
+				$('#slide_'+next+' .image').css({opacity:0,zIndex:100});
+				$('#slide_'+id+' .image').animate({width:167,height:147,marginTop:0,opacity:1,left:35},300);
+				$('#slide_'+id+' .image img').animate({width:167,height:147},300);
+					$('#slide_'+prev+' .image').css({zIndex:100}).animate({left:36,opacity:0},300);
+					$('#slide_'+zoom+' .image img').animate({width:150,height:132},300);
+					$('#slide_'+zoom+' .image').animate({width:150,height:132,marginTop:6,opacity:0.3,left:-140},300, function() {
+						$('#slide_'+prev).removeClass('left'); 
+						$('#slide_'+id).removeClass('preview right');
+						$('#slide_'+zoom).addClass('preview left');
+						$('#slide_'+zoom).removeClass('viewed');
+						$('#slide_'+id).addClass('viewed');
+						$('#slide_'+next+' .image').animate({left:224,marginTop:6,opacity:0.3});
+						$('#slide_'+next).addClass('right');
+						$('#slide_'+id+' .text').show();
+					});
+	timerminislides = setInterval(function() {
+		miniSlideRight();
+	}, 8000);
+}
 $(document).ready(function() {
-	$('.navPred > div > a').hover(function() {
+	/*$('.navPred > .elLeft > a').hover(function() {
 		var pos = $(this).position();
 		var url = $(this).attr('href');
 		var img = $(this).find('img').attr('src');
@@ -132,34 +139,183 @@ $(document).ready(function() {
 		$('#modal').css({left:pos.left - 58,top:pos.top+10}).show();
 		return false;
 	});
-	$('#modal').hover(function() {
+	$('.navPred > .elRight > a').hover(function() {
+		var pos = $(this).position();
+		var url = $(this).attr('href');
+		var img = $(this).find('img').attr('src');
+		var text = $(this).find('p').html();
+		var title = $(this).find('span').html();
+		$('#modalR p').html(text);
+		$('#modalR a').attr('href',url);
+		$('#modalR span').html(title);
+		$('#modalR img').attr({src:img,alt:title});
+		$('#modalR').css({left:pos.left-306,top:pos.top}).show();
+		return false;
+	});
+	$('.modal').hover(function() {
 		return true;
 	},
 	function() {
-	  $('#modal').hide();
+	  $('.modal').hide();
 	});
+	
+	$('.navPredSlider > div > a').hover(function(){
+		/*var pos = $(this).position();
+		var url = $(this).attr('href');
+		var img = $(this).find('img').attr('src');
+		var text = $(this).find('p').html();
+		var title = $(this).find('span').html();
+		$('#modalR p').html(text);
+		$('#modalR a').attr('href',url);
+		$('#modalR span').html(title);
+		$('#modalR').css({left:pos.left-58,top:pos.top}).show();
+		$(this).find('img').attr('src',$(this).find('img').attr('src').replace('.png','H.png'));
+	},
+	function() {
+		$(this).find('img').attr('src',$(this).find('img').attr('src').replace('H.png','.png'));
+	});
+	/*$('.modal').hover(function() {
+		return true;
+	},
+	function() {
+	  $('.modal').hide();
+	});*/
 });
-
+function addBg(elem) {
+	$(elem).find('img').attr('src',$(elem).find('img').attr('src').replace('.png','H.png'));
+}
+function removeBg(elem) {
+	$(elem).find('img').attr('src',$(elem).find('img').attr('src').replace('H.png','.png'));
+}
 $(document).ready(function() {
+	mainSlidesLoad();
 	$('.navigator a').click(function() {
-		var oldId = $('.navActive').attr('id');
-		var id = $(this).attr('id');
-		var slide = id;
-		if (id == oldId) return false;
-		else {
-			var newPos = 1000 * id;
-			var src = $(this).find('img').attr('src');
-			var oldSrc = $('.navActive img').attr('src');
-			$('.navActive img').attr('src',src);
-			$(this).find('img').attr('src',oldSrc);
-			$(this).attr('id',oldId);
-			$('.navActive').attr('id',id);
-			$('.slides_control .slide').css({display:'none',zIndex:0});
-			$('.slide_'+slide).css({zIndex:5,display:'block'});
-		}
+		var id = Number($(this).attr('id').replace('mainSlideNav_',''));
+		clearInterval(timerslides);
+		mainSlideLeft(id);
+	});
+	$('.subMenuClick').click(function() {
+		$('.twosubmenu').hide();
+		$('#'+$(this).attr('rel')).show();
 		return false;
 	});
+/*	$('.slides_container1').hover(function() {
+		clearInterval(timerslides);
+	},function() {
+		timerslides = setInterval(function() {
+		mainSlideLeft();
+	}, 4000);
+	});
+	$('.navPred').hover(function() {
+		clearInterval(timerslides);
+	},function() {
+		timerslides = setInterval(function() {
+		mainSlideLeft();
+	}, 4000);
+	});
+	$('.modal').hover(function() {
+		clearInterval(timerslides);
+	},function() {
+		timerslides = setInterval(function() {
+		mainSlideLeft();
+	}, 4000);
+	});*/
 });
+function mainSlidesLoad() {
+	var i = 0;
+	$('.slides_container1 .slide').each(function() {
+		this.setAttribute('id','mainSlide_'+i);
+		i++;
+	});
+	var i = 0;
+	$('.navigator a').each(function() {
+		this.setAttribute('id','mainSlideNav_'+i);
+		i++;
+	});
+/*	var i = 0;
+	$('.navPredSlider div').each(function() {
+		this.setAttribute('id','navPredSlide_'+i);
+		i++;
+	});*/
+	$('#mainSlide_0').removeClass('slide').addClass('viewed');
+	//$('.navPredSlider').css({left:0});
+		timerslides = setInterval(function() {
+		mainSlideLeft();
+	}, 1);
+	timerminislides = setInterval(function() {
+		miniSlideRight();
+	}, 1);
+}
+function getClassesForNav(id) {
+	switch(id) {
+		case 0:
+		var pos = ['navActive','right1','right2','left2','left1'];
+		var letters = ['c','d','e','a','b'];
+		break;
+		case 1:
+		var pos = ['left1','navActive','right1','right2','left2'];
+		var letters = ['b','c','d','e','a'];
+		break;
+		case 2:
+		var pos = ['left2','left1','navActive','right1','right2'];
+		var letters = ['a','b','c','d','e'];
+		break;
+		case 3:
+		var pos = ['right2','left2','left1','navActive','right1'];
+		var letters = ['e','a','b','c','d'];
+		break;
+		case 4:
+		var pos = ['right1','right2','left2','left1','navActive'];
+		var letters = ['d','e','a','b','c'];
+		break;
+	}
+	$('.navigator a').removeAttr('class');
+	for (var i=0;i<pos.length;i++) {
+		var e = i+1;
+		src = '/assets/'+e+letters[i]+'.png';
+		$('#mainSlideNav_'+i+' img').attr('src',src);
+		$('#mainSlideNav_'+i).addClass(pos[i]);
+	}
+}
+function navPredLeft() {
+	//var classes = ['elLeft','elLeft','elLeft','elRight','elRight'];
+	$('.navPredSlider div').removeAttr('class');
+	$('.navPredSlider div:first').clone().appendTo('.navPredSlider');
+	var i = 0;
+	$('.navPredSlider').animate({left:-253},400,function() {
+		$('.navPredSlider div:first').remove();
+		$('.navPredSlider').css({left:0});
+	});
+	/*$('.navPredSlider div').each(function() {
+		this.setAttribute('class',classes[i]);
+		//alert(i+': '+classes[i]);
+		i++;
+	});*/
+}
+function mainSlideLeft(sId) {
+	clearInterval(timerslides);
+	if ($(':animated').length == 0) {
+		var id = Number(($('.slides_container1 .viewed').attr('id').replace('mainSlide_','')));
+		var maxSlide = $('.slides_container1 .slide').length;
+		if (sId == undefined) {
+			if (id < maxSlide) var newId = id + 1;
+			else if (id == maxSlide) var newId = 0;
+		}
+		else {
+			var newId = sId;
+		}
+		$('.slides_container1 .slide').css({marginLeft:1920});
+		$('#mainSlide_'+id).animate({marginLeft:-1920},400);
+		$('#mainSlide_'+newId).animate({marginLeft:0},400);
+		getClassesForNav(newId);
+		navPredLeft();
+		$('#mainSlide_'+id).removeClass('viewed').addClass('slide');
+		$('#mainSlide_'+newId).removeClass('slide').addClass('viewed');
+	}
+	timerslides = setInterval(function() {
+		mainSlideLeft();
+	}, 8000);
+}
 </script>
 </head>
 <body>
@@ -179,151 +335,73 @@ $(document).ready(function() {
 			</div>
 		</div>
 	</header>
-	<nav class="warp">
+	<%= render :partial =>  "layouts/menu" %>
+	<div id="navWarp">
+	<nav class="warp twosubmenu companyNav" id="news">
 		<div class="main">
-			<div class="capability">
-				<a href="" class="f">
-					Возможности системы
-				</a>
-				<div class="main subMenu" id="capability">
-					<ul class="warp">
-						<li>
-							<a href="">Увеличение количества обрабатываемых заказов</a>
-							<ul>
-								<li><a href="">Десятки тысяч обрабатываемых заказов в сутки</a></li>
-								<li><a href="">Моментальная обработка заявки </a></li>
-								<li><a href="">Автоматическое распределение заказов</a></li>
-								<li><a href="">Предварительный расчет стоимости заказа</a></li>
-								<li><a href="">Снижение «холостого прогона» автомобилей </a></li>
-								<li><a href="">Минимальное время подачи машины</a></li>
-							</ul>
-						</li>
-						<li>
-							<a href="">Повышение лояльности водителей</a>
-							<ul>
-								<li><a href="">Максимальная лояльность водителей</a></li>
-								<li><a href="">Мгновенная оплата услуг диспетчерской</a></li>
-							</ul>
-						</li>
-						<li>
-							<a href="">Лучшие условия для ваших клиентов</a>
-							<ul>
-								<li><a href="">Множество способов заказа такси для ваших клиентов</a></li>
-								<li><a href="">Индивидуальный подход к корпоративным клиентам</a></li>
-								<li><a href="">Гарантированное выполнение заказа</a></li>
-								<li><a href="">Бонусы клиентам</a></li>
-								<li><a href="">Прозрачность расчета стоимости поездки</a></li>
-							</ul>
-						</li>
-						<li>
-							<a href="">Снижение затрат на обслуживание диспетчерской</a>
-							<ul>
-								<li><a href="">Сохранение инвестиций в IT инфраструктуру компании 	</a></li>
-								<li><a href="">Простота администрирования системы</a></li>
-								<li><a href="">Качественная и стабильная телефония</a></li>
-								<li><a href="">Уникальная расширяемость</a></li>
-							</ul>
-						</li>
-						<li>
-							<a href="">Повышение управляемости компанией</a>
-							<ul>
-								<li><a href="">Управление диспетчерской из любой точки мира	</a></li>
-								<li><a href="">Повышение самодисциплины сотрудников 	</a></li>
-								<li><a href="">Любой отчет по работе диспетчерской в несколько кликов мышью 	</a></li>
-								<li><a href="">Безопасность и защита информации 	</a></li>
-							</ul>
-						</li>
-						<li>
-							<a href="">Повышение производительности труда сотрудников</a>
-							<ul>
-								<li><a href="">Снижение нагрузки на операторов </a></li>
-								<li><a href="">Удобство и легкость работы 		</a></li>
-							</ul>
-						</li>
-					</ul>
-					<footer><a href=""><img src="/assets/allcap.png" alt="" /> Посмотреть все возможности системы</a></footer>
-				</div>
-			</div>
-			<div class="about">
-				<a href="" class="f">
-					О продукте
-				</a>
-				<div class="main subMenu" id="about">
-					<ul class="warp">
-						<li>
-							<a href="">Функциональные возможности</a>
-							<ul>
-								<li><a href="">Автоматизация процесса приема и обработки заказов. Повышение производительности труда операторов</a></li>
-								<li><a href="">Контроль и анализ деятельности диспетчерской</a></li>
-								<li><a href="">Повышение эффективности работы водителей</a></li>
-								<li><a href="">Администрирование системы. Снижение расходов на обслуживание </a></li>
-								<li><a href="">Увеличение количества обрабатываемых заказов</a></li>
-								<li><a href="">Персонализированное взаимодействие с клиентами</a></li>
-							</ul>
-						</li>
-						<li>
-							<a href="">Видеопрезентации</a>
-							<ul>
-								<li><img src="/assets/videoMenu.png" alt="" /><a href="">Контроль и анализ деятельности диспетчерской</a></li>
-								<li><img src="/assets/videoMenu.png" alt="" /><a href="">Контроль и анализ деятельности диспетчерской</a></li>
-								<li><img src="/assets/videoMenu.png" alt="" /><a href="">Контроль и анализ деятельности диспетчерской</a></li>
-							</ul>
-						</li>
-						<li>
-							<a href="">Дополнительное оборудование</a>
-							<ul>
-								<li><a href="">GSM-шлюзы</a></li>
-								<li><a href="">IP-ATC Агат UX </a></li>
-								<li><a href="">Гарнитуры</a></li>
-								<li><a href="">Платы CTI</a></li>
-								<li><a href="">IP-телефоны</a></li>
-							</ul>
-						</li>
-						<li>
-							<a href="">Обучающее видео</a>
-							<ul>
-								<li><a href="">Версия 2.4.0.1. Что нового?</a></li>
-								<li><a href="">Настройка карточки заказа</a></li>
-								<li><a href="">Настройка карточки заказа (расширенный видеокурс)</a></li>
-								<li><a href="">Расчет стоимости поездок по зонам внутри города</a></li>
-								<li><a href="">Настройка загородных тарифов</a></li>
-								<li><a href="">Расчет стоимости поездок по времени</a></li>
-								<li><a href="">Расчет стоимости поездок по расстоянию</a></li>
-							</ul>
-						</li>
-						<li>
-							<a href="">Что требуется для запуска</a><br />
-							<a href="">Infinity+MTC</a><br />
-						</li>
-					</ul>
-				</div>
-			</div>
 			<div>
-				<a href="">
-					Истории успеха
+				<a href="" class="active">
+					Контакты
 				</a>
 			</div>
 			<div>
 				<a href="">
-					Купить
+					Техподдержка
 				</a>
 			</div>
 			<div>
 				<a href="">
-					О компании
+					Новости и события
 				</a>
 			</div>
 			<div>
 				<a href="">
-					Форум
+					Партнеры
 				</a>
 			</div>
 		</div>
 	</nav>
+	<nav class="warp twosubmenu productNav">
+		<div class="main">
+			<div>
+				<a href="" class="active">
+					Функциональные возможности
+				</a>
+			</div>
+			<div>
+				<a href="">
+					Видеопрезентации
+				</a>
+			</div>
+			<div>
+				<a href="">
+					Infinity+MTC
+				</a>
+			</div>
+			<div>
+				<a href="">
+					Дополнительное оборудование
+				</a>
+			</div>
+			<div>
+				<a href="">
+					Обучающее видео
+				</a>
+			</div>
+			<div>
+				<a href="">
+					Что требуется для запуска
+				</a>
+			</div>
+		</div>
+	</nav>
+	</div>
+	<div class="secondMain">
+	</div>
 	<section class="warp" id="slides">
-		<div class="slides_container">
+		<div class="slides_container1">
 		<% i=0; @slides.each do |s| i+=1 %>
-		  <div class="main slide slide_<%= i %>">
+		  <div class="slide slide_<%= i %>">
 			  <div class="text">
 			    <%= raw s.text%>
 			  </div>
@@ -337,43 +415,57 @@ $(document).ready(function() {
 		<% end %>
 		</div>
 		<div class="navigator">
-		<% classes = ['navActive','left1','left2','right1','right2']%>
 		<% i=0; @slides.each do |s| i+=1 %>
-      <%= link_to image_tag(s.icon),"#", :id=>i, :class=>classes[i-1]%>
+      		<%= link_to image_tag(s.icon),"#"%>
 		<% end %>
 		</div>
 	</section>
 	<section class="main">
 		<div class="navPred">
-			<div>
-				<a href="">
-					<img src="/assets/monitor.png" alt="" />
+			<div class="navPredSlider">
+			<div class="elLeft">
+				<a href="" onmouseover="addBg(this);" onmouseout="removeBg(this);">
+					<img src="/assets/mmenu1.png" alt="" />
 					<span>Увеличение количества обрабатываемых заказов</span>
 					<p>в Infinity TAXI записываются все разговоры с клиентами, что позволяет легко и быстро решать конфликтные ситуации.программа для такси способствует росту клиентской базы и повышению лояльности клиентов за счет новой планки качества Ваших услуг.</p>
 				</a>
 			</div>
-			<div>
-				<a href="">
-					<img src="/assets/rul.png" alt="" />
+			<div class="elLeft">
+				<a href="" onmouseover="addBg(this);" onmouseout="removeBg(this);">
+					<img src="/assets/mmenu3.png" alt="" />
 					<span>Повышение лояльности водителей</span>
 					<p>в Infinity TAXI записываются все разговоры с клиентами, что позволяет легко и быстро решать конфликтные ситуации.программа для такси способствует росту клиентской базы и повышению лояльности клиентов за счет новой планки качества Ваших услуг.</p>
 				</a>
 			</div>
-			<div>
-				<a href="">
-					<img src="/assets/joystick.png" alt="" />
+			<div class="elRight">
+				<a href="" onmouseover="addBg(this);" onmouseout="removeBg(this);">
+					<img src="/assets/mmenu5.png" alt="" />
 					<span>Повышение управляемости компанией</span>
 					<p>в Infinity TAXI записываются все разговоры с клиентами, что позволяет легко и быстро решать конфликтные ситуации.программа для такси способствует росту клиентской базы и повышению лояльности клиентов за счет новой планки качества Ваших услуг.</p>
 				</a>
 			</div>
-			<div>
-				<a href="">
-					<img src="/assets/skovoroda.png" alt="" />
+			<div class="elRight">
+				<a href="" onmouseover="addBg(this);" onmouseout="removeBg(this);">
+					<img src="/assets/mmenu6.png" alt="" />
 					<span>Повышение производительности труда сотрудников</span>
 					<p>в Infinity TAXI записываются все разговоры с клиентами, что позволяет легко и быстро решать конфликтные ситуации.программа для такси способствует росту клиентской базы и повышению лояльности клиентов за счет новой планки качества Ваших услуг.</p>
 				</a>
 			</div>
-			<div id="modal">
+			<div class="elRight">
+				<a href="" onmouseover="addBg(this);" onmouseout="removeBg(this);">
+					<img src="/assets/mmenu2.png" alt="" />
+					<span>Лучшие условия для ваших клиентов</span>
+					<p>в Infinity TAXI записываются все разговоры с клиентами, что позволяет легко и быстро решать конфликтные ситуации.программа для такси способствует росту клиентской базы и повышению лояльности клиентов за счет новой планки качества Ваших услуг.</p>
+				</a>
+			</div>
+			<div class="elRight">
+				<a href="" onmouseover="addBg(this);" onmouseout="removeBg(this);">
+					<img src="/assets/mmenu4.png" alt="" />
+					<span>Снижение затрат на обслуживание диспетчерской</span>
+					<p>в Infinity TAXI записываются все разговоры с клиентами, что позволяет легко и быстро решать конфликтные ситуации.программа для такси способствует росту клиентской базы и повышению лояльности клиентов за счет новой планки качества Ваших услуг.</p>
+				</a>
+			</div>
+			<div id="modal" class="modal">
 				<div class="left">
 					<div class="title">
 						<img src="" alt="" />
@@ -389,6 +481,19 @@ $(document).ready(function() {
 				</div>
 			</div>
 		</div>
+		</div>
+			<div id="modalR" class="modal">
+				<div class="right">
+					<div class="title">
+						<img src="" alt="" />
+						<span></span>
+					</div>
+					<p></p>
+					<a href="">
+						Узнать больше
+					</a>
+				</div>
+			</div>
 		<div class="warper">
 			<aside class="left">
 				<div class="news">
@@ -478,9 +583,6 @@ $(document).ready(function() {
 					</div>
 					<footer><a href="">Все истории успеха</a></footer>
 				</div>
-				<div class="ensign">
-					<a href=""><img src="/assets/ensign1.png" alt="" /></a>
-				</div>
 			</aside>
 			<div class="right">
 				<img class="h1" src="/assets/aboutText.png" alt="" />
@@ -524,11 +626,17 @@ $(document).ready(function() {
 <h3>Infinity Taxi - автоматизация такси технологиями будущего!</h3><br />
 			</div>
 		</div>
+		<div class="ensignC">
+				<div class="ensign">
+					<a href=""><img src="/assets/ensign1.png" alt="" /></a>
+				</div>
+		</div>
 		<div class="bottom">
 			<header><img src="/assets/clientsText.png" alt="" /></header>
 			<div class="clients">
 				<div class="nav" id="navClLeft"></div>
 				<div class="nav" id="navClRight"></div>
+				<div class="list">
 				<ul>
 				<li>
 					<img src="/assets/slide_1.jpg" alt="" />
@@ -546,7 +654,7 @@ $(document).ready(function() {
 					<img src="/assets/slide_5.jpg" alt="" />
 				</li>
 				</ul>
-
+			</div>
 			</div>
 		</div>
 	</section>

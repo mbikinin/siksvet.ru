@@ -69,13 +69,18 @@ a {
 	clear:both;
 }
 
-a:hover {
-	text-decoration:none;
-	color:#9b1e1c;
+a:hover, a:hover span {
+	color:#c76f01;
 }
 i {
 	font-style:italic;
 }
 s {
 	text-decoration:line-through;
+}
+div.navPredSlider div a:hover span {
+	color:#c76f01;
+}
+footer.main a:hover {
+	color:#c76f01 !important;
 }
