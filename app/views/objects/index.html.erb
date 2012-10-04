@@ -1,0 +1,31 @@
+<div id="objects_box">
+	<% @objects.each do |p|%>
+		<h3><%= p.title%></h3>
+		<div class="image">
+			<%= image_tag p.img.url(:medium)%>
+		</div>
+		<div class="desc">
+			<%= p.description.html_safe %>
+			<span>Адрес объекта: <br/><b class="address"><%= p.address%></b></span> <br/>
+			<span>Этажность объекта: <br/><b class="phone"><%= p.floors%></b></span><br/>
+			<span>Cроки сдачи объекта: <br/><b class="date_finish"><%= p.date_finish %></b></span><br/>
+		</div>
+		<div class="clear"></div>
+		<div class="object_links">
+			<span class="brone">
+				Забронировать
+			</span>
+			<span class="photos">
+				<%= link_to "фотографии с объекта" , "#", :class=>"blue_link"%>	
+			</span>
+			<span class="project">
+				<%= link_to "проектные декларации" , "#", :class=>"blue_link"%>	
+			</span>
+			<span class="plan">
+				<%= link_to "планировка" , object_path(p.id), :class=>"blue_link", :remote=>true%>	
+			</span>
+		</div>
+		<br/>
+	<% end %>
+
+</div>

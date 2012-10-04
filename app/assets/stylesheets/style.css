@@ -458,9 +458,7 @@ div.newsElement div.image {
 div.newsElement div.image {
 	width:258px;
 }
-b {
-	font-weight:600;
-}
+
 div.center p {
 	line-height:1.3;
 }
@@ -800,9 +798,7 @@ h4 {
 	font-weight:bold;
 	margin:25px 0;
 }
-p {
-	margin-bottom:24px;
-}
+
 ul.discList li {
 	list-style:disc;
 	margin:0 0 12px 17px;

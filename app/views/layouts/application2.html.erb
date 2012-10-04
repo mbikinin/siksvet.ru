@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title></title>
+<!--[if IE]>
+  <%= javascript_include_tag "http://html5shiv.googlecode.com/svn/trunk/html5.js" %>
+<![endif]-->
+  <%= stylesheet_link_tag    :reset,:style,:menu, :media => "all" %>
+  <%= javascript_include_tag :application,:menu,:carousel,:jMyCarousel,:easing,:mousewheel,:slides %>
+  <%= csrf_meta_tags %>
+<script>
+function testinput(re, str){
+   if (str.search(re) != -1)
+	  return true
+   else
+	  return false
+}
+		$(function() {
+		    $(".clients").jMyCarousel({
+				btnNext: "#navClRight",
+				btnPrev: "#navClLeft",
+		        visible: '100%',
+				speed: 200
+		    });
+		});
+$(document).ready(function () {
+	$('#slides').slides({
+		preload: true,
+		play: 5000,
+		pause: 2500,
+		hoverPause: true,
+		animationStart: function(current){
+			$('.caption').animate({
+				bottom:-35
+			},100);
+		},
+		animationComplete: function(current){
+			$('.caption').animate({
+				bottom:0
+			},200);
+		},
+		slidesLoaded: function() {
+			$('.caption').animate({
+				bottom:0
+			},200);
+		}
+	});
+	$('.winStory .nav').click(function() {
+		if ($(':animated').length == 0) {
+			var nap = $(this).attr('id');
+			if (nap == 'navWinRight') {
+				miniSlideLeft();
+			}
+			if (nap == 'navWinLeft') {
+				miniSlideRight();
+			}
+		}
+	});
+});
+function miniSlideLeft() {
+				clearInterval(timerminislides);
+				var id = Number($('.winStory .left').attr('id').replace('slide_',''));
+				var maxSlide = $('.winStory .preview').length;
+				
+				if (id == maxSlide) { var zoom = 0; }
+				else { var zoom = id + 1; }
+				if (id == maxSlide - 1) { var next = 0;}
+				else if (id == maxSlide) { var next = 1; }
+				else { var next = zoom + 1; }
+				if (id == 0) { var prev = maxSlide; }
+				else { var prev = id - 1; }
+				$('#slide_'+zoom+' .image').css({zIndex:200});
+				$('#slide_'+id+' .image').css({zIndex:150});
+				$('#slide_'+zoom+' .text').hide();
+				$('#slide_'+prev+' .image').css({opacity:0,zIndex:100});
+				$('#slide_'+id+' .image img').animate({width:167,height:147},300);
+				$('#slide_'+id+' .image').animate({width:167,height:147,opacity:1,left:35,marginTop:0},300);
+					$('#slide_'+next+' .image').css({zIndex:100}).animate({left:36,opacity:0},300);
+					$('#slide_'+zoom+' .image img').animate({width:150,height:132},300);
+					$('#slide_'+zoom+' .image').animate({width:150,height:132,marginTop:6,opacity:0.3,left:224},300, function() {
+						$('#slide_'+next).removeClass('right');
+						$('#slide_'+id).removeClass('preview left');
+						$('#slide_'+zoom).addClass('preview right');
+						$('#slide_'+zoom).removeClass('viewed');
+						$('#slide_'+id).addClass('viewed');
+						$('#slide_'+prev+' .image').animate({left:-140,marginTop:6,opacity:0.3});
+						$('#slide_'+prev).addClass('left');
+						$('#slide_'+id+' .text').show();
+					});
+	timerminislides = setInterval(function() {
+		miniSlideRight();
+	}, 8000);
+}
+function miniSlideRight() {
+				clearInterval(timerminislides);
+				var id = Number($('.winStory .right').attr('id').replace('slide_',''));
+				var maxSlide = $('.winStory .preview').length;
+				if (maxSlide == id) { var next = 0; }
+				else { next = id + 1; }
+				if (id == 1) { var prev = maxSlide;}
+				else if (id == 0) { var prev = maxSlide - 1;}
+				else { var prev = id - 2; }
+				if (id == 0) { var zoom = maxSlide; }
+				else {var zoom = id - 1;}
+				$('#slide_'+zoom+' .image').css({zIndex:200});
+				$('#slide_'+id+' .image').css({zIndex:150});
+				$('#slide_'+zoom+' .text').hide();
+				$('#slide_'+next+' .image').css({opacity:0,zIndex:100});
+				$('#slide_'+id+' .image').animate({width:167,height:147,marginTop:0,opacity:1,left:35},300);
+				$('#slide_'+id+' .image img').animate({width:167,height:147},300);
+					$('#slide_'+prev+' .image').css({zIndex:100}).animate({left:36,opacity:0},300);
+					$('#slide_'+zoom+' .image img').animate({width:150,height:132},300);
+					$('#slide_'+zoom+' .image').animate({width:150,height:132,marginTop:6,opacity:0.3,left:-140},300, function() {
+						$('#slide_'+prev).removeClass('left'); 
+						$('#slide_'+id).removeClass('preview right');
+						$('#slide_'+zoom).addClass('preview left');
+						$('#slide_'+zoom).removeClass('viewed');
+						$('#slide_'+id).addClass('viewed');
+						$('#slide_'+next+' .image').animate({left:224,marginTop:6,opacity:0.3});
+						$('#slide_'+next).addClass('right');
+						$('#slide_'+id+' .text').show();
+					});
+	timerminislides = setInterval(function() {
+		miniSlideRight();
+	}, 8000);
+}
+$(document).ready(function() {
+	/*$('.navPred > .elLeft > a').hover(function() {
+		var pos = $(this).position();
+		var url = $(this).attr('href');
+		var img = $(this).find('img').attr('src');
+		var text = $(this).find('p').html();
+		var title = $(this).find('span').html();
+		$('#modal p').html(text);
+		$('#modal a').attr('href',url);
+		$('#modal span').html(title);
+		$('#modal img').attr({src:img,alt:title});
+		$('#modal').css({left:pos.left - 58,top:pos.top+10}).show();
+		return false;
+	});
+	$('.navPred > .elRight > a').hover(function() {
+		var pos = $(this).position();
+		var url = $(this).attr('href');
+		var img = $(this).find('img').attr('src');
+		var text = $(this).find('p').html();
+		var title = $(this).find('span').html();
+		$('#modalR p').html(text);
+		$('#modalR a').attr('href',url);
+		$('#modalR span').html(title);
+		$('#modalR img').attr({src:img,alt:title});
+		$('#modalR').css({left:pos.left-306,top:pos.top}).show();
+		return false;
+	});
+	$('.modal').hover(function() {
+		return true;
+	},
+	function() {
+	  $('.modal').hide();
+	});
+	
+	$('.navPredSlider > div > a').hover(function(){
+		/*var pos = $(this).position();
+		var url = $(this).attr('href');
+		var img = $(this).find('img').attr('src');
+		var text = $(this).find('p').html();
+		var title = $(this).find('span').html();
+		$('#modalR p').html(text);
+		$('#modalR a').attr('href',url);
+		$('#modalR span').html(title);
+		$('#modalR').css({left:pos.left-58,top:pos.top}).show();
+		$(this).find('img').attr('src',$(this).find('img').attr('src').replace('.png','H.png'));
+	},
+	function() {
+		$(this).find('img').attr('src',$(this).find('img').attr('src').replace('H.png','.png'));
+	});
+	/*$('.modal').hover(function() {
+		return true;
+	},
+	function() {
+	  $('.modal').hide();
+	});*/
+});
+function addBg(elem) {
+	$(elem).find('img').attr('src',$(elem).find('img').attr('src').replace('.png','H.png'));
+}
+function removeBg(elem) {
+	$(elem).find('img').attr('src',$(elem).find('img').attr('src').replace('H.png','.png'));
+}
+$(document).ready(function() {
+	mainSlidesLoad();
+	$('.navigator a').click(function() {
+		var id = Number($(this).attr('id').replace('mainSlideNav_',''));
+		clearInterval(timerslides);
+		mainSlideLeft(id);
+	});
+	$('.subMenuClick').click(function() {
+		$('.twosubmenu').hide();
+		$('#'+$(this).attr('rel')).show();
+		return false;
+	});
+/*	$('.slides_container1').hover(function() {
+		clearInterval(timerslides);
+	},function() {
+		timerslides = setInterval(function() {
+		mainSlideLeft();
+	}, 4000);
+	});
+	$('.navPred').hover(function() {
+		clearInterval(timerslides);
+	},function() {
+		timerslides = setInterval(function() {
+		mainSlideLeft();
+	}, 4000);
+	});
+	$('.modal').hover(function() {
+		clearInterval(timerslides);
+	},function() {
+		timerslides = setInterval(function() {
+		mainSlideLeft();
+	}, 4000);
+	});*/
+});
+function mainSlidesLoad() {
+	var i = 0;
+	$('.slides_container1 .slide').each(function() {
+		this.setAttribute('id','mainSlide_'+i);
+		i++;
+	});
+	var i = 0;
+	$('.navigator a').each(function() {
+		this.setAttribute('id','mainSlideNav_'+i);
+		i++;
+	});
+/*	var i = 0;
+	$('.navPredSlider div').each(function() {
+		this.setAttribute('id','navPredSlide_'+i);
+		i++;
+	});*/
+	$('#mainSlide_0').removeClass('slide').addClass('viewed');
+	//$('.navPredSlider').css({left:0});
+		timerslides = setInterval(function() {
+		mainSlideLeft();
+	}, 1);
+	timerminislides = setInterval(function() {
+		miniSlideRight();
+	}, 1);
+}
+function getClassesForNav(id) {
+	switch(id) {
+		case 0:
+		var pos = ['navActive','right1','right2','left2','left1'];
+		var letters = ['c','d','e','a','b'];
+		break;
+		case 1:
+		var pos = ['left1','navActive','right1','right2','left2'];
+		var letters = ['b','c','d','e','a'];
+		break;
+		case 2:
+		var pos = ['left2','left1','navActive','right1','right2'];
+		var letters = ['a','b','c','d','e'];
+		break;
+		case 3:
+		var pos = ['right2','left2','left1','navActive','right1'];
+		var letters = ['e','a','b','c','d'];
+		break;
+		case 4:
+		var pos = ['right1','right2','left2','left1','navActive'];
+		var letters = ['d','e','a','b','c'];
+		break;
+	}
+	$('.navigator a').removeAttr('class');
+	for (var i=0;i<pos.length;i++) {
+		var e = i+1;
+		src = '/assets/'+e+letters[i]+'.png';
+		$('#mainSlideNav_'+i+' img').attr('src',src);
+		$('#mainSlideNav_'+i).addClass(pos[i]);
+	}
+}
+function navPredLeft() {
+	//var classes = ['elLeft','elLeft','elLeft','elRight','elRight'];
+	$('.navPredSlider div').removeAttr('class');
+	$('.navPredSlider div:first').clone().appendTo('.navPredSlider');
+	var i = 0;
+	$('.navPredSlider').animate({left:-253},400,function() {
+		$('.navPredSlider div:first').remove();
+		$('.navPredSlider').css({left:0});
+	});
+	/*$('.navPredSlider div').each(function() {
+		this.setAttribute('class',classes[i]);
+		//alert(i+': '+classes[i]);
+		i++;
+	});*/
+}
+function mainSlideLeft(sId) {
+	clearInterval(timerslides);
+	if ($(':animated').length == 0) {
+		var id = Number(($('.slides_container1 .viewed').attr('id').replace('mainSlide_','')));
+		var maxSlide = $('.slides_container1 .slide').length;
+		if (sId == undefined) {
+			if (id < maxSlide) var newId = id + 1;
+			else if (id == maxSlide) var newId = 0;
+		}
+		else {
+			var newId = sId;
+		}
+		$('.slides_container1 .slide').css({marginLeft:1920});
+		$('#mainSlide_'+id).animate({marginLeft:-1920},400);
+		$('#mainSlide_'+newId).animate({marginLeft:0},400);
+		getClassesForNav(newId);
+		navPredLeft();
+		$('#mainSlide_'+id).removeClass('viewed').addClass('slide');
+		$('#mainSlide_'+newId).removeClass('slide').addClass('viewed');
+	}
+	timerslides = setInterval(function() {
+		mainSlideLeft();
+	}, 8000);
+}
+</script>
+</head>
+<body>
+	<header class="main">
+		<div class="logo">
+			<a href="index.html"><img src="/assets/logo.png" alt="Главная" /></a>
+		</div>
+		<div class="contacts">
+			<div class="skype">
+				<img src="/assets/skype.png" alt="Наш скайп" /> skype_inteltelecom
+			</div>
+			<div class="mail">
+				<a href="mailto:sales@taxi_infinity.ru"><img src="/assets/mail.png" alt="Наш почтовый ящик" /></a> <a href="mailto:sales@taxi_infinity.ru">sales@taxi_infinity.ru</a>
+			</div>
+			<div class="phone">
+				<img src="/assets/phone.png" alt="Наш телефон" /> <p><span class="gray">+7(495)</span> 641-1010</p>
+			</div>
+		</div>
+	</header>
+	<%= render :partial =>  "layouts/menu" %>
+	<div id="navWarp">
+	<nav class="warp twosubmenu companyNav" id="news">
+		<div class="main">
+			<div>
+				<a href="" class="active">
+					Контакты
+				</a>
+			</div>
+			<div>
+				<a href="">
+					Техподдержка
+				</a>
+			</div>
+			<div>
+				<a href="">
+					Новости и события
+				</a>
+			</div>
+			<div>
+				<a href="">
+					Партнеры
+				</a>
+			</div>
+		</div>
+	</nav>
+	<nav class="warp twosubmenu productNav">
+		<div class="main">
+			<div>
+				<a href="" class="active">
+					Функциональные возможности
+				</a>
+			</div>
+			<div>
+				<a href="">
+					Видеопрезентации
+				</a>
+			</div>
+			<div>
+				<a href="">
+					Infinity+MTC
+				</a>
+			</div>
+			<div>
+				<a href="">
+					Дополнительное оборудование
+				</a>
+			</div>
+			<div>
+				<a href="">
+					Обучающее видео
+				</a>
+			</div>
+			<div>
+				<a href="">
+					Что требуется для запуска
+				</a>
+			</div>
+		</div>
+	</nav>
+	</div>
+	<div class="secondMain">
+	</div>
+	<section class="warp" id="slides">
+		<div class="slides_container1">
+		<% i=0; @slides.each do |s| i+=1 %>
+		  <div class="slide slide_<%= i %>">
+			  <div class="text">
+			    <%= raw s.text%>
+			  </div>
+			  <div class="bottom">
+				  <a href="">
+					  Узнать больше
+				  </a>
+			  </div>
+			  <div class="bg"><%= image_tag(s.img)%></div>
+		  </div>
+		<% end %>
+		</div>
+		<div class="navigator">
+		<% i=0; @slides.each do |s| i+=1 %>
+      		<%= link_to image_tag(s.icon),"#"%>
+		<% end %>
+		</div>
+	</section>
+	<section class="main">
+		<div class="navPred">
+			<div class="navPredSlider">
+			<div class="elLeft">
+				<a href="" onmouseover="addBg(this);" onmouseout="removeBg(this);">
+					<img src="/assets/mmenu1.png" alt="" />
+					<span>Увеличение количества обрабатываемых заказов</span>
+					<p>в Infinity TAXI записываются все разговоры с клиентами, что позволяет легко и быстро решать конфликтные ситуации.программа для такси способствует росту клиентской базы и повышению лояльности клиентов за счет новой планки качества Ваших услуг.</p>
+				</a>
+			</div>
+			<div class="elLeft">
+				<a href="" onmouseover="addBg(this);" onmouseout="removeBg(this);">
+					<img src="/assets/mmenu3.png" alt="" />
+					<span>Повышение лояльности водителей</span>
+					<p>в Infinity TAXI записываются все разговоры с клиентами, что позволяет легко и быстро решать конфликтные ситуации.программа для такси способствует росту клиентской базы и повышению лояльности клиентов за счет новой планки качества Ваших услуг.</p>
+				</a>
+			</div>
+			<div class="elRight">
+				<a href="" onmouseover="addBg(this);" onmouseout="removeBg(this);">
+					<img src="/assets/mmenu5.png" alt="" />
+					<span>Повышение управляемости компанией</span>
+					<p>в Infinity TAXI записываются все разговоры с клиентами, что позволяет легко и быстро решать конфликтные ситуации.программа для такси способствует росту клиентской базы и повышению лояльности клиентов за счет новой планки качества Ваших услуг.</p>
+				</a>
+			</div>
+			<div class="elRight">
+				<a href="" onmouseover="addBg(this);" onmouseout="removeBg(this);">
+					<img src="/assets/mmenu6.png" alt="" />
+					<span>Повышение производительности труда сотрудников</span>
+					<p>в Infinity TAXI записываются все разговоры с клиентами, что позволяет легко и быстро решать конфликтные ситуации.программа для такси способствует росту клиентской базы и повышению лояльности клиентов за счет новой планки качества Ваших услуг.</p>
+				</a>
+			</div>
+			<div class="elRight">
+				<a href="" onmouseover="addBg(this);" onmouseout="removeBg(this);">
+					<img src="/assets/mmenu2.png" alt="" />
+					<span>Лучшие условия для ваших клиентов</span>
+					<p>в Infinity TAXI записываются все разговоры с клиентами, что позволяет легко и быстро решать конфликтные ситуации.программа для такси способствует росту клиентской базы и повышению лояльности клиентов за счет новой планки качества Ваших услуг.</p>
+				</a>
+			</div>
+			<div class="elRight">
+				<a href="" onmouseover="addBg(this);" onmouseout="removeBg(this);">
+					<img src="/assets/mmenu4.png" alt="" />
+					<span>Снижение затрат на обслуживание диспетчерской</span>
+					<p>в Infinity TAXI записываются все разговоры с клиентами, что позволяет легко и быстро решать конфликтные ситуации.программа для такси способствует росту клиентской базы и повышению лояльности клиентов за счет новой планки качества Ваших услуг.</p>
+				</a>
+			</div>
+			<div id="modal" class="modal">
+				<div class="left">
+					<div class="title">
+						<img src="" alt="" />
+						<span></span>
+					</div>
+					<p></p>
+					<a href="">
+						Узнать больше
+					</a>
+				</div>
+				<div class="image">
+					<img src="" alt="" />
+				</div>
+			</div>
+		</div>
+		</div>
+			<div id="modalR" class="modal">
+				<div class="right">
+					<div class="title">
+						<img src="" alt="" />
+						<span></span>
+					</div>
+					<p></p>
+					<a href="">
+						Узнать больше
+					</a>
+				</div>
+			</div>
+		<div class="warper">
+			<aside class="left">
+				<div class="news">
+					<header>
+						<img src="/assets/newsText.png" alt="" />
+					</header>
+					<div class="newsElement">
+						<div class="date">
+							<span>22</span> апреля
+						</div>
+						<div class="content">
+							<div class="text">
+								Видео: Использование CRM-системы юридической <a href="">компанией «Правовой Альянс»</a>
+							</div>
+						</div>
+					</div>
+					<div class="newsElement">
+						<div class="date">
+							<span>22</span> апреля
+						</div>
+						<div class="content">
+							<div class="text">
+								Видео: Представитель компании «Драгон Эсет Менеджмент» о <a href="">преимуществах системы Terrasoft CRM</a>
+							</div>
+						</div>
+					</div>
+					<div class="newsElement">
+						<div class="image">
+							<img src="/assets/news.jpg" alt="" />
+						</div>
+						<div class="date">
+							<span>22</span> декабря
+						</div>
+						<div class="content">
+							<div class="text">
+								Вице-президент Gartner на Terrasoft Customer Forum: «86% людей готовы <a href="">доплачивать за лучший потребительский опыт»*</a>
+							</div>
+						</div>
+					</div>
+					<footer>
+						<a href="">Все новости</a>
+					</footer>
+				</div>
+				<div class="winStory">
+					<header><img src="/assets/winStoryText.png" alt="" /> <div class="nav" id="navWinLeft"></div><div class="nav" id="navWinRight"></div></header>
+					<div class="slide preview left" id="slide_0">
+						<div class="image">
+							<img src="/assets/winner.jpg" alt="" />
+						</div>
+						<div class="text">
+							<h2>7 500 заказов с Infinity TAXI</h2>
+							<p>Ставропольская служба такси «Улет» была организована в конце 2008 года, как справочная по товарами, услугам и заказу такси. Работа велась под брендом «Ночная справка». По словам Сергея Кочетова, заместителя руководителя фирмы такси «Улет», идея была в том, что человеку не нужно запоминать кучу разных номеров, достаточно знать номер </p>
+							<p class="footer">Такси «Улёт»    <a href="">Прочитать подробнее</a></p>
+						</div>
+					</div>
+					<div class="slide viewed" id="slide_1">
+						<div class="image">
+							<img src="/assets/winner.jpg" alt="" />
+						</div>
+						<div class="text">
+							<h2>7 501 заказов с Infinity TAXI</h2>
+							<p>Ставропольская служба такси «Улет» была организована в конце 2008 года, как справочная по товарами, услугам и заказу такси. Работа велась под брендом «Ночная справка». По словам Сергея Кочетова, заместителя руководителя фирмы такси «Улет», идея была в том, что человеку не нужно запоминать кучу разных номеров, достаточно знать номер </p>
+							<p class="footer">Такси «Улёт»    <a href="">Прочитать подробнее</a></p>
+
+						</div>
+					</div>
+					<div class="slide preview right" id="slide_2">
+						<div class="image">
+							<img src="/assets/winner.jpg" alt="" />
+						</div>
+						<div class="text">
+							<h2>7 502 заказов с Infinity TAXI</h2>
+							<p>Ставропольская служба такси «Улет» была организована в конце 2008 года, как справочная по товарами, услугам и заказу такси. Работа велась под брендом «Ночная справка». По словам Сергея Кочетова, заместителя руководителя фирмы такси «Улет», идея была в том, что человеку не нужно запоминать кучу разных номеров, достаточно знать номер </p>
+							<p class="footer">Такси «Улёт»    <a href="">Прочитать подробнее</a></p>
+
+						</div>
+					</div>
+					<div class="slide preview" id="slide_3">
+						<div class="image">
+							<img src="/assets/winner.jpg" alt="" />
+						</div>
+						<div class="text">
+							<h2>7 5003 заказов с Infinity TAXI</h2>
+							<p>Ставропольская служба такси «Улет» была организована в конце 2008 года, как справочная по товарами, услугам и заказу такси. Работа велась под брендом «Ночная справка». По словам Сергея Кочетова, заместителя руководителя фирмы такси «Улет», идея была в том, что человеку не нужно запоминать кучу разных номеров, достаточно знать номер </p>
+							<p class="footer">Такси «Улёт»    <a href="">Прочитать подробнее</a></p>
+						</div>
+					</div>
+					<footer><a href="">Все истории успеха</a></footer>
+				</div>
+			</aside>
+			<div class="right">
+				<img class="h1" src="/assets/aboutText.png" alt="" />
+				<h3>Автоматизация такси одной из самых передовых, современных и эффективных программ для такси Infinity TAXI по оптимальной цене</h3>
+<p>Диспетчерская — сердце и мозг работы службы такси. Слаженная команда операторов обеспечивает 90% успеха на высококонкурентном рынке пассажирских перевозок. Автоматизация такси (диспетчерской службы) с помощью программы для такси Infinity позволит вам минимизировать влияние человеческого фактора на процесс работы операторов, оптимизировать все процессы службы.</p>
+<p>Автоматизация такси осуществляется с помощью одной из самых передовых, современных и эффективных программ. Для такси любого уровня мы предлагаем оптимальные цены. Infinity TAXI — это минимальные вложения, максимальный результат с первых дней работы диспетчерской.</p>
+<p>Мы работаем на рынке автоматизации такси более 5 лет. Наша компания обслуживает сегодня более 500 диспетчерских и продолжает совершенствовать программное обеспечениев соответствии с новыми запросами служб такси.</p>
+<h4>Программа такси Infinity— это 7 ступеней успеха вашего бизнеса. Она позволит Вам:</h4>
+<ul class="discList">
+<li>Существенно увеличить прибыль за счет обработки значительно большего количества заказов.</li>
+<li>Расширить клиентскую базу вследствие повышения качества оказываемых услуг.</li>
+<li>Снизить эксплуатационные расходы в результате оптимизации штата сотрудников и сокращения затрат на IT и телекоммуникационную инфраструктуру компании.</li>
+<li>Повысить эффективность бизнес-процессов, управляемость компании, за счет создания прозрачной и отлаженной схемы работы сотрудников.</li>
+<li>Минимизировать возможность мошенничества за счет использования системы записи разговоров и детальных отчетов по работе диспетчерской.</li>
+<li>Повысить самодисциплину сотрудников благодаря возможности контроля их деятельности в режиме реального времени.</li>
+<li>Повысить лояльность водителей к компании за счет гибкой системы мотивации и удобного механизма взаиморасчетов.</li>
+</ul>
+Программа для такси Infinity — преимущества лидера.
+<h4>Десятки тысяч обрабатываемых заказов в сутки</h4>
+<p>Благодаря заложенным в программу для такси Infinity Taxi самым современным и передовым технологиям, система позволяет обрабатывать неограниченное количество заказов без потери качества и скорости обработки вызова.</p>
+<h4>Качественная и стабильная телефония</h4>
+<p>В программу встроен один из лучших Call-центров Infinity. Все настройки режимов работы выполняются посредством дружелюбных интерфейсов. Call-центр Infinity удобен и технологичен, занимает лидирующее место среди отечественных разработчиков.</p>
+<p>Infinity Taxi - единственная программа такси, разработанная профессионалами в телекоммуникациях. Для запуска нашей системы достаточно одного сервера с установленной операционной системой. Затраты на внедрение и сопровождение минимальны.</p>
+<h4>Любой отчет по работе диспетчерской в несколько кликов мышью</h4>
+<p>Модуль аналитики, заложенный в Infinity Taxi, встроенный визуальный конструктор позволят Вам в несколько простых операций сформировать абсолютно любой отчет по работе службы, обеспечить эффективный контроль за работой диспетчерской. Детальные отчеты нашей программы для таксипозволят вам оценить как загруженность каждого сотрудника, так и экономическую эффективность компании в целом. Вся информация предоставлена в удобной и наглядной форме.</p>
+<h4>Максимальная лояльность водителей</h4>
+<p>Infinity Taxi содержит сверхгибкую систему мотивации для водителей. Каждому из них Вы сможете предложить индивидуальные условия работы. Рейтинговая система распределения заказов будет способствовать желанию водителя соответствовать требованиям компании. Каждому сотруднику начисляются бонусы в зависимости от интенсивности и качества работы.</p>
+<h4>Минимальное время подачи машины клиентам</h4>
+<p>В системе реализованы новейшие мощные алгоритмы автоматического распределения и контроля заказов. Заказы распределяются по бортам в зависимости от местоположения машины, определенного по координатам со спутника, отдаленности ее от клиента, категории машины, приоритетов водителей, начисленных водителям бонусов или штрафных баллов и т.д.</p>
+<p>Система интеллектуального планирования заказов прогнозирует время и место завершения текущего заказа и автоматически предлагает водителю новый заказ.</p>
+<h4>Индивидуальный подход к каждому клиенту</h4>
+<p>Infinity Taxi позволит клиентам заказывать машины Вашей службы по телефону, через сайт, при помощи приложения на мобильных телефонах.Голосовое меню программы для таксипозволит заказывать машину без участия оператора.Любые варианты скидок и начисления бонусных баллов для Ваших клиентов реализованы в нашей программе такси.</p>
+<h4>Сложные технологии – простой интерфейс</h4>
+<p>Одним из показателей высокого уровня разработки программы для работы в такси является максимально простой для пользователя интерфейс. По данному параметру программа для такси Infinity не знает себе равных среди отечественных аналогов. Большинство режимов работы комплекса настраивается при помощи графических сценариев.</p>
+<p>Программа для такси Infinity крайне проста в изучении, превращает процесс приема, обработки и распределения заказов в легкий и быстрый процесс. Infinity Taxi признается наиболее удобной и, вместе с тем, гибкой программой для автоматизации таксина рынке России.</p>
+<h4>Гарантированное выполнение заказов</h4>
+<p>В Infinity Taxi поддержана интеграция с современными сервисами Яндекс.такси, РБТакси. С нашей программой для такси Вы получите доступ к нескольким тысячам дополнительных заказов в сутки. Заказы из биржи станут для Вашей диспетчерской дополнительным источником доходов.</p>
+<p>Также Вы сможете обмениваться заказами между диспетчерскими, передавая им в обработку свои заказы. Обеспечивается полная обратная связь по состоянию заказа при его выполнении в дружественной диспетчерской.</p>
+<br />
+<br />
+<h3>Infinity Taxi - автоматизация такси технологиями будущего!</h3><br />
+			</div>
+		</div>
+		<div class="ensignC">
+				<div class="ensign">
+					<a href=""><img src="/assets/ensign1.png" alt="" /></a>
+				</div>
+		</div>
+		<div class="bottom">
+			<header><img src="/assets/clientsText.png" alt="" /></header>
+			<div class="clients">
+				<div class="nav" id="navClLeft"></div>
+				<div class="nav" id="navClRight"></div>
+				<div class="list">
+				<ul>
+				<li>
+					<img src="/assets/slide_1.jpg" alt="" />
+				</li>
+				<li>
+					<span><img src="/assets/slide_4.jpg" alt="" />
+				</li>
+				<li>
+					<img src="/assets/slide_2.jpg" alt="" />
+				</li>
+				<li>
+					<img src="/assets/slide_3.jpg" alt="" />
+				</li>
+				<li>
+					<img src="/assets/slide_5.jpg" alt="" />
+				</li>
+				</ul>
+			</div>
+			</div>
+		</div>
+	</section>
+	<footer class="main">
+		<div class="logo">
+			<img src="/assets/logoFooter.png">
+			<div class="copy">
+				© 2005-2012 Taxi Infinity
+			</div>
+		</div>
+		<div class="urls">
+			<p>Полезные ссылки</p><br />
+			<a href="">Программа мобильное такси</a>
+			<a href="">Организация такси диспетчерской</a>
+			<a href="">Организация маршрутного такси</a>
+		</div>
+		<div class="right">
+			Телефон +7(495) 641-1010
+e-mail: <a href="mailto:sales@taxi-infinity.ru">sales@taxi-infinity.ru</a>
+skype: <a href="skype:skype_inteltelecom?call" class="skype">skype_inteltelecom</a>
+		</div>
+	</footer>
+</body>
+</html>

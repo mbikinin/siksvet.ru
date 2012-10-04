@@ -12,7 +12,7 @@ development:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: infinityt_development
+  database: svet_development
   pool: 5
   username: apps_user
   password:
@@ -27,7 +27,7 @@ test:
   reconnect: false
   database: infinityt_test
   pool: 5
-  username: apps_user
+  username: svet_user
   password:
   socket: /var/run/mysqld/mysqld.sock
 
@@ -35,7 +35,7 @@ production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: infinityt_production
+  database: svet_production
   pool: 5
   username: apps_user
   password:

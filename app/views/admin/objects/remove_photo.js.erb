@@ -1,0 +1,7 @@
+alert(1)
+<% if @err%>
+	alert(<%= @err%>);
+<% else %>
+	$('#photo<%= params[:id]%>').css({opacity: 0.5});
+	$('#photo<%= params[:id]%>').find('a').removeAttr("href");
+<% end%>

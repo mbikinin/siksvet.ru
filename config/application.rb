@@ -34,8 +34,11 @@ module Infinityt
     # config.i18n.default_locale = :de
 
     # Configure the default encoding used in templates for Ruby 1.9.
+   # I18n.load_path += Dir[Rails.root.join("config/locales/ru.yml")]
+    config.i18n.locale = :ru
+    config.i18n.default_locale = :ru
+    # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
-
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
 

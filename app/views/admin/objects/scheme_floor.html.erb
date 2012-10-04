@@ -1,0 +1,12 @@
+<h1 style="font-size: 33px;">Поэтажная планировка</h1><br/><br/>
+<h1>Объект : <lable><%= @object.title %> <br/>по адресу : <%= @object.address %></label>
+</h1>
+<br/>
+	<% i=0 %>	
+	<% @object.floors_int.times do %>
+		<%= link_to "Этаж № #{ i=i+1 }", "#"%>
+	<% end %>
+	
+<div id="photos">
+
+</div>

@@ -1,0 +1,30 @@
+// Place all the styles related to the plans controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+  .plan_title{
+    color: #757575; 
+    margin-left:20px;
+  }
+ 
+#plan_box{
+  .left_block{
+    float:left;
+    width: 258px;
+    padding: 5px 20px;
+    font-size: 14px;
+  }
+  .right_block{
+    float:left;
+    width:700px;
+    img{
+      max-width: 690px;
+      max-height: 500px;
+    }
+  }
+  .each_floors{
+    a{
+      padding: 0 5px;
+    }
+  }
+}

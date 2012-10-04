@@ -1,5 +1,7 @@
+# coding: utf-8
+
 class MainController < ApplicationController
   def index
-    @slides = Slide.all
+    @title = "Главная"
   end
 end

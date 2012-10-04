@@ -1,0 +1,88 @@
+// Place all the styles related to the objects controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#objects_box{
+  width:100%;
+  .image, .desc{
+    float:left
+  }
+  .image{
+    display:inline-block;
+    padding: 2px;
+    background: #fff;
+    border: solid 1px #e1e1e1;
+  }
+  .desc{
+    padding-left: 20px;
+    width: 370px;
+    .address,.phone,.date_finish{
+      padding-left: 10px;
+    }
+    span{
+      display: inline-block;
+      padding: 2px 0 5px;
+    }
+  }
+  .object_links{
+    padding: 5px 10px;
+    margin: 20px 10px;
+    border: 1px solid #e1e1e1;
+    .photos,.project,.plan{
+      margin-left: 20px;
+    }
+  }
+}
+#plan_box{
+  display: inline-block;
+  width:1000px;
+  height: 100%; 
+  .object{
+    width: 1004px;
+    height: 660px;
+  }
+  #object_img{
+    z-index: -1;
+    img{
+      width: 1004px;
+    }
+    .floor{
+      height: 66px;
+      left: 63px;
+      opacity: 0.5;
+      position: absolute;
+      top: 262px;
+      width: 910px;
+    }
+    #floor_1{
+      top: 296px;
+    }
+    #floor_2{
+      top: 225px;
+    }
+    #floor_3{
+      top: 155px;
+    }
+    .hide{
+      display: none;
+    }
+    .show{
+      display: block;
+    }
+  }
+  .object_title{
+    position: absolute;
+    color: #757575; 
+    margin-left:20px;
+  }
+  .floor_text{
+    background: none repeat scroll 0 0 #757575;
+    color: #FFFFFF;
+    display: none;
+    font-size: 14px;
+    padding: 8px 25px;
+    position: absolute;
+    right: 17px;
+    top: 41px;
+  }
+}
+

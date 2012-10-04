@@ -1,0 +1,10 @@
+<div id='plan_box' class='plan_<%= params[:id]%>'>
+	<h2 class="object_title">Выберите этаж</h2>
+	<div id="object_img">
+		<%= image_tag  @object.img_floor.url(:medium), :class=>"object_bg"%>
+		<% @object.floors_int.times do |i|%>
+			<%= link_to "<div id='floor_#{i}' class='floor' rel=#{i}></div>".html_safe, plan_floor_path(@object.id, i) , :remote=>true%>
+		<% end %>
+		<div class="floor_text"></div>
+	</div>
+</div>
