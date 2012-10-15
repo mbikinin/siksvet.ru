@@ -21,17 +21,13 @@ end
 
 group :development do
   gem 'rspec-rails', '2.6.1'
-  gem 'annotate', '2.4.0'
-  gem 'factory_girl_rails', '1.0'
-  gem "capistrano"
-  gem "rvm-capistrano"
 end
 group :production do
   gem 'unicorn'
 end
 gem 'cancan'
 gem 'activeadmin-cancan'
-gem 'activeadmin' , :git=>"https://github.com/drug/active-admin.git"
+gem 'activeadmin'
 
 gem 'faker', '0.3.1'
 gem 'jquery-rails'
@@ -39,7 +35,6 @@ gem 'russian'
 
 gem 'lazybox'
 gem 'rich', :git => 'https://github.com/bastiaanterhorst/rich.git'
-gem 'russian'
 gem "paperclip"
 gem 'haml'
 gem 'awesome_nested_set'
