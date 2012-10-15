@@ -34,7 +34,7 @@ gem 'jquery-rails'
 gem 'russian'
 
 gem 'lazybox'
-gem 'rich', :git => 'https://github.com/bastiaanterhorst/rich.git'
+gem 'rich', :git => "https://github.com/drug/rich-active-admin.git"
 gem "paperclip"
 gem 'haml'
 gem 'awesome_nested_set'
