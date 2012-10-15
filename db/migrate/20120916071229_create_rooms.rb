@@ -17,7 +17,7 @@ class CreateRooms < ActiveRecord::Migration
       t.string :area_bathroom_room
       t.string :area_loggia
       t.text :description      
-      t.string :img
+      t.string :img_file_name
       t.boolean :is_active
       t.timestamps
     end

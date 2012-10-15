@@ -8,6 +8,7 @@
   }
  
 #plan_box{
+  width: 1000px;
   .left_block{
     float:left;
     width: 258px;
@@ -20,11 +21,17 @@
     img{
       max-width: 690px;
       max-height: 500px;
+      min-width: 350px;
     }
   }
   .each_floors{
     a{
       padding: 0 5px;
     }
+  }
+  .compas{
+    margin: 26px 5px;
+    text-align: center;
+    width: 165px;
   }
 }

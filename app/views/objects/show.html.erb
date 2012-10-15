@@ -1,0 +1,25 @@
+  <%= javascript_include_tag "lazybox_helper" %>
+<h1><%= @object.title %></h1>
+<div class="object_box">
+		<div class="image left"><%= image_tag @object.img.url(:medium) %></div>
+			<h3>Описание объекта</h3>
+			<span>Адрес объекта: <br/><b class="address"><%= @object.address%></b></span> <br/>
+			<span>Этажность объекта: <br/><b class="phone"><%= @object.floors%></b></span><br/>
+			<span>Cроки сдачи объекта: <br/><b class="date_finish"><%= @object.date_finish %></b></span><br/>
+		<div class="clear"></div>
+		<div class="padding"></div>
+			<%= @object.description.html_safe %>
+		<div class="clear"></div>
+		<div class="padding"></div>
+		<div class="photos_object">
+			<% if @object.photos && @object.photos.count>0 %>
+			<h3>Фотографии объекта</h3>
+				<% @object.photos.each do |p|%>
+					<div class="image">
+						<%= link_to image_tag(p.img.url(:thumb)), p.img.url(:medium), :rel => :lazybox %>
+					</div>
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+</div>

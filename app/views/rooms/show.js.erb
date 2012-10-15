@@ -1,0 +1,6 @@
+<% if @err %>
+	$("#alert_box").html("<%= @err %>").fadeIn('slow');
+	setTimeout(function() {  $("#alert_box").fadeOut('slow') }, 3000)
+<% else %>
+	$.lazybox("<%= escape_javascript(render "room_plan") %>");
+<% end %>

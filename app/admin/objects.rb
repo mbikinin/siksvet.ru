@@ -37,6 +37,9 @@ ActiveAdmin.register Objects do
       column 'Квартиры' do |obj|
         link_to 'Квартиры объекта', room_description_path(obj)
       end
+      column "Фотографии" do |post|
+        link_to 'Фотографии', admin_objects_photo_path(post)
+      end
   end
 
 
@@ -50,7 +53,11 @@ ActiveAdmin.register Objects do
     def scheme_floor
        @object = Objects.find_by_id(params[:id])
        @plans = Plan.where(:object_id => @object.id)
-    end 
+    end
+    def photo
+       @object = Objects.find_by_id(params[:id])
+       @photos = Photo.where(:objects_id=>params[:id])
+    end
   end
 
 end

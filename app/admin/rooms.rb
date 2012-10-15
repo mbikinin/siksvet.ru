@@ -6,21 +6,17 @@ ActiveAdmin.register Room do
   index do
       column :id
       column 'Объект', :objects
-      column 'Этаж', :plan do |f|
-        "Этаж № #{ f.plan.floor}"
-      end
+      column 'Этаж', :number_floor
       column 'Общая площадь', :area_all
       column 'Жилая площадь', :area_living_room
       default_actions
   end
   form :html => { :multiple => true  } do |f|
     f.inputs 'Квартиры' do
-      f.input :objects, :label => 'Объект'
-      
-       f.input :plan, :label=>"Планировка" do |p|
-          "#{:plan}123"
-       end
-      
+       f.input :is_active,:as => :radio, :label => 'Продана или нет ?'
+
+      f.input :objects, :label => 'Объект'      
+      f.input :number_floor, :as => :select, :collection => [1,2,3,4,5], :label => 'Этаж'
       f.input :number_room, :label => 'Номер квартиры'
       f.input :title, :label => 'Титл'
       f.input :description, :label => 'Описание'
@@ -36,7 +32,6 @@ ActiveAdmin.register Room do
       f.input :area_bathroom_room, :label => 'Площадь ванной комнаты(если имеется)'
       f.input :area_loggia, :label => 'Площадь лоджии'
       f.input :img, :as => :file, :multiple => true, :label => 'Изображеие планировки'
-      f.input :is_active,:as => :radio, :label => 'Продана или нет ?'
       f.buttons
     end
   end
@@ -44,6 +39,9 @@ ActiveAdmin.register Room do
  controller do load_and_authorize_resource :except => :index
     def scoped_collection
       params[:object].nil? ? end_of_association_chain.accessible_by(current_ability) : Room.where(:objects_id=>params[:object])
+    end
+    def new
+      @plans = Plan.where(:objects_id=>params[:object])
     end
   end
 

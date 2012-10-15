@@ -17,7 +17,6 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
-	font-family:Arial;
 	color:#111;
 }
 /* HTML5 display-role reset for older browsers */
@@ -48,7 +47,6 @@ table {
 }
 p, span, td, input,div,a {
 	font-size:12px;
-	font-family:Arial;
 	line-height:1.2;
 	letter-spacing:normal;
 }

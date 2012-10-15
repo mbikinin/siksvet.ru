@@ -1,0 +1,94 @@
+<div id='plan_box' class='plan_<%= params[:id]%>'>
+	<h2 class="plan_title">Планировка квартиры</h2>
+	<div class="left_block">
+		<div class="each_floors">			
+			Квартиры на этом этаже:
+			<% i=0 %>
+			<% @object.rooms.where(:number_floor=> @room.number_floor ).each do |r|%>
+				<%= link_to r.number_room, room_path(r.id), :remote=>true, :class=>"#{current(r.id, params[:id])} blue" %> | 
+			<% end %>
+			<div class="each_floors">			
+			Другие этажы:
+			<% i=0 %>
+			<% @object.floors_int.times do %>
+				<%= link_to i=i+1, plan_floor_path(@object.id, i), :remote=>true, :class=>"#{current(i, @room.number_floor)} blue" %> | 
+			<% end %>
+		</div>
+		</div>
+		<div class="clear"></div>
+		<div class="compas">
+			<%= image_tag "kompas-32.png"%>
+		</div>
+		<div class="clear"></div>
+		<h3>Похожие квартиры</h3>
+		<% @object.rooms.where(:count_rooms=> @room.count_rooms ).order("RAND(id)").each do |r|%>
+			<%= link_to r.number_room, room_path(r.id), :remote=>true, :class=>"#{current(r.id, params[:id])} blue" %> | 
+		<% end %>
+	</div>
+	<div class="right_block">
+		<%= image_tag @room.img.url(:medium)%>
+		<div class="options">
+		<h1>Площадь помещений</h1>
+			<% unless @room.area_all.blank? %>
+				<div class="item">
+					<span class="label">Общая площадь:</span><span class="blue digit"><%= @room.area_all %></span> м<sup>2</sup>
+				</div>
+			<% end %>
+			<% unless @room.area_living_room.blank? %>
+				<div class="item">
+					<span class="label">Жилая площадь:</span><span class="blue digit"><%= @room.area_living_room %></span>м<sup>2</sup>
+				</div>
+			<% end %>
+			<% unless @room.area_kitchen.blank? %>
+				<div class="item">
+					<span class="label">Площадь кухни:</span><span class="blue digit"><%= @room.area_kitchen %></span>м<sup>2</sup>
+				</div>
+			<% end %>
+			<% unless @room.area_room_1.blank? %>
+				<div class="item">
+					<span class="label">Площадь комнаты 1: </span><span class="blue digit"><%= @room.area_room_1 %></span>м<sup>2</sup>
+				</div>
+			<% end %>
+			<% unless @room.area_room_2.blank? %>
+				<div class="item">
+					<span class="label">Площадь комнаты 2: </span><span class="blue digit"><%= @room.area_room_2 %></span>м<sup>2</sup>
+				</div>
+			<% end %>
+			<% unless @room.area_room_3.blank? %>
+				<div class="item">
+					<span class="label">Площадь комнаты 3: </span><span class="blue digit"><%= @room.area_room_3 %></span>м<sup>2</sup>
+				</div>
+			<% end %>
+			<% unless @room.area_wc_room.blank? %>
+				<div class="item">
+					<span class="label">Площадь санузла: </span><span class="blue digit"><%= @room.area_wc_room %></span>м<sup>2</sup>
+				</div>
+			<% end %>
+			<% unless @room.area_bathroom_room.blank? %>
+				<div class="item">
+					<span class="label">Площадь ванной-комнаты: </span><span class="blue digit"><%= @room.area_bathroom_room %></span>м<sup>2</sup>
+				</div>
+			<% end %>
+			<% unless @room.area_loggia.blank? %>
+				<div class="item">
+					<span class="label">Площадь лоджии: </span><span class="blue digit"><%= @room.area_loggia %></span>м<sup>2</sup>
+				</div>
+			<% end %>
+			<% unless @room.description.blank? %>
+			<h3>Описаниие</h3>
+				<div class="item">
+					<div class="description">
+						<%= @room.description.html_safe%>
+					</div>
+				</div>
+			<% end %>
+			<div class="item">
+				<br/><br/>
+				<span class="brone link">
+					<%= link_to "Оставить заявку", feedback_order_path, :remote=>true %>
+				</span>
+				<br/><br/>
+			</div>
+		</div>
+	</div>
+</div>

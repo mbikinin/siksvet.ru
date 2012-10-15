@@ -1,31 +1,38 @@
 <div id="objects_box">
 	<% @objects.each do |p|%>
-		<h3><%= p.title%></h3>
-		<div class="image">
-			<%= image_tag p.img.url(:medium)%>
+		<div class="object_item">
+			<h3><%= p.title%></h3>
+			<div class="image">
+				<%= image_tag p.img.url(:medium)%>
+			</div>
+			<div class="desc">
+				<span>Адрес объекта: <br/><b class="address"><%= p.address%></b></span> <br/>
+				<span>Этажность объекта: <br/><b class="phone"><%= p.floors%></b></span><br/>
+				<span>Cроки сдачи объекта: <br/><b class="date_finish"><%= p.date_finish %></b></span><br/>
+			</div>
+			<div class="clear"></div>
+			<div class="object_links">
+				<span class="brone link">
+					<%= link_to "Оставить заявку", feedback_order_path, :remote=>true %>
+				</span>
+				<%  if p.photos.count>0  %>
+					<span class="photos link">
+						<%= link_to "фотографии с объекта" , object_photos_path(p.id), :class=>"blue_link"%>	
+					</span>
+				<% end %>
+				<% if p.declarations.count>0  %>
+					<span class="project link">
+						<%= link_to "проектные декларации" , declarations_filter_path(p.id), :class=>"blue_link" %>	
+					</span>
+				<% end %>
+				<% if p.plans.count>0  %>
+					<span class="plan link">
+						<%= link_to "планировка" , object_path(p.id), :remote=>true, :class=>"blue_link" %>	
+					</span>
+				<% end %>
+			</div>
+			<br/>
 		</div>
-		<div class="desc">
-			<%= p.description.html_safe %>
-			<span>Адрес объекта: <br/><b class="address"><%= p.address%></b></span> <br/>
-			<span>Этажность объекта: <br/><b class="phone"><%= p.floors%></b></span><br/>
-			<span>Cроки сдачи объекта: <br/><b class="date_finish"><%= p.date_finish %></b></span><br/>
-		</div>
-		<div class="clear"></div>
-		<div class="object_links">
-			<span class="brone">
-				Забронировать
-			</span>
-			<span class="photos">
-				<%= link_to "фотографии с объекта" , "#", :class=>"blue_link"%>	
-			</span>
-			<span class="project">
-				<%= link_to "проектные декларации" , "#", :class=>"blue_link"%>	
-			</span>
-			<span class="plan">
-				<%= link_to "планировка" , object_path(p.id), :class=>"blue_link", :remote=>true%>	
-			</span>
-		</div>
-		<br/>
 	<% end %>
 
 </div>

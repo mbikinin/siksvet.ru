@@ -39,15 +39,7 @@ function testinput(re, str){
    else
 	  return false
 }
-		$(function() {
-		    $(".clients").jMyCarousel({
-				btnNext: "#navClRight",
-				btnPrev: "#navClLeft",
-		        visible: '100%',
-				speed: 200
-		    });
-		});
-
+		
 function miniSlideLeft() {
 				clearInterval(timerminislides);
 				var id = Number($('.winStory .left').attr('id').replace('slide_',''));

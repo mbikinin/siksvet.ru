@@ -1,0 +1,13 @@
+<%= render "upload"%>
+<h1>Альбом /<%= params[:id]%>/<lable><%= @objects.title %></label></h1>
+<div id="photos">
+	<% @photos.each do |p|%>
+		<div class="photo_container">
+			<div id="photo<%=p.id%>" class="photo_box">
+				<%= image_tag p.img.url(:thumb), :class=>"photo" %><br/>
+				<%= link_to "удалить", admin_objects_remove_photo_path(p.id), :remote=>true%>
+			</div>
+		</div>
+	<% end%>
+</div>
+<iframe id="frame" name="frame" style="display:none"></iframe>

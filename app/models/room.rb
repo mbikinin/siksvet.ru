@@ -2,12 +2,12 @@ class Room < ActiveRecord::Base
   
   attr_accessible :title, :description, :count_rooms, :area_living_room, :area_kitchen, 
                   :area_room_1, :area_room_2, :area_room_3, :area_room_4, :area_wc_room, :area_bathroom_room,
-                  :area_loggia, :description,
-                  :img , :img_file_name, 
+                  :area_loggia, :description, :number_floor,
+                  :img , :img_file_name, :objects_id, :number_room, :area_all,
                   :is_active
 
   #Определяем файлы для paperclip
-  has_attached_file :img, :styles => { :medium => "250x200#", :thumb => "100x100>" },
+  has_attached_file :img, :styles => { :medium => "800x600>", :thumb => "100x100>" },
       :url =>"/system/:class/:id/:style/:basename.:extension",
       :path => ":rails_root/public/system/:class/:id/:style/:basename.:extension"
 

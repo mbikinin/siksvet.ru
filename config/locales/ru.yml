@@ -1,4 +1,8 @@
 ru:
+  picker_browse: Выбрать файл
+  will_paginate:
+    previous_label: ""
+    next_label: ""
   devise:
     sessions:
       admin_user:
@@ -351,6 +355,7 @@ ru:
         text: Текст
         partner_type_dealing: Поле сфера деятельности
         partner_name: Имя партнера
+        comment: Текст
       user:
         name: Ваше имя
         phone: Телефон

@@ -6,8 +6,8 @@
 <!--[if IE]>
   <%= javascript_include_tag "http://html5shiv.googlecode.com/svn/trunk/html5.js" %>
 <![endif]-->
-  <%= stylesheet_link_tag    :reset, :style,:menu, :application, :media => "all" %>
-  <%= javascript_include_tag :application,:lazybox,  :menu %>
+  <%= stylesheet_link_tag    :reset, :style, :menu, :application, :media => "all" %>
+  <%= javascript_include_tag :application,  :menu %>
   
   <%= csrf_meta_tags %>
 
@@ -25,7 +25,12 @@
 			<!--header -->
 			<header>
 				<div id="logo">
-					<%= link_to "", "#" %>
+					<div class="image">
+						<%= link_to image_tag("logo2.png"), "/" %>
+					</div>
+					<div class="name">
+						Строительно-инвестиционная <br/>компания «Свет»
+					</div>
 				</div>
 				<div id="header_text">
 					<span>Новый 3-х этажный жилой дом</span><br/>
@@ -37,27 +42,54 @@
 			</header>
 			<div class="clear"></div>
 			<div id="content">
+			
 				<%= render "layouts/menu" %>
 				<% if params[:controller] != "main" %>
 					<div id="content_block">
+						<% flash.each do |key, value| %>
+							<div class="flash <%= key %>"><%= value %></div>
+						<% end %>
 	               		<%= yield %>
 					</div>
+				<% else %>
+					<%= yield %>
 				<% end %>
 			</div>
 		</div>
 	</div>
+	<div class="partners">
+		<% if @partners && @partners.count>0 %>
+			<% @partners.each do |p| %>
+				<div class="image">
+					<%= image_tag p.img.url(:medium)%>
+				</div>
+			<% end %>
+		<% end %>
+	</div>
 	<div class="block"></div>
 </div>
 <!--footer -->
-<footer>
-	<div class="col_1">
-		<div class="wrapper">
-			<div class="bg_spinner"></div>
-			<ul class="pagination">
-			</ul>
-		</div>					
-	</div>			
-</footer>
+<div class="bg1">
+	<div class="main">
+			<footer>
+				<div class="col_1">
+					<div class="wrapper">
+						<div class="bg_spinner"></div>
+					</div>
+					<ul id="icons">
+						<li><a href="#" class="normaltip" title="Facebook"><img src="assets/icon1.jpg" alt=""></a></li>
+						<li><a href="#" class="normaltip" title="Twitter"><img src="assets/icon2.jpg" alt=""></a></li>
+					</ul>
+				</div>
+				<div class="col_2">
+				 	<br>
+					<span>Строительно-инвестиционная комапния «Свет» </span>© 2012 
+				</div>
+				<!-- {%FOOTER_LINK} -->
+			</footer>
+		</div>
+	</div>
+			<!--footer end-->
 <%= javascript_include_tag :functions %>
 
 <script>

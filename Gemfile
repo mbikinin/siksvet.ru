@@ -36,9 +36,18 @@ gem 'activeadmin'
 gem 'faker', '0.3.1'
 gem 'jquery-rails'
 gem 'russian'
-gem "paperclip"
-gem 'lazybox'
 
+gem 'lazybox'
+gem 'rich', :git => 'https://github.com/bastiaanterhorst/rich.git'
+gem 'russian'
+gem "paperclip"
+gem 'haml'
+gem 'awesome_nested_set'
+gem 'the_sortable_tree', '>= 1.9.3'
+gem 'thin'
+gem 'mini_magick'
+gem 'carrierwave'
+gem 'tinymce-rails-imageupload', '~> 3.5.6.3'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

@@ -1,0 +1,25 @@
+<h1><%= @title %></h1>
+<%= "Нет документов" unless @declarations && @declarations.count>0%>
+<div id="declarations_box">
+	<% @declarations.each do |p|%>
+		<div class="object_item">
+			<h3><%= p.title%></h3>
+			<div class="desc">
+				<%= p.anounce.html_safe %>
+			</div>
+			<div class="clear"></div>
+			
+			<div class="object_links">
+				<span class="project">
+					<%= link_to "скачать документ" , p.file, :class=>"doc_link" %>
+				</span>
+				<% unless p.text.nil?%>
+					<span class="project">
+						<%= link_to "подробнее", declaration_path(p.id)%>
+					</span>
+				<% end %>
+			</div>
+		</div>
+	<% end %>
+</div>
+

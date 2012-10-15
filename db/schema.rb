@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120924184447) do
+ActiveRecord::Schema.define(:version => 20121015182407) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -45,6 +45,29 @@ ActiveRecord::Schema.define(:version => 20120924184447) do
 
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
+
+  create_table "declarations", :force => true do |t|
+    t.string   "title"
+    t.text     "anounce"
+    t.text     "text"
+    t.string   "img_file_name"
+    t.string   "file"
+    t.boolean  "is_active"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.integer  "objects_id"
+  end
+
+  create_table "feedbacks", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "phone"
+    t.text     "text"
+    t.string   "comment"
+    t.string   "section"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "histories", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -84,6 +107,26 @@ ActiveRecord::Schema.define(:version => 20120924184447) do
     t.boolean  "on_menu",                    :default => true
   end
 
+  create_table "partners", :force => true do |t|
+    t.string   "title"
+    t.string   "img_file_name"
+    t.text     "description"
+    t.text     "contacts"
+    t.boolean  "on_main",       :default => true
+    t.boolean  "is_active",     :default => true
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+  end
+
+  create_table "photos", :force => true do |t|
+    t.integer  "objects_id"
+    t.string   "img_file_name"
+    t.integer  "carma",         :default => 0
+    t.integer  "views",         :default => 0
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+  end
+
   create_table "plans", :force => true do |t|
     t.string   "title"
     t.integer  "objects_id"
@@ -93,6 +136,19 @@ ActiveRecord::Schema.define(:version => 20120924184447) do
     t.boolean  "is_active"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+  end
+
+  create_table "rich_rich_files", :force => true do |t|
+    t.datetime "created_at",                                 :null => false
+    t.datetime "updated_at",                                 :null => false
+    t.string   "rich_file_file_name"
+    t.string   "rich_file_content_type"
+    t.integer  "rich_file_file_size"
+    t.datetime "rich_file_updated_at"
+    t.string   "owner_type"
+    t.integer  "owner_id"
+    t.text     "uri_cache"
+    t.string   "simplified_type",        :default => "file"
   end
 
   create_table "rooms", :force => true do |t|
@@ -112,10 +168,11 @@ ActiveRecord::Schema.define(:version => 20120924184447) do
     t.string   "area_bathroom_room"
     t.string   "area_loggia"
     t.text     "description"
-    t.string   "img"
+    t.string   "img_file_name"
     t.boolean  "is_active"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
+    t.integer  "number_floor"
   end
 
   create_table "slides", :force => true do |t|
@@ -126,6 +183,12 @@ ActiveRecord::Schema.define(:version => 20120924184447) do
     t.string   "href"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "tinymce_images", :force => true do |t|
+    t.string   "file_file_name"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
 end

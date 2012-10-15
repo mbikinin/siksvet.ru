@@ -2,7 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #objects_box{
-  width:100%;
   .image, .desc{
     float:left
   }
@@ -27,15 +26,15 @@
     padding: 5px 10px;
     margin: 20px 10px;
     border: 1px solid #e1e1e1;
-    .photos,.project,.plan{
+    .link{
       margin-left: 20px;
+    }
+    .link:first-child{
+      margin-left: 0px;
     }
   }
 }
 #plan_box{
-  display: inline-block;
-  width:1000px;
-  height: 100%; 
   .object{
     width: 1004px;
     height: 660px;
@@ -84,5 +83,34 @@
     right: 17px;
     top: 41px;
   }
+  .none_rooms{
+    font-style:italic;
+  }
 }
-
+.object_box{
+  display: inline-block;
+  .left, .right{
+    float: left;
+    padding: 5px;
+  }
+  .left{
+    
+  }
+  .right{
+    width: 345px;
+    margin-left: 15px;
+  }
+  .image{
+      background: #e0e0e0;
+      border: solid 1px #999;
+      padding:3px 4px 1px;
+      margin: 13px 22px 0 0;
+      display: inline-block;
+  }
+  img.photo_object{
+     width: 180px;
+  }
+  ul li{
+    list-style: inside
+  }
+}

@@ -15,7 +15,7 @@
                     <i class="icon-plus icon-white"></i>
                     <span>Добавить</span>
  						<%= f.file_field :img, :multiple => true %>
- 						<%= f.hidden_field :album_id , :value=>@album.id%>                 
+ 						<%= f.hidden_field :objects_id , :value=>@objects.id%>                 
  					 </span>
                 <button type="submit" class="btn btn-primary start">
                     <i class="icon-upload icon-white"></i>
@@ -59,8 +59,8 @@
 <!-- Bootstrap JS and Bootstrap Image Gallery are not required, but included for the demo -->
 <script src="http://blueimp.github.com/cdn/js/bootstrap.min.js"></script>
 <script src="http://blueimp.github.com/Bootstrap-Image-Gallery/js/bootstrap-image-gallery.min.js"></script>
-<%= render "/admin/albums/shared/fileupload/queue" %>
-<%= render "/admin/albums/shared/fileupload/index" %>
-<%= render "/admin/albums/shared/fileupload/js_include_local" %>
+<%= render "/admin/objects/shared/fileupload/queue" %>
+<%= render "/admin/objects/shared/fileupload/index" %>
+<%= render "/admin/objects/shared/fileupload/js_include_local" %>
 
 

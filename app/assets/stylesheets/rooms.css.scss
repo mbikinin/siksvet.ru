@@ -1,3 +1,24 @@
 // Place all the styles related to the rooms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.options{
+  .item{
+    .label{
+      display: inline-block;
+      width: 153px;
+    }
+    .digit{
+      display: inline-block;
+      width: 20px;
+      text-align: center;
+    }   
+  }
+ h3{
+    margin: 25px 0 0px
+  }
+}
+sup {
+    font-size: 8px;
+    vertical-align: super;
+}

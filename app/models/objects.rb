@@ -4,7 +4,7 @@ class Objects < ActiveRecord::Base
                     :is_active, :floors, :floors_int
   
   #Определяем файлы для paperclip
-  has_attached_file :img, :styles => { :medium => "250x200#", :thumb => "100x100>" },
+  has_attached_file :img, :styles => { :medium => "250x200#", :thumb => "150x150>" },
       :url =>"/system/:class/:id/:style/:basename.:extension",
       :path => ":rails_root/public/system/:class/:id/:style/:basename.:extension"
   has_attached_file :img_floor, :styles => { :medium => "1000x600>", :thumb => "100x100>" },
@@ -14,6 +14,9 @@ class Objects < ActiveRecord::Base
   before_save :basename_floor
   
   has_many :plans
+  has_many :photos
+  has_many :declarations
+  has_many :rooms
 
 private
   def basename

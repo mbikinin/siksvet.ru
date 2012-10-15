@@ -1,0 +1,46 @@
+<h1>Оставить заявку</h1>
+
+<%= form_for @feedback, :multipart => true, :remote=>true do |f| %>
+	<% if @feedback.errors.any? %>
+	  <div id="error_explanation">
+	    <h3>У вас <%=  @feedback.errors.count%> <%= Russian.pluralize( @feedback.errors.count, "ошибка","ошибки","ошибок") %></h3>
+	    <ul>
+	    <%  @feedback.errors.full_messages.each do |msg| %>
+	      <li><%= msg %></li>
+	    <% end %>
+	    </ul>
+	  </div>
+	<% end %>
+
+	<div id="new_feedback">
+	<div class="contacts">
+		Контакты для связи:<br/>
+		8(843)521-25-21 <br/>
+		+7(917)123-14-13 <br/><br/>
+		icq: 87621111 <br/>
+		skype: siksvet
+	</div>
+	<h3>Форма обратной связи</h3>
+	<p class="item">
+		<label>Представьтесь</label><br/>
+		<%= f.text_field "name" , :id=>'name', :class=>"buy" %>
+		<span class="notify"></span>
+		</p>
+	<p class="item">
+		<label>Телефон</label><br/>
+		<%= f.text_field "phone" , :id=>'phone', :class=>"buy active" %>
+		<span class="notify"></span>
+	</p>
+	<p class="item">
+		<label>E-mail</label><br/>
+		<%= f.text_field "email" , :id=>'email', :class=>"buy" %>
+		<span class="notify"></span>
+	</p>
+	<p class="item">
+		<label class="nofloat">Текст</label><br/>
+		<%= f.text_area "comment" , :id=>'comment', :class=>"buy", :cols=>"60", :rows=>"10" %>
+	</p>
+	<div class="clear"></div><br/>
+	<p><%= f.submit "Отправить", :type=>"submit" %></p>
+	</div>
+<% end %>
