@@ -31,7 +31,7 @@ group :production do
 end
 gem 'cancan'
 gem 'activeadmin-cancan'
-gem 'activeadmin'
+gem 'activeadmin' , :git=>"https://github.com/drug/active-admin.git"
 
 gem 'faker', '0.3.1'
 gem 'jquery-rails'
