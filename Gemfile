@@ -34,7 +34,7 @@ gem 'jquery-rails'
 gem 'russian'
 
 gem 'lazybox'
-gem 'rich', :git => "https://github.com/drug/rich-active-admin.git"
+
 gem "paperclip"
 gem 'haml'
 gem 'awesome_nested_set'
@@ -43,6 +43,7 @@ gem 'thin'
 gem 'mini_magick'
 gem 'carrierwave'
 gem 'tinymce-rails-imageupload', '~> 3.5.6.3'
+gem 'rich', :git => "https://github.com/drug/rich-active-admin.git"
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
