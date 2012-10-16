@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title> <%= "#{@title} | " unless @title.nil? %>  ООО Строительно-инвестиционная компания Свет</title>
+<!--[if IE]>
+  <%= javascript_include_tag "http://html5shiv.googlecode.com/svn/trunk/html5.js" %>
+<![endif]-->
+  <%= stylesheet_link_tag    :reset, :style, :menu, :application, :media => "all" %>
+  <%= javascript_include_tag :application,  :menu %>
+  
+  <%= csrf_meta_tags %>
+
+</head>
+<body>
+	<div id="backgroundImage" >
+		
+		<%= image_tag "bg.jpg"%>
+	</div>
+<div class="spinner"></div>
+<div id="bgSlider"></div>
+<div class="extra">
+	<div class="main">
+		<div class="box">
+			<!--header -->
+			<header>
+				<div id="logo">
+					<div class="image">
+						<%= link_to image_tag("logo2.png"), "/" %>
+					</div>
+					<div class="name">
+						Строительно-инвестиционная <br/>компания «Свет»
+					</div>
+				</div>
+				<div id="header_text">
+					<span>Новый 3-х этажный жилой дом</span><br/>
+					<span>ПО УЛИЦЕ МАЛО-МОСКОВСКОЙ</span><br/>
+					<span>кировского района</span><br/>
+					<span>г. Казань</span><br/>
+					<span>тел.: (843)234-12-12</span><br/>
+				</div>
+			</header>
+			<div class="clear"></div>
+			<div id="content">
+			
+				<%= render "layouts/menu" %>
+				<% if params[:controller] != "main" %>
+					<div id="content_block">
+						<% flash.each do |key, value| %>
+							<div class="flash <%= key %>"><%= value %></div>
+						<% end %>
+	               		<%= yield %>
+					</div>
+				<% else %>
+					<%= yield %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+	<div class="partners">
+		<% if @partners && @partners.count>0 %>
+			<% @partners.each do |p| %>
+				<div class="image">
+					<%= image_tag p.img.url(:medium)%>
+				</div>
+			<% end %>
+		<% end %>
+	</div>
+	<div class="block"></div>
+</div>
+<!--footer -->
+<div class="bg1">
+	<div class="main">
+			<footer>
+				<div class="col_1">
+					<div class="wrapper">
+						<div class="bg_spinner"></div>
+					</div>
+					<ul id="icons">
+						<li><a href="#" class="normaltip" title="Facebook"><img src="assets/icon1.jpg" alt=""></a></li>
+						<li><a href="#" class="normaltip" title="Twitter"><img src="assets/icon2.jpg" alt=""></a></li>
+					</ul>
+				</div>
+				<div class="col_2">
+				 	<br>
+					<span>Строительно-инвестиционная комапния «Свет» </span>© 2012 
+				</div>
+				<!-- {%FOOTER_LINK} -->
+			</footer>
+		</div>
+	</div>
+			<!--footer end-->
+<%= javascript_include_tag :functions %>
+
+<script>
+$(window).load(function() {	
+	$('.spinner').fadeOut();
+	$('body').css({overflow:'inherit'})
+})
+</script>
+<div id="alert_box"></div>
+</body>
+</html>
