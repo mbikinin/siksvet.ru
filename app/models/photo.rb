@@ -5,8 +5,8 @@ class Photo < ActiveRecord::Base
   belongs_to :objects
 
   has_attached_file :img, :styles => { :medium => "800x800>", :thumb => "100x100#", :list => "220x220#"},
-      :url =>"/system/:class/:albums/:style/:basename.:extension",
-      :path => ":rails_root/public/system/:class/:albums/:style/:basename.:extension"
+      :url =>"/system/:class/:style/:basename.:extension",
+      :path => ":rails_root/public/system/:class/:style/:basename.:extension"
   
   before_save :basename
   #one convenient method to pass jq_upload the necessary information

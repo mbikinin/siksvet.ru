@@ -283,3 +283,10 @@ div.mapNotify {
 .notice{
     border: 1px solid green
 }
+#error_explanation{
+  padding-bottom: 15px;
+  ul li{
+    list-style: none;
+    color: #990000;
+  }
+}
