@@ -1,5 +1,4 @@
-class Objects < ActiveRecord::Base
-  
+class Objects < ActiveRecord::Base 
   
    attr_accessible :title, :description, :address, :phone, :date_finish, :longitude, :latitude,:img , :img_floor,
                     :img_file_name, :img_floor_file_name,
@@ -7,11 +6,11 @@ class Objects < ActiveRecord::Base
   
   #Определяем файлы для paperclip
   has_attached_file :img, :styles => { :medium => "250x200#", :thumb => "150x150>" },
-      :url =>"/images/:class/:id/:style/:basename.:extension",
-      :path => ":rails_root/public/images/:class/:id/:style/:basename.:extension"
+      :url =>"/system/:class/:id/:style/:basename.:extension",
+      :path => ":rails_root/public/system/:class/:id/:style/:basename.:extension"
   has_attached_file :img_floor, :styles => { :medium => "1000x600>", :thumb => "100x100>" },
-      :url =>"/images/:class/:id/:style/:basename.:extension",
-      :path => ":rails_root/public/images/:class/:id/:style/:basename.:extension"
+      :url =>"/system/:class/:id/:style/:basename.:extension",
+      :path => ":rails_root/public/system/:class/:id/:style/:basename.:extension"
   before_save :basename
   before_save :basename_floor
   
