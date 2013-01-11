@@ -8,8 +8,8 @@ class Room < ActiveRecord::Base
 
   #Определяем файлы для paperclip
   has_attached_file :img, :styles => { :medium => "800x600>", :thumb => "100x100>" },
-      :url =>"/system/:class/:id/:style/:basename.:extension",
-      :path => ":rails_root/public/system/:class/:id/:style/:basename.:extension"
+      :url =>"/images/:class/:id/:style/:basename.:extension",
+      :path => ":rails_root/public/images/:class/:id/:style/:basename.:extension"
 
   before_save :basename
   

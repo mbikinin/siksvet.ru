@@ -1,8 +1,8 @@
 class TinymceImage < ActiveRecord::Base
   attr_accessible :file, :file_file_name
   has_attached_file :file, :styles => {:thumb => "80x80#"},
-      :url =>"/system/:class/:style/:basename.:extension",
-      :path => ":rails_root/public/system/:class/:style/:basename.:extension"
+      :url =>"/images/:class/:style/:basename.:extension",
+      :path => ":rails_root/public/images/:class/:style/:basename.:extension"
   before_save :basename
   
 private

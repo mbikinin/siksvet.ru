@@ -3,8 +3,8 @@ class Partner < ActiveRecord::Base
     
       #Определяем файлы для paperclip
   has_attached_file :img, :styles => { :medium => "100x100>", :thumb => "100x100#" },
-      :url =>"/system/:class/:id/:style/:basename.:extension",
-      :path => ":rails_root/public/system/:class/:id/:style/:basename.:extension"
+      :url =>"/images/:class/:id/:style/:basename.:extension",
+      :path => ":rails_root/public/images/:class/:id/:style/:basename.:extension"
   
   before_save :basename
   private
