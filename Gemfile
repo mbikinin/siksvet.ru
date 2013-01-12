@@ -42,6 +42,7 @@ gem 'the_sortable_tree', '>= 1.9.3'
 gem 'thin'
 gem 'mini_magick'
 gem 'carrierwave'
+
 gem 'tinymce-rails-imageupload', '~> 3.5.6.3'
 gem 'rich', :git => "https://github.com/drug/rich-active-admin.git"
 gem 'dalli'
