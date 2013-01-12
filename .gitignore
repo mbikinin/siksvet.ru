@@ -12,5 +12,4 @@ db/schema.rb
 db/sphinx
 
 config/development.sphinx.conf
-public/system/
 public/system/**/*
