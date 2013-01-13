@@ -13,8 +13,6 @@
 ####FROM HABRA
 require 'rvm/capistrano' # Для работы rvm
 require 'bundler/capistrano' # Для работы bundler. При изменении гемов bundler автоматически обновит все гемы на сервере, чтобы они в точности соответствовали гемам разработчика. 
-ssh_options[:forward_agent] = true
-default_run_options[:pty] = true
 
 set :application, "siksvet"
 set :rails_env, "production"
