@@ -11,6 +11,7 @@
 #role :db,  "your slave db-server here"
 
 ####FROM HABRA
+$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
 require 'rvm/capistrano' # Для работы rvm
 require 'bundler/capistrano' # Для работы bundler. При изменении гемов bundler автоматически обновит все гемы на сервере, чтобы они в точности соответствовали гемам разработчика. 
 
@@ -22,8 +23,8 @@ set :use_sudo, false
 set :unicorn_conf, "#{deploy_to}/current/config/unicorn.rb"
 set :unicorn_pid, "#{deploy_to}/shared/pids/unicorn.pid"
 
-set :rvm_ruby_string, 'ruby-1.9.3-p362' # Это указание на то, какой Ruby интерпретатор мы будем использовать.
-set :rvm_bin_path, "/usr/local/rvm/bin"
+#set :rvm_ruby_string, 'ruby-1.9.3-p362' # Это указание на то, какой Ruby интерпретатор мы будем использовать.
+#set :rvm_bin_path, "/usr/local/rvm/bin"
 
 set :scm, :git # Используем git. Можно, конечно, использовать что-нибудь другое - svn, например, но общая рекомендация для всех кто не использует git - используйте git. 
 set :repository,  "git@github.com:maksim844/siksvet.ru.git" # Путь до вашего репозитария. Кстати, забор кода с него происходит уже не от вас, а от сервера, поэтому стоит создать пару rsa ключей на сервере и добавить их в deployment keys в настройках репозитария.
