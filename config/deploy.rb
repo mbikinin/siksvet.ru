@@ -11,7 +11,6 @@
 #role :db,  "your slave db-server here"
 
 ####FROM HABRA
-$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
 require 'rvm/capistrano' # Для работы rvm
 require 'bundler/capistrano' # Для работы bundler. При изменении гемов bundler автоматически обновит все гемы на сервере, чтобы они в точности соответствовали гемам разработчика. 
 
