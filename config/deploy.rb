@@ -79,4 +79,7 @@ namespace :deploy do
   task :stop do
     run "if [ -f #{unicorn_pid} ] && [ -e /proc/$(cat #{unicorn_pid}) ]; then kill -QUIT `cat #{unicorn_pid}`; fi"
   end
+  task :after_update_code, :roles => [:web, :db, :app] do
+    run "chmod 755 #{release_path}/public -R"
+  end
 end
