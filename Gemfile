@@ -20,7 +20,10 @@ group :assets do
 end
 
 group :development do
-  gem 'rspec-rails', '2.6.1'
+  gem 'annotate', ">=2.5.0"
+  gem "capistrano"
+  gem "rvm-capistrano"
+  gem 'rspec-rails', '~> 2.8.0'
 end
 group :production do
   gem 'unicorn'
