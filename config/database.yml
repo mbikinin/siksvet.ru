@@ -15,7 +15,7 @@ development:
   database: svet_development
   pool: 5
   username: apps_user
-  password:
+  password: 
   socket: /var/run/mysqld/mysqld.sock
 
 # Warning: The database defined as "test" will be erased and
@@ -27,8 +27,8 @@ test:
   reconnect: false
   database: infinityt_test
   pool: 5
-  username: svet_user
-  password:
+  username: apps_user
+  password: 
   socket: /var/run/mysqld/mysqld.sock
 
 production:
@@ -37,6 +37,6 @@ production:
   reconnect: false
   database: svet_production
   pool: 5
-  username: apps_user
-  password:
+  username: root
+  password: 18121988bm
   socket: /var/run/mysqld/mysqld.sock

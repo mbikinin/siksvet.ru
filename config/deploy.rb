@@ -29,20 +29,19 @@ set :scm, :git # Используем git. Можно, конечно, испо�
 set :repository,  "git@github.com:maksim844/siksvet.ru.git" # Путь до вашего репозитария. Кстати, забор кода с него происходит уже не от вас, а от сервера, поэтому стоит создать пару rsa ключей на сервере и добавить их в deployment keys в настройках репозитария.
 set :branch, "master" # Ветка из которой будем тянуть код для деплоя.
 set :deploy_via, :remote_cache # Указание на то, что стоит хранить кеш репозитария локально и с каждым деплоем лишь подтягивать произведенные изменения. Очень актуально для больших и тяжелых репозитариев.
-set :normalize_asset_timestamps, false
-ssh_options[:forward_agent] = true
+
 
 role :web, domain
 role :app, domain
 role :db,  domain, :primary => true
 before 'deploy:setup', 'rvm:install_rvm', 'rvm:install_ruby' # интеграция rvm с capistrano настолько хороша, что при выполнении cap deploy:setup установит себя и указанный в rvm_ruby_string руби.
 
-#after 'deploy:update_code', :roles => :app do
+after 'deploy:update_code', :roles => :app do
  # run "chmod 755 #{current_release}/public -R"
   # Здесь для примера вставлен только один конфиг с приватными данными - database.yml. Обычно для таких вещей создают папку /srv/myapp/shared/config и кладут файлы туда. При каждом деплое создаются ссылки на них в нужные места приложения.
   #run "rm -f #{current_release}/config/database.yml"
   #run "ln -s #{deploy_to}/shared/config/database.yml #{current_release}/config/database.yml"
-#end
+end
 
 # Далее идут правила для перезапуска unicorn. Их стоит просто принять на веру - они работают.
 # В случае с Rails 3 приложениями стоит заменять bundle exec unicorn_rails на bundle exec unicorn
@@ -51,18 +50,18 @@ load 'deploy/assets' # assets:precompile etc
 namespace :deploy do
   namespace :db do
     task :migrate do
-     # run %Q{cd #{current_release} && #{rake} RAILS_ENV=#{rails_env} db:migrate:reset}
+      run %Q{cd #{current_release} && #{rake} RAILS_ENV=#{rails_env} db:migrate:reset}
     end
-    task :populate do
-      run %Q{cd #{current_release} && #{rake} RAILS_ENV=#{rails_env} db:populate}
-    end
+   task :populate do
+     run %Q{cd #{current_release} && #{rake} RAILS_ENV=#{rails_env} db:populate}
+   end
   end
-  namespace :user do
+ namespace :user do
     task :bundle do
-      run %Q{cd #{current_release} && bundle install}
-    end
-  end
-  namespace :assets do
+       run %Q{cd #{current_release} && bundle install}
+   end
+ end
+   namespace :assets do
     task :precompile, :roles => :web, :except => { :no_release => true } do
       from = source.next_revision(current_revision)
       if capture("cd #{latest_release} && #{source.local.log(from)} vendor/assets/ app/assets/ lib/assets | wc -l").to_i > 0
