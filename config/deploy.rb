@@ -22,7 +22,7 @@ set :use_sudo, false
 set :unicorn_conf, "#{deploy_to}/current/config/unicorn.rb"
 set :unicorn_pid, "#{deploy_to}/shared/pids/unicorn.pid"
 
-set :rvm_ruby_string, 'ruby-1.9.3-p194' # Это указание на то, какой Ruby интерпретатор мы будем использовать.
+set :rvm_ruby_string, 'ruby-1.9.3' # Это указание на то, какой Ruby интерпретатор мы будем использовать.
 #set :rvm_bin_path, "/usr/local/rvm/bin"
 
 set :scm, :git # Используем git. Можно, конечно, использовать что-нибудь другое - svn, например, но общая рекомендация для всех кто не использует git - используйте git. 
