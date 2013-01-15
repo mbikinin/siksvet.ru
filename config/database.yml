@@ -37,6 +37,6 @@ production:
   reconnect: false
   database: siksvet_production
   pool: 5
-  username: apps_user
-  password: 
+  username: root
+  password: "18121988"
   socket: /var/run/mysqld/mysqld.sock
