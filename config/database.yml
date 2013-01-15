@@ -38,5 +38,5 @@ production:
   database: siksvet_production
   pool: 5
   username: apps_user
-  password: 18121988
+  password: 
   socket: /var/run/mysqld/mysqld.sock
