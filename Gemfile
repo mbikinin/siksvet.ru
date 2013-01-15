@@ -49,6 +49,7 @@ gem 'carrierwave'
 gem 'tinymce-rails-imageupload', '~> 3.5.6.3'
 gem 'rich', :git => "https://github.com/drug/rich-active-admin.git"
 gem 'dalli'
+gem 'RedCloth', :require => 'redcloth'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
