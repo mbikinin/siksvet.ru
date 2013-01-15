@@ -49,6 +49,9 @@ end
 load 'deploy/assets' # assets:precompile etc
 namespace :deploy do
   namespace :db do
+    task :create do
+      run %Q{cd #{current_release} && #{rake} RAILS_ENV=#{rails_env} db:create}
+    end
     task :migrate do
       run %Q{cd #{current_release} && #{rake} RAILS_ENV=#{rails_env} db:migrate:reset}
     end
