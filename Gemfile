@@ -5,7 +5,7 @@ gem 'therubyracer', :platforms => :ruby
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2', :git => 'https://github.com/brianmario/mysql2.git', :branch => "0.2.x"
+gem 'mysql2', :git => 'https://github.com/brianmario/mysql2.git'
 gem 'russian'
 
 # Gems used only for assets and not required
