@@ -1,4 +1,10 @@
 GIT
+  remote: https://github.com/brianmario/mysql2.git
+  revision: 50b230af0d4b1b8cef1db710d9fcca9593a19d16
+  specs:
+    mysql2 (0.3.12b5)
+
+GIT
   remote: https://github.com/drug/rich-active-admin.git
   revision: 3cff11cb16dd2d4e090ae8a982c09902371ae51e
   specs:
@@ -143,7 +149,6 @@ GEM
     mini_magick (3.4)
       subexec (~> 0.2.1)
     multi_json (1.3.6)
-    mysql2 (0.3.11)
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-sftp (2.0.5)
@@ -268,7 +273,7 @@ DEPENDENCIES
   lazybox
   meta_search (>= 1.1.0.pre)
   mini_magick
-  mysql2
+  mysql2!
   paperclip
   rails (= 3.2.2)
   rich!
