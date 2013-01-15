@@ -25,7 +25,7 @@ test:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: infinityt_test
+  database: siksvet_test
   pool: 5
   username: apps_user
   password: 
