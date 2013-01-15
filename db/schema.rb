@@ -69,14 +69,12 @@ ActiveRecord::Schema.define(:version => 20121015182407) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "histories", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "main_menus", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "title"
+    t.string   "sort"
+    t.boolean  "on_main",    :default => true
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
   create_table "objects", :force => true do |t|
@@ -84,10 +82,10 @@ ActiveRecord::Schema.define(:version => 20121015182407) do
     t.text     "description"
     t.string   "address"
     t.string   "floors"
-    t.integer  "floors_int",          :null => false
+    t.integer  "floors_int"
     t.string   "phone"
     t.string   "img_file_name"
-    t.string   "img_floor_file_name", :null => false
+    t.string   "img_floor_file_name"
     t.string   "date_finish"
     t.string   "longitude"
     t.string   "latitude"
@@ -101,7 +99,7 @@ ActiveRecord::Schema.define(:version => 20121015182407) do
     t.string   "uri",         :limit => 50
     t.string   "description", :limit => 500
     t.text     "text"
-    t.string   "is_active",                  :default => "1"
+    t.boolean  "is_active",                  :default => true
     t.datetime "created_at",                                   :null => false
     t.datetime "updated_at",                                   :null => false
     t.boolean  "on_menu",                    :default => true
@@ -173,16 +171,6 @@ ActiveRecord::Schema.define(:version => 20121015182407) do
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
     t.integer  "number_floor"
-  end
-
-  create_table "slides", :force => true do |t|
-    t.string   "title"
-    t.string   "icon"
-    t.text     "text"
-    t.string   "img"
-    t.string   "href"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "tinymce_images", :force => true do |t|
