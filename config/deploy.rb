@@ -16,7 +16,8 @@ require 'bundler/capistrano' # Для работы bundler. При измене�
 
 set :application, "siksvet"
 set :rails_env, "production"
-set :domain, "deployer@79.143.190.205" # Это необходимо для деплоя через ssh. Именно ради этого я настоятельно советовал сразу же залить на сервер свой ключ, чтобы не вводить паролей.
+
+set :domain, "root@79.143.190.205" # Это необходимо для деплоя через ssh. Именно ради этого я настоятельно советовал сразу же залить на сервер свой ключ, чтобы не вводить паролей.
 set :deploy_to, "/var/www/#{application}"
 set :use_sudo, false
 set :unicorn_conf, "#{deploy_to}/current/config/unicorn.rb"
@@ -49,6 +50,9 @@ end
 load 'deploy/assets' # assets:precompile etc
 namespace :deploy do
   namespace :db do
+    task :create do
+      run %Q{cd #{current_release} && #{rake} RAILS_ENV=#{rails_env} db:create}
+    end
     task :migrate do
       run %Q{cd #{current_release} && #{rake} RAILS_ENV=#{rails_env} db:migrate:reset}
     end
@@ -62,14 +66,14 @@ namespace :deploy do
    end
  end
    namespace :assets do
-    #task :precompile, :roles => :web, :except => { :no_release => true } do
-    #  from = source.next_revision(current_revision)
-     # if capture("cd #{latest_release} && #{source.local.log(from)} vendor/assets/ app/assets/ lib/assets | wc -l").to_i > 0
-     #   run %Q{cd #{latest_release} && #{rake} RAILS_ENV=#{rails_env} #{asset_env} assets:precompile}
-     # else
-     #   logger.info "Skipping asset pre-compilation because there were no asset changes"
-     # end
-    #end
+    task :precompile, :roles => :web, :except => { :no_release => true } do
+      from = source.next_revision(current_revision)
+      if capture("cd #{latest_release} && #{source.local.log(from)} vendor/assets/ app/assets/ lib/assets | wc -l").to_i > 0
+        run %Q{cd #{latest_release} && #{rake} RAILS_ENV=#{rails_env} #{asset_env} assets:precompile}
+      else
+        logger.info "Skipping asset pre-compilation because there were no asset changes"
+      end
+   end
   end
   task :restart do
     run "if [ -f #{unicorn_pid} ] && [ -e /proc/$(cat #{unicorn_pid}) ]; then kill -USR2 `cat #{unicorn_pid}`; else cd #{deploy_to}/current && bundle exec unicorn -c #{unicorn_conf} -E #{rails_env} -D; fi"

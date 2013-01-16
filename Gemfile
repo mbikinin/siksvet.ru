@@ -5,7 +5,7 @@ gem 'therubyracer', :platforms => :ruby
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2'
+gem 'mysql2', :git => 'https://github.com/brianmario/mysql2.git'
 gem 'russian'
 
 # Gems used only for assets and not required
@@ -49,6 +49,7 @@ gem 'carrierwave'
 gem 'tinymce-rails-imageupload', '~> 3.5.6.3'
 gem 'rich', :git => "https://github.com/drug/rich-active-admin.git"
 gem 'dalli'
+gem 'RedCloth', :require => 'redcloth'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
