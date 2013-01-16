@@ -30,7 +30,7 @@ group :production do
 end
 gem 'cancan'
 gem 'activeadmin-cancan'
-gem 'activeadmin'
+gem 'activeadmin', '~> 0.5.0'
 
 gem 'faker', '0.3.1'
 gem 'jquery-rails'
@@ -49,17 +49,4 @@ gem 'carrierwave'
 gem 'tinymce-rails-imageupload', '~> 3.5.6.3'
 gem 'rich', :git => "https://github.com/drug/rich-active-admin.git"
 gem 'dalli'
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
 
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
