@@ -36,15 +36,16 @@ role :app, domain
 role :db,  domain, :primary => true
 before 'deploy:setup', 'rvm:install_rvm', 'rvm:install_ruby' # интеграция rvm с capistrano настолько хороша, что при выполнении cap deploy:setup установит себя и указанный в rvm_ruby_string руби.
 
-#before 'deploy:update_code' do
-#  puts "Cleaning up old assets..."
-#  run "rm -rf #{deploy_to}/shared/assets/*.css"
-#  run "rm -rf #{deploy_to}/shared/assets/*.css.gz"
-#  run "rm -rf #{deploy_to}/shared/assets/*.js"
-#  run "rm -rf #{deploy_to}/shared/assets/*.js.gz"
-#  run "rm -rf #{deploy_to}/shared/assets/*.png"
-#  run "rm -rf #{deploy_to}/shared/assets/application"
-#end
+before 'deploy:update_code' do
+  puts "Cleaning up old assets..."
+  run "rm -rf #{deploy_to}/shared/assets/*.css"
+  run "rm -rf #{deploy_to}/shared/assets/*.css.gz"
+  run "rm -rf #{deploy_to}/shared/assets/*.js"
+  run "rm -rf #{deploy_to}/shared/assets/*.js.gz"
+  run "rm -rf #{deploy_to}/shared/assets/*.png"
+  run "rm -rf #{deploy_to}/shared/assets/*.jpg"
+  run "rm -rf #{deploy_to}/shared/assets/application"
+end
 
 # Далее идут правила для перезапуска unicorn. Их стоит просто принять на веру - они работают.
 # В случае с Rails 3 приложениями стоит заменять bundle exec unicorn_rails на bundle exec unicorn
