@@ -74,7 +74,7 @@ namespace :deploy do
       end
     end
     task :clean, :roles => :web, :except => { :no_release => true } do
-      run "cd #{latest_release} && #{rake} RAILS_ENV=#{rails_env} #{asset_env} assets:cleanse"
+      run "cd #{latest_release} && #{rake} RAILS_ENV=#{rails_env} #{asset_env} assets:clean:all"
     end
   end
   task :restart do
