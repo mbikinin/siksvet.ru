@@ -18,7 +18,7 @@ Infinityt::Application.configure do
   config.assets.compile = true
   
   #config.assets.precompile += %w( *.css *.js )
-
+  config.assets.precompile = [ /\A[^\/\\]+\.(ccs|js)$/i ]
   # Generate digests for assets URLs
   config.assets.digest = true
 
