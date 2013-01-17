@@ -7,12 +7,13 @@ nav.firstmenu {
 nav div.main div {
 	float:left;
 }
+
 nav div.main div a {
 	display:block;
 	color: #fff;
 	text-decoration:none;
     font-size: 14px;
-    padding: 14px 22px 13px;
+    padding: 14px 22px 12px;
 	text-align:center;
 }
 nav.firstmenu > div.main > div > a {
