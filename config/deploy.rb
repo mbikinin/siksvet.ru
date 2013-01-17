@@ -38,12 +38,12 @@ before 'deploy:setup', 'rvm:install_rvm', 'rvm:install_ruby' # интеграц�
 
 before 'deploy:update_code' do
   puts "Cleaning up old assets..."
-  run 'rm -rf ~/sites/myproject.com/staging/shared/assets/*.css'
-  run 'rm -rf ~/sites/myproject.com/staging/shared/assets/*.css.gz'
-  run 'rm -rf ~/sites/myproject.com/staging/shared/assets/*.js'
-  run 'rm -rf ~/sites/myproject.com/staging/shared/assets/*.js.gz'
-  run 'rm -rf ~/sites/myproject.com/staging/shared/assets/*.png'
-  run 'rm -rf ~/sites/myproject.com/staging/shared/assets/application'
+  run 'rm -rf ~/#{deploy_to}/shared/assets/*.css'
+  run 'rm -rf ~/#{deploy_to}/shared/assets/*.css.gz'
+  run 'rm -rf ~/#{deploy_to}shared/assets/*.js'
+  run 'rm -rf ~/#{deploy_to}/shared/assets/*.js.gz'
+  run 'rm -rf ~/#{deploy_to}/shared/assets/*.png'
+  run 'rm -rf ~/#{deploy_to}/shared/assets/application'
 end
 
 # Далее идут правила для перезапуска unicorn. Их стоит просто принять на веру - они работают.
