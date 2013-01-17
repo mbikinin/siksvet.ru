@@ -27,7 +27,7 @@ GEM
       rack-cache (~> 1.2)
       rack-test (~> 0.6.1)
       sprockets (~> 2.2.1)
-    activeadmin (0.5.0)
+    activeadmin (0.5.1)
       arbre (>= 1.0.1)
       bourbon (>= 1.0.0)
       devise (>= 1.1.2)
@@ -222,7 +222,7 @@ GEM
     subexec (0.2.2)
     the_sortable_tree (1.9.4)
       rails (>= 3.1)
-    therubyracer (0.11.2)
+    therubyracer (0.11.3)
       libv8 (~> 3.11.8.12)
       ref
     thin (1.5.0)
@@ -254,7 +254,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activeadmin (= 0.5.0)
+  activeadmin
   activeadmin-cancan
   annotate (>= 2.5.0)
   awesome_nested_set
