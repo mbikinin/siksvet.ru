@@ -6,8 +6,8 @@
 <!--[if IE]>
   <%= javascript_include_tag "http://html5shiv.googlecode.com/svn/trunk/html5.js" %>
 <![endif]-->
-  <%= stylesheet_link_tag    :application, :media => "all" %>
-  <%= javascript_include_tag :application,  :menu %>
+  <%= stylesheet_link_tag    :application, :reset, :style, :menu,  :media => "all" %>
+  <%= javascript_include_tag :application, :menu %>
   
   <%= csrf_meta_tags %>
 
