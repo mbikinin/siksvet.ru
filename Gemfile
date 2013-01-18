@@ -27,6 +27,7 @@ group :development do
 end
 group :production do
   gem 'unicorn'
+  gem 'uglifier'
 end
 gem 'cancan'
 gem 'activeadmin-cancan'
