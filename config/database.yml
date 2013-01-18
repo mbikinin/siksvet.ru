@@ -12,7 +12,7 @@ development:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: svet_development
+  database: siksvet_development
   pool: 5
   username: apps_user
   password: 
