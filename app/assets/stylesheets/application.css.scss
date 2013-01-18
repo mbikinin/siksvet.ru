@@ -15,6 +15,7 @@
  *= require declarations
  *= require feedbacks
  *= require main
+ *= require menus
  *= require lib/lazybox
 */
 
@@ -45,6 +46,7 @@
     text-decoration: none
   }
 }
+
 .brone:hover{
   a{
     background: #035dd5;
@@ -149,7 +151,7 @@ header {
 		float: left;
 	}
 	#content_block{
-    width: 650px;
+    width: 645px;
 	  background: #fff;
     float: left;
     min-height: 400px;

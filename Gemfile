@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.2'
+gem 'rails', '3.2.11'
 gem 'therubyracer', :platforms => :ruby
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2', :git => 'https://github.com/brianmario/mysql2.git'
+gem 'mysql2'
 gem 'russian'
 
 # Gems used only for assets and not required
@@ -13,7 +13,7 @@ gem 'russian'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-  gem "meta_search",    '>= 1.1.0.pre'
+  gem "meta_search",  '>= 1.1.0.pre'
   gem 'compass-rails'
   gem 'uglifier'
   gem 'thin'
@@ -49,18 +49,4 @@ gem 'carrierwave'
 gem 'tinymce-rails-imageupload', '~> 3.5.6.3'
 gem 'rich', :git => "https://github.com/drug/rich-active-admin.git"
 gem 'dalli'
-gem 'RedCloth', :require => 'redcloth'
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
 
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
