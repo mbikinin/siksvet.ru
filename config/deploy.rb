@@ -46,6 +46,7 @@ before 'deploy:update_code' do
   run "rm -rf #{deploy_to}/shared/assets/*.png"
   run "rm -rf #{deploy_to}/shared/assets/*.jpg"
   run "rm -rf #{deploy_to}/shared/assets/application"
+  run "rm -rf #{deploy_to}/shared/assets/active_admin"
 end
 
 # Далее идут правила для перезапуска unicorn. Их стоит просто принять на веру - они работают.
