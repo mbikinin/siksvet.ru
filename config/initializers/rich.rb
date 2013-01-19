@@ -17,24 +17,6 @@ if Object.const_defined?("Rich")
     # you are editing. To disable this:
      config.editor[:toolbar] = 'Full'
  
-    config.editor[:toolbar_Full] =
-    [
-      [ 'Source','-','Save','NewPage','DocProps','Preview','Print','-','Templates' ],
-      [ 'Cut','Copy','Paste','PasteText','PasteFromWord','-','Undo','Redo' ],
-      [ 'Find','Replace','-','SelectAll','-','SpellChecker', 'Scayt' ],
-      [ 'Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 
-            'HiddenField' ],
-      '/',
-      [ 'Bold','Italic','Underline','Strike','Subscript','Superscript','-','RemoveFormat' ],
-      [ 'NumberedList','BulletedList','-','Outdent','Indent','-','Blockquote','CreateDiv',
-      '-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-','BidiLtr','BidiRtl' ],
-      [ 'Link','Unlink','Anchor' ],
-      [ "richImage","richFile",'Flash','Table','HorizontalRule','Smiley','SpecialChar','PageBreak','Iframe' ],
-      '/',
-      [ 'Styles','Format','Font','FontSize' ],
-       [ 'TextColor','BGColor' ],
-      [ 'Maximize', 'ShowBlocks']
-    ];
      config.editor[:justifyClasses] = [ 'AlignLeft', 'AlignCenter', 'AlignRight', 'AlignJustify' ]
     # == Image styles
     # 
@@ -115,8 +97,7 @@ if Object.const_defined?("Rich")
   # Also configurable per-use from within the filebrowser.
   #
   # Default:
-  config.insert_many = true
-    
+  config.insert_many = true    
     # == User Authentication
     #
     # When defined, Rich will automatically call this method
