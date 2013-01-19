@@ -1,4 +1,3 @@
-# -*- encoding : utf-8 -*-
 require "rich"
 
 if Object.const_defined?("Rich")
@@ -11,13 +10,28 @@ if Object.const_defined?("Rich")
     # 
     # For example, the elements available in the formats
     # dropdown are defined like this:
-      #config.editor[:format_tags] = "h3;p;pre"
+    #   config.editor[:format_tags] = "h3;p;pre"
     # 
     # By default, Rich visualizes what type of element
     # you are editing. To disable this:
-     config.editor[:toolbar] = 'Full'
- 
-     config.editor[:justifyClasses] = [ 'AlignLeft', 'AlignCenter', 'AlignRight', 'AlignJustify' ]
+    #   config.editor[:startupOutlineBlocks] = false
+    
+    # == File Storage
+    # 
+    # Rich uses paperclip for uploads. You can configure
+    # paperclip to use Amazon's S3 service for file storage
+    # or use the local file system.
+    #
+    #   config.file_storage = :s3
+    #
+    # The default is to use the local filesystem
+    #   config.file_storage = :filesystem
+
+    # S3 credentials
+    # If you're using S3 to store your uploads, configure its credentials here
+    # See http://rubydoc.info/gems/paperclip/Paperclip/Storage/S3
+    #   config.s3_credentials = "path/to/s3.yml"
+    
     # == Image styles
     # 
     # Rich uses paperclip for image processing. You can
@@ -29,15 +43,7 @@ if Object.const_defined?("Rich")
     # remember to re-generate your styles by running:
     #   rake rich:refresh_assets
     config.image_styles = {
-      :thumb => "100x100#",
-      :banner => "180x280#",  
-      :cat_icon => "150x150>",  
-      :gallery => "260x130#",  
-      :history => "170x170>",  
-      :mainIcon => "90x90>",  
-      :menu => "80x60>",  
-      :video => "291x219#",
-      :news => "170x170^"
+      :thumb => "100x100#"
     }
 
     # == Convert options
@@ -68,36 +74,37 @@ if Object.const_defined?("Rich")
     # the unprocessed file. Make sure this style exists.
     config.default_style = :thumb
 
-  # == Upload non-image files
-  #
-  # Setting this option to true will add a second Rich filebrowser icon to
-  # the editor toolbar. In this filebrowser you can upload non-image files.
-  # Inserting these files into your editor will result in a direct (A) link.
-  #
-  # Default:
-  config.allow_document_uploads = true
+	# == Upload non-image files
+	#
+	# Setting this option to true will add a second Rich filebrowser icon to
+	# the editor toolbar. In this filebrowser you can upload non-image files.
+	# Inserting these files into your editor will result in a direct (A) link.
+	#
+	# Default:
+	# config.allow_document_uploads = false
+		
+	# == Set allowed filetypes for non-image files
+	#
+	# If you want, you can restrict the types of documents that users can upload.
+	# Default behavior is to allow any kind of file to be uploaded. You can set
+	# the accepted types by providing an array of mimetypes to check against.
+	# Note that for this to have any effect, you first need to enable document
+	# uploads using the setting above.
+	# 
+	# Default, allow any file to be uploaded:
+	# config.allowed_document_types = :all
+	#
+	# Example, only allow PDF uploads:
+	# config.allowed_document_types = ['application/pdf']
+		
+	# == Asset insertion
+	#
+	# Set this to true to keep the filebrowser open after inserting an asset.
+	# Also configurable per-use from within the filebrowser.
+	#
+	# Default:
+	# config.insert_many = false
     
-  # == Set allowed filetypes for non-image files
-  #
-  # If you want, you can restrict the types of documents that users can upload.
-  # Default behavior is to allow any kind of file to be uploaded. You can set
-  # the accepted types by providing an array of mimetypes to check against.
-  # Note that for this to have any effect, you first need to enable document
-  # uploads using the setting above.
-  # 
-  # Default, allow any file to be uploaded:
-  config.allowed_document_types = :all
-  #
-  # Example, only allow PDF uploads:
-  # config.allowed_document_types = ['application/pdf']
-    
-  # == Asset insertion
-  #
-  # Set this to true to keep the filebrowser open after inserting an asset.
-  # Also configurable per-use from within the filebrowser.
-  #
-  # Default:
-  config.insert_many = true    
     # == User Authentication
     #
     # When defined, Rich will automatically call this method
