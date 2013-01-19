@@ -48,6 +48,6 @@ gem 'mini_magick'
 gem 'carrierwave'
 
 gem 'tinymce-rails-imageupload', '~> 3.5.6.3'
-gem 'rich', :git => "https://github.com/drug/rich-active-admin.git"
+gem 'rich', :git => 'https://github.com/bastiaanterhorst/rich.git'
 gem 'dalli'
 

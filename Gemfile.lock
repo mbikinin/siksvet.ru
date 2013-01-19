@@ -1,8 +1,8 @@
 GIT
-  remote: https://github.com/drug/rich-active-admin.git
-  revision: 3cff11cb16dd2d4e090ae8a982c09902371ae51e
+  remote: https://github.com/bastiaanterhorst/rich.git
+  revision: 49becb70b4f8f83f70be7c4bf991e5a6b129c36a
   specs:
-    rich (1.2.0)
+    rich (1.4.1)
       jquery-rails
       kaminari
       mime-types
