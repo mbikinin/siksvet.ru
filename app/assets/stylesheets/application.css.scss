@@ -199,6 +199,9 @@ a.blue_link:hover{
 
   padding:0 25px;
   height:45px;
+  font: inherit;
+  vertical-align: baseline;
+  color:#111;
 }
 #menu > li > a.active strong {
 	border-bottom:0;border-right:0;padding-bottom:1px;padding-right:61px
