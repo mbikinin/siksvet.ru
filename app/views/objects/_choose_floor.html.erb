@@ -3,7 +3,7 @@
 	<div id="object_img">
 		<%= image_tag  @object.img_floor.url(:medium), :class=>"object_bg"%>
 		<% @object.floors_int.times do |i|%>
-			<%= link_to "<div id='floor_#{i}' class='floor' rel=#{i}></div>".html_safe, plan_floor_path(@object.id, i) , :remote=>true%>
+			<%= link_to "<div id='floor_#{i + 1}' class='floor' rel=#{i}></div>".html_safe, plan_floor_path(@object.id, i) , :remote=>true%>
 		<% end %>
 		<div class="floor_text"></div>
 	</div>
