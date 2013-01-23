@@ -9,6 +9,7 @@
  
 #plan_box{
     width: 1000px;
+    height: 490px;
   .left_block{
     float:left;
     width: 258px;
@@ -20,9 +21,6 @@
     width:700px;
     height: 445px;
     img{
-      max-width: 690px;
-      max-height: 440px;
-      min-width: 350px;
     }
   }
   .each_floors{
