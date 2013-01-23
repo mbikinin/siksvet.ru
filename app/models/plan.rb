@@ -2,10 +2,10 @@ class Plan < ActiveRecord::Base
   attr_accessible :title, :description, :floor,:img, :objects_id,
                     :img_file_name
   
-  validates :objects_id , :presence => true
+  validates :objects_id , :floor, :presence => true
 
   #Определяем файлы для paperclip
-  has_attached_file :img, :styles => { :medium => "800x600>", :thumb => "100x100>" },
+  has_attached_file :img, :styles => { :medium => "800x500>", :thumb => "100x100>" },
       :url =>"/system/:class/:id/:style/:basename.:extension",
       :path => ":rails_root/public/system/:class/:id/:style/:basename.:extension"
 

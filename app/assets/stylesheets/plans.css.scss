@@ -21,6 +21,33 @@
     width:700px;
     height: 445px;
     img{
+      min-height: 300px;
+      max-height: 500px;
+    }
+  }
+  .each_floors{
+    a{
+      padding: 0 5px;
+    }
+  }
+  .compas{
+    margin: 26px 5px;
+    text-align: center;
+    width: 165px;
+  }
+}
+#floor_plan_box{
+  display:block;
+  height: 500px;
+  .left_block{
+    float:left;
+    width: 258px;
+    padding: 5px 20px;
+    font-size: 15px;
+  }
+  .right_block{
+    float: left;
+    img{
     }
   }
   .each_floors{

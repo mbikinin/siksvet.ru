@@ -1,26 +1,6 @@
-<div id='plan_box' class='plan_<%= params[:id]%>'>
-	<h2 class="plan_title">Планировка <%= params[:floor]%> - го этажа </h2>
-	<div class="left_block">
-		<div class="each_floors">			
-			Выберите этаж:
-			<% i=0 %>
-			<% @object.floors_int.times do %>
-				<%= link_to i=i+1, plan_floor_path(@object.id, i), :remote=>true, :class=>"#{current(i, params[:floor])} blue" %> | 
-			<% end %>
-		</div>
-		<div class="clear"></div>
-		<div class="compas">
-			<%= image_tag "kompas-32.png"%>
-		</div>
-		<div class="clear"></div>
-		<h3>Свободные квартиры</h3>
-		<% rooms = @object.rooms.where(:is_active=>false, :number_floor=>params[:floor]) %>
-		<span class="none_rooms"><%= "Все квартиры проданы" unless rooms && rooms.count>0 %></span>
-		<% rooms.each do |r| %>
-			 <%= link_to "№ #{r.number_room}", room_path(r.id), :remote=>true %>
-		<% end %>
-
-	</div>
+<div id='floor_plan_box' class='plan_<%= params[:id]%>'>
+	<h2 class="plan_title"><%= link_to @object.title, object_path(@object.id), :remote=>true  %> / Планировка <%= params[:floor]%>-го этажа </h2>
+	<%= render 'left_block'%>
 	<div class="right_block">
 		<%= image_tag @plan.img.url(:medium)%>
 	</div>

@@ -42,8 +42,9 @@
 			<div class="clear"></div>
 			<div id="content">
 			
-				<%= render "layouts/menu" %>
+				
 				<% if params[:controller] != "main" %>
+				<%= render "layouts/menu" %>
 					<div id="content_block">
 						<% flash.each do |key, value| %>
 							<div class="flash <%= key %>"><%= value %></div>
@@ -51,20 +52,16 @@
 	               		<%= yield %>
 					</div>
 				<% else %>
-					<%= yield %>
+					<%= render "layouts/menu" %>
+					<div class="clear"></div>
+					<div id="index_content_block" class="round10">
+						<%= yield %>
+					</div>
 				<% end %>
 			</div>
 		</div>
 	</div>
-	<div class="partners">
-		<% if @partners && @partners.count>0 %>
-			<% @partners.each do |p| %>
-				<div class="image">
-					<%= image_tag p.img.url(:medium)%>
-				</div>
-			<% end %>
-		<% end %>
-	</div>
+
 	<div class="block"></div>
 </div>
 <!--footer -->

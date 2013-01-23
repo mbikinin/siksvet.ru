@@ -2,14 +2,53 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-.partners{
-  position: relative;
-  width: 1000px;
-  margin: 50px auto;
-  .image{
+#index_content_block{
+    background: url("content-index.png") #FFFFFF;
+    background-repeat: repeat-x;
+    margin-top: 100px;
+    padding: 30px;
+    width: 940px;
     display: inline-block;
-    margin-right: 20px;
-    vertical-align: middle;
-  }
+    .news{
+      dt {
+          color: #959595;
+          font-size: 9px;
+          line-height: 15px;
+          margin-top: 12px;
+          strong {
+              color: black;
+              display: block;
+              font-size: 12px;
+              line-height: 14px;
+          }
+          dd {
+              color: #636363;
+              font-size: 12px;
+              line-height: 15px;
+          }
+      }
+    }
+    .partners{
+      position: relative;
+      margin: 0px auto;
+      .image{
+        display: inline-block;
+        margin-right: 20px;
+        vertical-align: middle;
+      }
+    }
+    .statistics_block{
+      
+    }
+    .left_box, .right_box{
+      float: left;
+    }
+    .left_box{
+      width: 450px;
+      padding-right: 10px;
+    }
+    .right_box{
+      width: 450px;
+      padding-left: 10px;
+    }
 }

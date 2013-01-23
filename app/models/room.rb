@@ -4,17 +4,20 @@ class Room < ActiveRecord::Base
                   :area_room_1, :area_room_2, :area_room_3, :area_room_4, :area_wc_room, :area_bathroom_room,
                   :area_loggia, :description, :number_floor,
                   :img , :img_file_name, :objects_id, :number_room, :area_all,
-                  :is_active
+                  :is_active, :plan_id, :price
 
   #Определяем файлы для paperclip
-  has_attached_file :img, :styles => { :medium => "800x600>", :thumb => "100x100>" },
+  has_attached_file :img, :styles => { :medium => "500x500>", :thumb => "100x100>" },
       :url =>"/system/:class/:id/:style/:basename.:extension",
       :path => ":rails_root/public/system/:class/:id/:style/:basename.:extension"
+  scope :active, where("is_active = ?",1)
+  validates :count_rooms, :presence => true
 
   before_save :basename
   
   belongs_to :objects
   belongs_to :plan
+  
   private
   def basename
     if self.img.dirty?

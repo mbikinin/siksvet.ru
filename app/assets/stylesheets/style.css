@@ -394,7 +394,7 @@ section.main div.right p {
 section.main div.warper {
 	overflow:hidden;
 }
-div.news,div.ensign,div.winStory {
+div.ensign,div.winStory {
 	border:1px solid #d3d3d3;
 	border-radius:2px;
 	margin-bottom:31px;

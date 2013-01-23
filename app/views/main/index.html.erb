@@ -1,0 +1,52 @@
+<div class="left_box">
+<div class="news">
+	<% if @news && @news.count>0 %>
+	<h1>Новости</h1>
+	<div class="news_box">
+		<% @news.each do |n|%>
+			<dl>
+				<dt>
+					<%= n.date.strftime("%d.%m.%Y") %><br/>
+					<b><%= link_to n.title, "#"%></b>
+				</dt>
+				<dd>
+					<%= n.anounce.html_safe %>
+					<!--<div align="left">
+						<%= link_to "Читать дальше", "#"%>
+					</div>-->
+				</dd>
+			</dl>
+		<% end %>
+	</div>
+
+	<% end %>
+</div>
+
+
+
+</div>
+
+<div class="right_box">
+	<h1>Статистика</h1>
+	<div class="statistics_block">
+		<b>Всего квартир: <%= @room.count %></b><br/>
+		<span>Свободных квартир - <%= @room.count.to_i - @room_active.count.to_i %></span><br/>
+		<span>Однокомнатные - <%= Room.where(:count_rooms => 1, :is_active=>1).count %></span><br/>
+		<span>Двухкомнатные - <%= Room.where(:count_rooms => 2, :is_active=>1).count %></span><br/>
+		<span>Трехкомнатные - <%= Room.where(:count_rooms => 3, :is_active=>1).count %></span><br/>
+	</div>
+</div>
+<div class="clear"></div>
+
+<div class="partners">
+	<% if @partners && @partners.count>0 %>
+		<hr size="1" color="#ccc"/>
+	<h1>Наши партнеры</h1>
+		<% @partners.each do |p| %>
+			<div class="image">
+				<%= image_tag p.img.url(:medium)%>
+			</div>
+		<% end %>
+		<hr size="1" color="#ccc"/>
+	<% end %>
+</div>

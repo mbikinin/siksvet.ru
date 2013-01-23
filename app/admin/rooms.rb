@@ -9,16 +9,19 @@ ActiveAdmin.register Room do
       column 'Этаж', :number_floor
       column 'Общая площадь', :area_all
       column 'Жилая площадь', :area_living_room
+      column 'Цена квартиры', :price
       default_actions
   end
   form :html => { :multiple => true  } do |f|
     f.inputs 'Квартиры' do
-       f.input :is_active,:as => :radio, :label => 'Продана или нет ?'
+      f.input :is_active,:as => :radio, :label => 'Продана или нет ?'
 
       f.input :objects, :label => 'Объект'      
+      f.input :plan, :label => 'Планировка'
       f.input :number_floor, :as => :select, :collection => [1,2,3,4,5], :label => 'Этаж'
       f.input :number_room, :label => 'Номер квартиры'
       f.input :title, :label => 'Титл'
+      f.input :price, :label => 'Цена'
       f.input :description, :label => 'Описание'
       f.input :count_rooms, :label => 'Количество комнат'
       f.input :area_all, :label => 'Общая площадь'

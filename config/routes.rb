@@ -2,13 +2,10 @@ Infinityt::Application.routes.draw do
 
   mount Rich::Engine => '/rich', :as => 'rich'
 
-  ActiveAdmin.routes(self)
-
-  devise_for :admin_users, ActiveAdmin::Devise.config
-
   get "main/index"
-
+  resources :news
   root :to => 'main#index'
+  
   resources :pages
     #get "pages/about"
     #get "pages/offers"=>"pages#show"
@@ -34,7 +31,7 @@ Infinityt::Application.routes.draw do
   
   resources :feedbacks
     get "feedback/order" => "feedbacks#order", :as=> "feedback_order"
-    
+
     ActiveAdmin.routes(self)
     devise_for :admin_users, ActiveAdmin::Devise.config
       get "admin/plans?object=:object" => "admin/plans#show", :as => :object_plan

@@ -52,6 +52,7 @@
 .brone:hover{
   a{
     background: #035dd5;
+    color: #fff;
   }
 }
     
@@ -104,7 +105,7 @@ body, html {height:100%}
 /* ============================= main layout ====================== */
 a {color:#4d4d4d;text-decoration:underline;outline:none}
 a:hover {text-decoration:none}
-h2 {font-size:36px;color:#08afee;line-height:1.2em;padding:17px 0 16px 0;letter-spacing:-2px}
+h2 {font-size:36px;color:#08afee;line-height:1.2em;padding:17px 0 16px 0;letter-spacing:0px}
 p {padding: 10px 0}
 /* ============================= header ====================== */
 header {
@@ -178,13 +179,12 @@ a.blue_link:hover{
 }
 #menu > li > a {
 	display:inline-block;
-	font-size:21px;
+	font-size:16px;
 	line-height:46px;
 	color:#434343;
 	background:#fff;
 	text-decoration:none;
 	position:relative;
-	letter-spacing:-1px
 }
 #menu > li > a:hover {
 	background: #038ee5;
@@ -196,10 +196,9 @@ a.blue_link:hover{
 #menu > li > a strong {
   position:relative;
   display:block;
-  border-right:1px solid #f6f6f6;
-  border-bottom:1px solid #f0f0f0;
+
   padding:0 25px;
-  height:50px;
+  height:45px;
 }
 #menu > li > a.active strong {
 	border-bottom:0;border-right:0;padding-bottom:1px;padding-right:61px
@@ -294,3 +293,12 @@ div.mapNotify {
     color: #990000;
   }
 }
+hr{
+  margin: 15px 0;
+}
+.round10{
+    -moz-border-radius: 10px 10px 0 0 ; /* Firefox */
+    -webkit-border-radius: 10px 10px 0 0 ; /* Safari, Chrome */
+    -khtml-border-radius: 10px 10px 0 0 ; /* KHTML */
+    border-radius: 10px 10px 0 0 ; /* CSS3 */
+ }

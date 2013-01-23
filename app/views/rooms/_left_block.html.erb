@@ -1,0 +1,33 @@
+	<div class="left_block">
+		<%= "<p class='price'>Примерная стоимость квартиры: <span>#{@room.price}</span> руб.<br/>Площадь квартиры: #{@room.area_all} м<sup><small>2</small></sup></p>".html_safe unless @room.price.blank? %>
+		<hr color="#e1e1e1" size="1"/>
+		<div class="description_room">
+			<%= @room.description.html_safe %>
+		</div>
+		<hr color="#e1e1e1" size="1"/>
+		<div class="each_floors">	
+			<% if @object.rooms %>		
+			Квартиры на этом этаже:
+			<% i=0 %>
+			<% @object.rooms.where(:number_floor=> @room.number_floor ).each do |r|%>
+				<%= link_to r.number_room, room_path(r.id), :remote=>true, :class=>"#{current(r.id, params[:id])} blue" %> | 
+			<% end %>
+			<% end %>
+			<div class="each_floors_other">			
+			Другие этажы:
+			<% i=0 %>
+			<% @object.floors_int.times do %>
+				<%= link_to i=i+1, plan_floor_path(@object.id, i), :remote=>true, :class=>"#{current(i, @room.number_floor)} blue" %> | 
+			<% end %>
+		</div>
+		</div>
+		<div class="clear"></div>
+		<div class="compas">
+			<%= image_tag "kompas-32.png"%>
+		</div>
+		<div class="clear"></div>
+		<h3>Похожие квартиры</h3>
+		<% @object.rooms.where(:count_rooms=> @room.count_rooms ).order("RAND(id)").each do |r|%>
+			<%= link_to r.number_room, room_path(r.id), :remote=>true, :class=>"#{current(r.id, params[:id])} blue" %> | 
+		<% end %>
+	</div>
