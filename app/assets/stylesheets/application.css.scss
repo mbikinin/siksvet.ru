@@ -305,3 +305,19 @@ hr{
     -khtml-border-radius: 10px 10px 0 0 ; /* KHTML */
     border-radius: 10px 10px 0 0 ; /* CSS3 */
  }
+#loading {
+    display: none;
+    left: 49%;
+    position: fixed;
+    top: 48%;
+    .overlay {
+    background: none repeat scroll 0 0 #000000;
+    bottom: 0;
+    left: 0;
+    opacity: 0.3;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+}
+}
