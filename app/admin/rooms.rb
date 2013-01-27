@@ -9,6 +9,7 @@ ActiveAdmin.register Room do
       column 'Объект', :objects
       column 'Этаж', :number_floor
       column 'Кол. комнат', :count_rooms
+      column 'Номер квартиры', :number_room
       column 'Цена квартиры', :price
        column "Статус продажи" do |m|
         if m.is_active == true
