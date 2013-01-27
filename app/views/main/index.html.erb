@@ -30,10 +30,10 @@
 	<h1>Статистика</h1>
 	<div class="statistics_block">
 		<b>Всего квартир: <%= @room.count %></b><br/>
-		<span>Свободных квартир - <%= @room.count.to_i - @room_active.count.to_i %></span><br/>
-		<span>Однокомнатные - <%= Room.where(:count_rooms => 1, :is_active=>1).count %></span><br/>
-		<span>Двухкомнатные - <%= Room.where(:count_rooms => 2, :is_active=>1).count %></span><br/>
-		<span>Трехкомнатные - <%= Room.where(:count_rooms => 3, :is_active=>1).count %></span><br/>
+		<span>Свободных квартир - <%= Room.active.count %></span><br/>
+		<span>Однокомнатные - <%= Room.active.where(:count_rooms => 1).count %></span><br/>
+		<span>Двухкомнатные - <%= Room.active.where(:count_rooms => 2).count %></span><br/>
+		<span>Трехкомнатные - <%= Room.active.where(:count_rooms => 3).count %></span><br/>
 	</div>
 </div>
 <div class="clear"></div>

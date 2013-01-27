@@ -6,6 +6,5 @@ class MainController < ApplicationController
     @partners = Partner.all
     @news = News.limit(3)
     @room = Room.all
-    @room_active = Room.active
   end
 end
