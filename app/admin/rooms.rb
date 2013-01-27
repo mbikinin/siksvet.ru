@@ -5,11 +5,21 @@ ActiveAdmin.register Room do
   
   index do
       column :id
+      
       column 'Объект', :objects
       column 'Этаж', :number_floor
+      column 'Кол. комнат', :count_rooms
+      column 'Цена квартиры', :price
+       column "Продана?" do |m|
+        if m.is_active == true
+          image_tag "/assets/ok.png"
+        else 
+          image_tag "/assets/no.png"
+        end
+      end
       column 'Общая площадь', :area_all
       column 'Жилая площадь', :area_living_room
-      column 'Цена квартиры', :price
+      
       default_actions
   end
   form :html => { :multiple => true  } do |f|

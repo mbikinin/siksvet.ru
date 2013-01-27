@@ -1,0 +1,52 @@
+<h1>Планировка квартир</h1>
+<div class="rooms_item count1_rooms">
+	<% if @rooms1 && !@rooms1.empty? %>
+	<h2>Однокомнатные квартиры</h2>
+		<% @rooms1.each do |r1| %>
+			<div class="room_box">
+				<div class="image"><%= image_tag r1.img(:thumb) %></div>
+				<div class="text">
+					<span class="digit_area"><%= r1.area_all %> м<sup>2</sup></span>
+					<span class="price">Стоимость от: <br/><%= @rooms1.min_by{ |price, value| price }.price  %></span><br/>
+				</div>				
+				<div class="bottom">
+					<span>Осталось квартир: <%= @rooms1.count %></span>&nbsp;&nbsp;&nbsp;
+					<span><%= link_to "Подобрать", object_path(r1.objects.id), :remote=>true %></span>
+				</div>
+			</div>
+		<% end %>		
+	<% end %>
+	<% if @rooms2 && !@rooms2.empty? %>
+	<br/><br/>
+	<h2>Двухкомнатные квартиры</h2>
+		<% @rooms2.each do |r1| %>
+			<div class="room_box">
+				<div class="image"><%= image_tag r1.img(:thumb) %></div>
+				<div class="text">
+					<span class="digit_area"><%= r1.area_all %> м<sup>2</sup></span>
+					<span class="price">Стоимость от: <br/><%= @rooms2.min_by{ |price, value| price }.price  %></span><br/>
+				</div>				
+				<div class="bottom">
+					<span>Осталось квартир: <%= @rooms2.count %></span>&nbsp;&nbsp;&nbsp;
+					<span><%= link_to "Подобрать", object_path(r1.objects.id), :remote=>true %></span>
+				</div>
+			</div>
+		<% end %>		
+	<% end %>
+	<% if @rooms3 && !@rooms3.empty? %>
+	<h2>Трехкомнатные квартиры</h2>
+		<% @rooms3.each do |r1| %>
+			<div class="room_box">
+				<div class="image"><%= image_tag r1.img(:thumb) %></div>
+				<div class="text">
+					<span class="digit_area"><%= r1.area_all %> м<sup>2</sup></span>
+					<span class="price">Стоимость от: <br/><%= @rooms3.min_by{ |price, value| price }.price  %></span><br/>
+				</div>				
+				<div class="bottom">
+					<span>Осталось квартир: <%= @rooms3.count %></span>&nbsp;&nbsp;&nbsp;
+					<span><%= link_to "Подобрать", object_path(r1.objects.id), :remote=>true %></span>
+				</div>
+			</div>
+		<% end %>		
+	<% end %>
+</div>

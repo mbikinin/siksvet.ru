@@ -33,7 +33,7 @@
     left: 40%;
     padding: 20px;
     position: fixed;
-    top: 0%; 
+    top: 40%; 
     z-index: 99999;
 }
 
@@ -90,7 +90,7 @@ body {
 .css3{border-radius:8px;-moz-border-radius:8px;-webkit-border-radius:8px;box-shadow:0 0 4px rgba(0, 0, 0, .4);-moz-box-shadow:0 0 4px rgba(0, 0, 0, .4);-webkit-box-shadow:0 0 4px rgba(0, 0, 0, .4);position:relative}
 /* Global Structure ============================================================= */
 .main {	margin:0 auto;width:1004px;overflow:hidden}
-.block {height:131px}
+.block {height: 90px}
 .extra {min-height:100%;height:auto !important;height:100%;margin:0 auto -95px;position:relative;}
 body, html {height:100%}
 .bg1 {background:#fff;position:relative;z-index:1;height: 95px}
@@ -154,6 +154,7 @@ header {
 		float: left;
 	}
 	#content_block{
+	  opacity: 0.9;
     width: 645px;
 	  background: #fff;
     float: left;
@@ -319,5 +320,17 @@ hr{
     right: 0;
     top: 0;
     z-index: 1000;
+  }
 }
+span.ico{
+  background: url(sprite.png);
 }
+span.upload_ico{
+  width: 16px;
+  height: 16px;
+  background-position: 0 -312px;
+  a{
+    padding-left: 20px;
+  }
+}
+

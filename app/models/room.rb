@@ -7,10 +7,10 @@ class Room < ActiveRecord::Base
                   :is_active, :plan_id, :price
 
   #Определяем файлы для paperclip
-  has_attached_file :img, :styles => { :medium => "500x500>", :thumb => "100x100>" },
+  has_attached_file :img, :styles => { :medium => "500x500>", :thumb => "150x150>" },
       :url =>"/system/:class/:id/:style/:basename.:extension",
       :path => ":rails_root/public/system/:class/:id/:style/:basename.:extension"
-  scope :active, where("is_active = ?",1)
+  scope :active, where("is_active = ?", 0)
   validates :count_rooms, :presence => true
 
   before_save :basename

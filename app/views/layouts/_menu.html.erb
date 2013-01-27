@@ -1,6 +1,7 @@
 	<% menu = Page.where(:on_menu => true) %>
 	<ul id="menu">
 			<li><%= link_to "<strong>Наши объекты</strong>".html_safe, objects_path %></li>
+			<li><%= link_to "<strong>Планировки квартир</strong>".html_safe, rooms_path %></li>
 			<li><%= link_to "<strong>Проектные декларации</strong>".html_safe, declarations_path %></li>
 		<% menu.each do |m|%> 
 			<li><%= link_to "<strong>#{m.title}</strong>".html_safe, page_path(m.uri) %></li>

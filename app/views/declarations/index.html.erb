@@ -10,11 +10,12 @@
 			<div class="clear"></div>
 			
 			<div class="object_links">
-				<span class="project">
-					<%= link_to "скачать документ" , p.file, :class=>"doc_link" %>
+				<span class="ico upload_ico">
+					<%= link_to "скачать документ" , p.file  %>
 				</span>
 				<% unless p.text.nil?%>
 					<span class="project">
+						&#8594;
 						<%= link_to "подробнее", declaration_path(p.id)%>
 					</span>
 				<% end %>
