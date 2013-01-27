@@ -10,7 +10,7 @@ ActiveAdmin.register Room do
       column 'Этаж', :number_floor
       column 'Кол. комнат', :count_rooms
       column 'Цена квартиры', :price
-       column "Продана?" do |m|
+       column "Статус продажи" do |m|
         if m.is_active == true
           image_tag "/assets/ok.png"
         else 
@@ -55,6 +55,18 @@ ActiveAdmin.register Room do
     end
     def new
       @plans = Plan.where(:objects_id=>params[:object])
+    end
+    def update
+      update! do |format|
+        flash[:notice] = "ОК! Успешно изменили"
+        format.html { redirect_to admin_rooms_path }
+      end
+    end
+    def create
+      create! do |format|
+        flash[:notice] = "ОК! Успешно изменили"
+        format.html { redirect_to admin_rooms_path }
+      end
     end
   end
 

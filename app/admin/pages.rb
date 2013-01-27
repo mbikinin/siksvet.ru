@@ -26,7 +26,21 @@ ActiveAdmin.register Page do
       end
       default_actions
   end
+    controller do
+     def update
+      update! do |format|
+        flash[:notice] = "ОК! Успешно изменили"
+        format.html { redirect_to admin_pages_path }
+      end
+    end
+    def create
+      create! do |format|
+        flash[:notice] = "ОК! Успешно создали"
+        format.html { redirect_to admin_pages_path }
+      end
+    end
     
+  end
 
 
 end

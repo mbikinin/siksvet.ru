@@ -58,6 +58,18 @@ ActiveAdmin.register Objects do
        @object = Objects.find_by_id(params[:id])
        @photos = Photo.where(:objects_id=>params[:id])
     end
+     def update
+      update! do |format|
+        flash[:notice] = "ОК! Успешно изменили"
+        format.html { redirect_to admin_objects_path }
+      end
+    end
+    def create
+      create! do |format|
+        flash[:notice] = "ОК! Успешно создали"
+        format.html { redirect_to admin_objects_path }
+      end
+    end
   end
 
 end
