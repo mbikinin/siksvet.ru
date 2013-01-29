@@ -1,6 +1,6 @@
 <div class="left_block">
 		<div class="each_floors">			
-			Выберите этаж:
+			Выберите этаж:<br/>
 			<% i=0 %>
 			<% @object.floors_int.times do %>
 				<%= link_to i=i+1, plan_floor_path(@object.id, i), :remote=>true, :class=>"#{current(i, params[:floor])} blue" %> | 
@@ -15,7 +15,7 @@
 		<% rooms = @object.rooms.where(:is_active=>false, :number_floor=>params[:floor]) %>
 		<span class="none_rooms"><%= "Все квартиры проданы" unless rooms && rooms.count>0 %></span>
 		<% rooms.each do |r| %>
-			 <%= link_to "№ #{r.number_room}", room_path(r.id), :remote=>true %>
+			 <%= link_to "№#{r.number_room}", room_path(r.id), :remote=>true %> |
 		<% end %>
 
 	</div>
