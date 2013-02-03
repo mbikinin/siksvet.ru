@@ -1,16 +1,44 @@
-  <%= javascript_include_tag "lazybox_helper" %>
-<h1><%= @object.title %></h1>
-<div class="object_box">
-		<div class="image left"><%= image_tag @object.img.url(:medium) %></div>
-			<h3>Описание объекта</h3>
-			<span>Адрес объекта: <br/><b class="address"><%= @object.address%></b></span> <br/>
-			<span>Этажность объекта: <br/><b class="phone"><%= @object.floors%></b></span><br/>
-			<span>Cроки сдачи объекта: <br/><b class="date_finish"><%= @object.date_finish %></b></span><br/>
-		<div class="clear"></div>
-		<div class="padding"></div>
-			<%= @object.description.html_safe %>
-		<div class="clear"></div>
-		<div class="padding"></div>
+<%= javascript_include_tag "lazybox_helper" %>
+<div id="objects_box">
+		<div class="object_item">
+			<h3><%= @object.title%></h3>
+			<div>
+			<div class="image">
+				<%= image_tag @object.img.url(:medium)%>
+			</div>
+			<div class="desc">
+				<span>Адрес объекта: <br/><i class="address"><%= @object.address%></i></span> <br/>
+				<span>Этажность объекта: <br/><i class="phone"><%= @object.floors%></i></span><br/>
+				<span>Cроки сдачи объекта: <br/><i class="date_finish"><%= @object.date_finish %></i></span><br/><br/>
+				<span>Отдел продаж: <br/>
+					<h1><i>(843)527-53-45</i></h1>
+				</span><br/>
+				<%= link_to "посмотреть на карте", page_path('contacts') %>
+			</div>
+			</div>
+			<div class="clear"></div>
+			<br/>
+			<div class="description">
+				<p><%= @object.description.html_safe %></p>
+			</div>
+			<div class="clear"></div>
+			<div class="object_links">
+				<span class="brone link">
+					<%= link_to "Оставить заявку", feedback_order_path, :remote=>true %>
+				</span>
+				<% if @object.declarations.count>0  %>
+					<span class="project link">
+						<%= link_to "проектные декларации" , declarations_filter_path(@object.id), :class=>"blue_link" %>	
+					</span>
+				<% end %>
+				<% if @object.plans.count>0  %>
+					<span class="plan link">
+						<%= link_to "планировка" , object_path(@object.id), :remote=>true, :class=>"blue_link" %>	
+					</span>
+				<% end %>
+			</div>
+			<br/>
+		</div>
 		<div class="photos_object">
 			<% if @object.photos && @object.photos.count>0 %>
 			<h3>Фотографии объекта</h3>
@@ -21,5 +49,5 @@
 				<% end %>
 			<% end %>
 		</div>
-	</div>
+</div>
 </div>

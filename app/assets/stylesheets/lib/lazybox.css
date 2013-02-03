@@ -25,14 +25,17 @@
 }
 
 a#lazybox_close {
-  background: transparent;
-  cursor: pointer;
-  height: 25px;
-  position: absolute;
-  right: 10px;
-  text-align: center;
-  top: 5px;
-  text-decoration: none;
+    background: url("/assets/close.png") repeat scroll 0 0 transparent;
+    color: #FFFFFF;
+    cursor: pointer;
+    height: 19px;
+    padding: 4px 0 0 1px;
+    position: absolute;
+    right: -6px;
+    text-align: center;
+    text-decoration: none;
+    top: -5px;
+    width: 24px;
 }
 
 a#lazybox_close.nice {
@@ -40,7 +43,7 @@ a#lazybox_close.nice {
   color: red;
 }
 
-a#lazybox_close:hover { color: #000;}
+a#lazybox_close:hover { color: #fff;}
 img.lazy_img { cursor: pointer; }
 #lazybox .lazy_buttons { margin-top: 15px; text-align: right; }
 #lazybox.confirm { max-width: 300px; }

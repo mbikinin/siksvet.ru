@@ -37,30 +37,41 @@
       margin-bottom: 20px;
       padding: 10px;
       text-align: center;
+      position: relative;
       img{
         max-width:500px;
         max-height: 500px;
       }
     }
-
+    
+    .infos {
+      background: none repeat scroll 0 0 #717171;
+      color: #FFFFFF;
+      padding: 5px 3px 5px 10px;
+      position: absolute;
+      right: -2px;
+      text-align: right;
+      top: -2px;
+    }
+    
     .options{
       width: 500px;
-  .item{
-    .label{
-      display: inline-block;
-      width: 153px;
+      .item{
+        .label{
+          display: inline-block;
+          width: 153px;
+        }
+        .digit{
+          display: inline-block;
+          padding-right: 3px;
+          text-align: right;
+          width: 50px;
+        }   
+      }
+     h3{
+        margin: 25px 0 0px
+      }
     }
-    .digit{
-      display: inline-block;
-      padding-right: 3px;
-      text-align: right;
-      width: 50px;
-    }   
-  }
- h3{
-    margin: 25px 0 0px
-  }
-}
   }
   .each_floors{
     a{

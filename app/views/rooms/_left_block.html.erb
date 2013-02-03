@@ -1,5 +1,5 @@
 	<div class="left_block">
-		<%= "<p class='price'>Примерная стоимость квартиры:<br/> <span>#{@room.price}</span> руб.<br/>Площадь квартиры: #{@room.area_all} м<sup><small>2</small></sup></p>".html_safe unless @room.price.blank? %>
+		<%= "<p class='price'>Площадь квартиры: <span class='digit gray'>#{@room.area_all}</span> м<sup><small>2</small></sup></p>".html_safe unless @room.price.blank? %>
 		<hr color="#e1e1e1" size="1"/>
 		<div class="description_room">
 			<%= @room.description.html_safe %>
