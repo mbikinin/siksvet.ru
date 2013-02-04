@@ -7,7 +7,6 @@
 				<div class="image"><%= link_to image_tag(r1.img(:thumb)), room_path(r1.id), :remote=>true%></div>
 				<div class="text">
 					<span class="digit_area"><%= r1.area_all %> м<sup>2</sup></span>
-					<span class="price">Стоимость: <br/><%= r1.price  %></span><br/>
 				</div>				
 				<div class="bottom">
 					<span>Осталось квартир: <%= @rooms1.count %></span>&nbsp;&nbsp;&nbsp;
@@ -24,7 +23,6 @@
 				<div class="image"><%= link_to image_tag(r1.img(:thumb)), room_path(r1.id), :remote=>true%></div>
 				<div class="text">
 					<span class="digit_area"><%= r1.area_all %> м<sup>2</sup></span>
-					<span class="price">Стоимость: <br/><%= r1.price %></span><br/>
 				</div>				
 				<div class="bottom">
 					<span>Осталось квартир: <%= @rooms2.count %></span>&nbsp;&nbsp;&nbsp;
@@ -41,7 +39,6 @@
 				<div class="image"><%= link_to image_tag(r1.img(:thumb)), room_path(r1.id), :remote=>true%></div>
 				<div class="text">
 					<span class="digit_area"><%= r1.area_all %> м<sup>2</sup></span>
-					<span class="price">Стоимость: <br/><%= r1.price %></span><br/>
 				</div>				
 				<div class="bottom">
 					<span>Осталось квартир: <%= @rooms3.count %></span>&nbsp;&nbsp;&nbsp;
