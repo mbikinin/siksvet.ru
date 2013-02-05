@@ -9,4 +9,8 @@ class ObjectsController < ApplicationController
   def show
     @object = Objects.find_by_id(params[:id])
   end
+  
+  def map
+    @object = Objects.find_by_id(params[:id])
+  end
 end

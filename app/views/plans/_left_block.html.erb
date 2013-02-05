@@ -17,5 +17,9 @@
 		<% rooms.each do |r| %>
 			 <%= link_to "№#{r.number_room}", room_path(r.id), :remote=>true %> |
 		<% end %>
+		<br/>
+		<br/>
+		<br/>
+		→ <%= link_to "посмотреть прайс лист", page_path(:price) %>
 
 	</div>

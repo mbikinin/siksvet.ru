@@ -31,4 +31,8 @@
 		<% @object.rooms.where("count_rooms = ? AND id != ?", @room.count_rooms, @room.id).order("RAND()").each do |r|%>
 			<%= link_to r.number_room, room_path(r.id), :remote=>true, :class=>"#{current(r.id, params[:id])} blue" %> | 
 		<% end %>
+				<br/>
+		<br/>
+		<br/>
+		→ <%= link_to "посмотреть прайс лист", page_path(:price) %>
 	</div>

@@ -14,6 +14,7 @@ Infinityt::Application.routes.draw do
   
   resources :objects
     get "objects" => "objects#index"
+    get "object/:id/map" => "objects#map", :as=>:object_map
     
   resources :declarations
     get "declarations" => "declarations#index"

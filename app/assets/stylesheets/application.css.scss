@@ -109,23 +109,38 @@ h2 {font-size:36px;color:#08afee;line-height:1.2em;padding:17px 0 16px 0;letter-
 /* ============================= header ====================== */
 header {
   #logo {
-    background: url("logo_bg.png") no-repeat scroll 0 0 blue;
+    background: url("logo_bg.png") no-repeat scroll -7px -7px blue;
     float: left;
-    height: 220px;
-    width: 267px;
+    height: 200px;
     text-align: center;
+    width: 240px;
     .image{
-      width: 200px;
-      margin: 35px auto 0;
+      margin: 18px auto 0;
       img{
-        width: 160px;
+        width: 100px;
       }
     }
     .name{
       color: #fff;
       -moz-text-shadow: 0 0 1px #000;
       -webkit-text-shadow: 0 0 1px #000;
-      text-shadow: 0 0 2px #000;
+      text-shadow: 0 0 1px #000;
+      margin-top: -10px;
+      font-size:10px;
+      .c_name1, .c_name2 {
+         font-size: 24px;
+         letter-spacing: 1px;
+         text-transform: uppercase;
+      }
+      .c_name1{
+         color: #fff;
+      }
+      .c_name2{
+         color: #000;
+          -moz-text-shadow: 0 0 1px #fff;
+        -webkit-text-shadow: 0 0 1px #fff;
+        text-shadow: 0 0 1px #fff;
+      }
     }
   }
   #header_text{

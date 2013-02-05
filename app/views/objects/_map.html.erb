@@ -1,0 +1,32 @@
+<div class="mapNotify" style="width: 300px; height: 30px; ">
+<h2><b>Адрес объекта:</b><br/> <%= @object.address%></h2>
+</div>
+<div class="bigMap">
+<div id="ymaps-map-id_134518269086948079794" style="
+	height: 500px;
+    width: 633px;
+    z-index: 0;">
+</div>
+<script type="text/javascript">function fid_134518269086948079794(ymaps) {
+	var map = new ymaps.Map("ymaps-map-id_134518269086948079794", {
+		center: [49.055251,55.801007], zoom: 15, type: "yandex#map"
+	}
+	);
+	map.controls.add("zoomControl").add("mapTools").add(new ymaps.control.TypeSelector(["yandex#map", "yandex#satellite", "yandex#hybrid", "yandex#publicMap"]));
+	map.geoObjects.add(new ymaps.Placemark([49.055917,55.800198], {
+		balloonContent: '<img src="images/fasad.png" alt="" />'
+	}
+	, {
+		preset: "twirl#nightDotIcon"
+	}
+	));
+}
+;
+function getnewmap() {
+	$('#ymaps-map-id_134518269086948079794').html('');
+	fid_134518269086948079794(ymaps);
+	return false;
+}
+</script>
+<script type="text/javascript" src="http://api-maps.yandex.ru/2.0/?coordorder=longlat&load=package.full&wizard=constructor&lang=ru-RU&onload=fid_134518269086948079794"></script>
+</div>
