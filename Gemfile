@@ -30,11 +30,11 @@ group :production do
   gem 'uglifier'
 end
 gem 'cancan'
- gem "activeadmin" , git: 'git://github.com/gregbell/active_admin.git'
+gem 'activeadmin', '0.5.0'
 gem 'faker', '0.3.1'
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'russian'
-
 gem 'lazybox'
 
 gem "paperclip"
