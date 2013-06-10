@@ -1,4 +1,5 @@
 //= require active_admin/base
+
 //= require tinymce-jquery
 //= require tinymce/plugins/uploadimage/editor_plugin.js
 //= require tinymce/plugins/uploadimage/langs/en.js
