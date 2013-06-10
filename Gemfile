@@ -30,9 +30,7 @@ group :production do
   gem 'uglifier'
 end
 gem 'cancan'
-gem 'activeadmin-cancan'
-gem 'activeadmin'
-
+gem 'activeadmin', '0.5.1'
 gem 'faker', '0.3.1'
 gem 'jquery-rails'
 gem 'russian'
