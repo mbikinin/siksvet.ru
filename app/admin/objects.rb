@@ -46,10 +46,7 @@ ActiveAdmin.register Objects do
   ###
   #   Controller
   ###
-  controller do load_and_authorize_resource :except => :index
-    def scoped_collection
-      end_of_association_chain.accessible_by(current_ability)
-    end
+  controller do
     def scheme_floor
        @object = Objects.find_by_id(params[:id])
        @plans = Plan.where(:object_id => @object.id)

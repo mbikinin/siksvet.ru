@@ -50,10 +50,10 @@ ActiveAdmin.register Room do
     end
   end
 
- controller do load_and_authorize_resource :except => :index
-    def scoped_collection
-      params[:object].nil? ? end_of_association_chain.accessible_by(current_ability) : Room.where(:objects_id=>params[:object])
-    end
+ controller do
+    # def scoped_collection
+      # params[:object].nil? ? end_of_association_chain.accessible_by(current_ability) : Room.where(:objects_id=>params[:object])
+    # end
     def new
       @plans = Plan.where(:objects_id=>params[:object])
     end
