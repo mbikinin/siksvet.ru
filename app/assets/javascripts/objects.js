@@ -1,11 +1,11 @@
-$("#object_img .floor").live("mouseover",
+$(document).on("mouseover", "#object_img .floor",
 	function(){
 		$(this).css("background", "url('/assets/floor_bg.png')");
 		$('.floor_text').show()
 		$('.floor_text').html($(this).attr("rel") + " этаж")
 	}
 );
-$("#object_img .floor").live("mouseout",
+$(document).on("mouseout", "#object_img .floor", 
 	function(){
 		$(this).css("background", "none");
 	}
