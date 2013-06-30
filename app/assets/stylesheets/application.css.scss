@@ -19,7 +19,10 @@
  *= require lib/lazybox
 */
 
-
+ @font-face {
+    font-family: Euro; /* Гарнитура шрифта */
+    src: url(/fonts/EUR.TTF); /* Путь к файлу со шрифтом */
+   }
 .padding{
   padding: 6px 0;
 }
@@ -74,7 +77,7 @@ mark, rp, rt, ruby, summary, time {display:inline }
 /* Global properties ======================================================== */
 body {
 	border:0;
-	font:14px "Myriad Pro",Arial,sans-serif;
+	font:14px Arial,sans-serif;
 	color:#4d4d4d;
 	line-height:25px;
 	min-width:960px;
@@ -121,12 +124,13 @@ header {
       }
     }
     .name{
+       font-family: Euro;
       color: #fff;
       -moz-text-shadow: 0 0 1px #000;
       -webkit-text-shadow: 0 0 1px #000;
       text-shadow: 0 0 1px #000;
       margin-top: -10px;
-      font-size:10px;
+      font-size:11px;
       .c_name1, .c_name2 {
          font-size: 24px;
          letter-spacing: 1px;
