@@ -20,8 +20,8 @@
 */
 
  @font-face {
-    font-family: Euro; /* Гарнитура шрифта */
-    src: url(/fonts/EUR_E.ttf); /* Путь к файлу со шрифтом */
+    font-family: "Euro_e"; /* Гарнитура шрифта */
+    src: url("/fonts/EUR_E.ttf");
    }
 .padding{
   padding: 6px 0;
@@ -124,7 +124,7 @@ header {
       }
     }
     .name{
-       font-family: Euro;
+      font-family: "Euro_e";
       color: #fff;
       -moz-text-shadow: 0 0 1px #000;
       -webkit-text-shadow: 0 0 1px #000;

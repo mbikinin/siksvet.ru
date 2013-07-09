@@ -4,8 +4,6 @@
 		<i><%= link_to @object.title, object_path(@object.id)%> / фотографии</i>
 	</p>
 	<% @object.photos.each do |p|%>
-		<div class="image">
-			<%= link_to image_tag(p.img.url(:list), :class=>:photo_object), p.img.url(:medium), :rel => :lazybox %>
-		</div>
+		<%= link_to image_tag(p.img.url(:list), :class=>:photo_object), p.img.url(:medium), :rel => :lazybox , :class=>"image"%>
 	<% end %>
 </div>

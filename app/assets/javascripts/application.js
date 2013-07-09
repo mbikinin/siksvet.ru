@@ -6,6 +6,7 @@
 	
 	$(document).ready(function(){
 		$(window).bind('resize', function(){resizeBackground();});
+		
 		$('a[rel*=lazybox]').lazybox();
 		
 			/****
