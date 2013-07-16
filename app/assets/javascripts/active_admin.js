@@ -3,7 +3,7 @@
 //= require tinymce-jquery
 //= require tinymce/plugins/uploadimage/editor_plugin.js
 //= require tinymce/plugins/uploadimage/langs/en.js
-//= require tinymce/plugins/uploadimage/langs/en_dlg.js
+
 //= require rich
 //= require lib/datepicker
 $(document).ready(function() {
