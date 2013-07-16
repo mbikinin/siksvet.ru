@@ -31,6 +31,7 @@ group :production do
 end
 gem 'cancan'
 gem 'activeadmin', '0.5.0'
+gem "devise"
 gem 'faker', '0.3.1'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
