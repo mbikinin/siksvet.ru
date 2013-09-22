@@ -5,7 +5,7 @@ class RoomsController < ApplicationController
     @rooms3 = Room.active.where(:count_rooms => 3).order("RAND()").limit(3)
   end
   def show
-    @room = Room.find_by_id(params[:id])
+    @room = Room.find_by_number_room(params[:id])
     @object = Objects.find_by_id(@room.objects_id)
   end
 end

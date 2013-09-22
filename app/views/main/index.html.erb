@@ -7,13 +7,13 @@
 			<dl>
 				<dt>
 					<%= n.date.strftime("%d.%m.%Y") %><br/>
-					<b><%= link_to n.title, "#"%></b>
+					<b><%= link_to n.title, news_path(n.title)%></b>
 				</dt>
 				<dd>
 					<%= n.anounce.html_safe %>
-					<!--<div align="left">
+					<!-- <div align="left">
 						<%= link_to "Читать дальше", "#"%>
-					</div>-->
+					</div> -->
 				</dd>
 			</dl>
 		<% end %>

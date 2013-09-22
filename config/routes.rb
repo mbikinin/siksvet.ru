@@ -3,7 +3,7 @@ Infinityt::Application.routes.draw do
   mount Rich::Engine => '/rich', :as => 'rich'
 
   get "main/index"
-  resources :news
+  resources :news, :only=>[:show]
   root :to => 'main#index'
   
   resources :pages

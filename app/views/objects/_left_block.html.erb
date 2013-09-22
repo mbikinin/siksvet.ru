@@ -4,7 +4,7 @@
 			Квартиры на этом этаже:
 			<% i=0 %>
 			<% @object.rooms.where(:number_floor=> @room.number_floor ).each do |r|%>
-				<%= link_to r.number_room, room_path(r.id), :remote=>true, :class=>"#{current(r.id, params[:id])} blue" %> | 
+				<%= link_to r.number_room, room_path(r.number_room), :remote=>true, :class=>"#{current(r.id, params[:id])} blue" %> | 
 			<% end %>
 			<% end %>
 			<div class="each_floors">			

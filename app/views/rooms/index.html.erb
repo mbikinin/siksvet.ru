@@ -4,7 +4,7 @@
 	<h2>Однокомнатные квартиры</h2>
 		<% @rooms1.each do |r1| %>
 			<div class="room_box">
-				<div class="image"><%= link_to image_tag(r1.img(:thumb)), room_path(r1.id), :remote=>true%></div>
+				<div class="image"><%= link_to image_tag(r1.img(:thumb)), room_path(r1.number_room), :remote=>true%></div>
 				<div class="text">
 					<span class="digit_area"><%= r1.area_all %> м<sup>2</sup></span>
 				</div>				
@@ -20,7 +20,7 @@
 	<h2>Двухкомнатные квартиры</h2>
 		<% @rooms2.each do |r1| %>
 			<div class="room_box">
-				<div class="image"><%= link_to image_tag(r1.img(:thumb)), room_path(r1.id), :remote=>true%></div>
+				<div class="image"><%= link_to image_tag(r1.img(:thumb)), room_path(r1.number_room), :remote=>true%></div>
 				<div class="text">
 					<span class="digit_area"><%= r1.area_all %> м<sup>2</sup></span>
 				</div>				
@@ -36,7 +36,7 @@
 	<h2>Трехкомнатные квартиры</h2>
 		<% @rooms3.each do |r1| %>
 			<div class="room_box">
-				<div class="image"><%= link_to image_tag(r1.img(:thumb)), room_path(r1.id), :remote=>true%></div>
+				<div class="image"><%= link_to image_tag(r1.img(:thumb)), room_path(r1.number_room), :remote=>true%></div>
 				<div class="text">
 					<span class="digit_area"><%= r1.area_all %> м<sup>2</sup></span>
 				</div>				

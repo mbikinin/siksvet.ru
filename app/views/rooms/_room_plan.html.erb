@@ -11,6 +11,11 @@
 				Этаж: <%= @room.plan.floor %><br/>
 				Квартира №:<%= @room.number_room %>
 			</div>
+			<%if @room.is_active? %>
+				<div class="prodano">
+					<%= image_tag 'prodano23.png' %>
+				</div>
+			<% end %>
 			<%= image_tag @room.img.url(:medium)%>
 		</div>
 		<div class="options">

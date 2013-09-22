@@ -10,7 +10,7 @@
 			Квартиры на этом этаже: <br/>
 			<% i=0 %>
 			<% @object.rooms.where(:number_floor=> @room.number_floor ).each do |r|%>
-				<%= link_to r.number_room, room_path(r.id), :remote=>true, :class=>"#{current(r.id, params[:id])} blue" %> | 
+				<%= link_to r.number_room, room_path(r.number_room ), :remote=>true, :class=>"#{current(r.number_room, params[:id])} blue" %> | 
 			<% end %>
 			<% end %>
 			<br/><br/>
@@ -29,7 +29,7 @@
 		<div class="clear"></div>
 		<h3>Похожие квартиры</h3>
 		<% @object.rooms.where("count_rooms = ? AND id != ?", @room.count_rooms, @room.id).order("RAND()").each do |r|%>
-			<%= link_to r.number_room, room_path(r.id), :remote=>true, :class=>"#{current(r.id, params[:id])} blue" %> | 
+			<%= link_to r.number_room, room_path(r.number_room), :remote=>true, :class=>"#{current(r.number_room, params[:id])} blue" %> | 
 		<% end %>
 				<br/>
 		<br/>
